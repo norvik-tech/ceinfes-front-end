@@ -1,0 +1,12 @@
+import { Badge } from "@nextui-org/react"
+
+const PaymentTest = ({ className }: { className?: string }) => {
+  return (
+    <Badge color="warning" className={className}>
+      <span className="font-semibold">Attention:</span> For testing purposes
+      only.
+    </Badge>
+  )
+}
+
+export default PaymentTest

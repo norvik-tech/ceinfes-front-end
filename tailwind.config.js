@@ -1,17 +1,25 @@
 const path = require("path")
+import { nextui } from "@nextui-org/react"
+import { addDynamicIconSelectors } from "@iconify/tailwind"
 
 module.exports = {
   darkMode: "class",
-  presets: [require("@medusajs/ui-preset")],
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx}",
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/modules/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@medusajs/ui/dist/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+      gap: {
+        4: "4px",
+        8: "8px",
+        12: "12px",
+        16: "16px",
+        24: "24px",
+        32: "32px",
+        48: "48px",
+        80: "80px",
+      },
       transitionProperty: {
         width: "width margin",
         height: "height",
@@ -33,7 +41,11 @@ module.exports = {
           70: "#374151",
           80: "#1F2937",
           90: "#111827",
+          default: "D1DCE5",
         },
+        primary: "#F97203",
+        secondary: "#385B8A",
+        dark: "#212121",
       },
       borderRadius: {
         none: "0px",
@@ -59,16 +71,7 @@ module.exports = {
         "3xl": "2rem",
       },
       fontFamily: {
-        sans: [
-          "Inter",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Ubuntu",
-          "sans-serif",
-        ],
+        "helvetica-neue": ["var(--font-helvetica-neue)"],
       },
       keyframes: {
         ring: {
@@ -158,5 +161,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-radix")()],
+  plugins: [
+    require("tailwindcss-radix")(),
+    nextui(),
+    addDynamicIconSelectors(),
+  ],
 }
