@@ -10,6 +10,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gap: {
+        4: "4px",
+        8: "8px",
+        12: "12px",
+        16: "16px",
+        24: "24px",
+        32: "32px",
+        48: "48px",
+        80: "80px",
+      },
       transitionProperty: {
         width: "width margin",
         height: "height",
@@ -31,7 +41,11 @@ module.exports = {
           70: "#374151",
           80: "#1F2937",
           90: "#111827",
+          default: "D1DCE5",
         },
+        primary: "#F97203",
+        secondary: "#385B8A",
+        dark: "#212121",
       },
       borderRadius: {
         none: "0px",
