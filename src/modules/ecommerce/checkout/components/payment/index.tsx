@@ -8,8 +8,6 @@ import PaymentContainer from "@modules/ecommerce/checkout/components/payment-con
 import { StripeContext } from "@modules/ecommerce/checkout/components/payment-wrapper/stripe-wrapper"
 import Divider from "@modules/ecommerce/common/components/divider"
 import { Button, cn } from "@nextui-org/react"
-import { CardElement } from "@stripe/react-stripe-js"
-import { StripeCardElementOptions } from "@stripe/stripe-js"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 
@@ -47,7 +45,8 @@ const Payment = ({
   const paymentReady =
     (activeSession && cart?.shipping_methods.length !== 0) || paidByGiftcard
 
-  const useOptions: StripeCardElementOptions = useMemo(() => {
+  // const useOptions: StripeCardElementOptions = useMemo(() => {
+  const useOptions = useMemo(() => {
     return {
       style: {
         base: {
@@ -169,7 +168,7 @@ const Payment = ({
                     Enter your card details:
                   </p>
 
-                  <CardElement
+                  {/* <CardElement
                     options={useOptions as StripeCardElementOptions}
                     onChange={(e) => {
                       setCardBrand(
@@ -179,7 +178,7 @@ const Payment = ({
                       setError(e.error?.message || null)
                       setCardComplete(e.complete)
                     }}
-                  />
+                  /> */}
                 </div>
               )}
             </>

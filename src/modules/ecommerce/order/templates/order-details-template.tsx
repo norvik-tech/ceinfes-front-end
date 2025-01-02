@@ -1,6 +1,5 @@
 "use client"
 
-import { XMark } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import Help from "@modules/ecommerce/order/components/help"
@@ -26,7 +25,12 @@ const OrderDetailsTemplate: React.FC<OrderDetailsTemplateProps> = ({
           className="flex gap-2 items-center text-ui-fg-subtle hover:text-ui-fg-base"
           data-testid="back-to-overview-button"
         >
-          <XMark /> Back to overview
+          <i
+            className="icon-[heroicons--x-mark-16-solid]"
+            role="img"
+            aria-hidden="true"
+          ></i>{" "}
+          Back to overview
         </LocalizedClientLink>
       </div>
       <div

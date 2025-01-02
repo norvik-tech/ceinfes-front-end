@@ -1,5 +1,4 @@
 import React from "react"
-import { CreditCard } from "@medusajs/icons"
 
 import Ideal from "@modules/ecommerce/common/icons/ideal"
 import Bancontact from "@modules/ecommerce/common/icons/bancontact"
@@ -12,7 +11,13 @@ export const paymentInfoMap: Record<
 > = {
   pp_stripe_stripe: {
     title: "Credit card",
-    icon: <CreditCard />,
+    icon: (
+      <i
+        className="icon-[tabler--credit-card]"
+        role="img"
+        aria-hidden="true"
+      ></i>
+    ),
   },
   "pp_stripe-ideal_stripe": {
     title: "iDeal",
@@ -28,7 +33,13 @@ export const paymentInfoMap: Record<
   },
   pp_system_default: {
     title: "Manual Payment",
-    icon: <CreditCard />,
+    icon: (
+      <i
+        className="icon-[tabler--credit-card]"
+        role="img"
+        aria-hidden="true"
+      ></i>
+    ),
   },
   // Add more payment providers here
 }
