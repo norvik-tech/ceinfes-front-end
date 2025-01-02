@@ -5,7 +5,7 @@ import { HttpTypes } from "@medusajs/types"
 import { Table, clx } from "@medusajs/ui"
 
 import Item from "@modules/ecommerce/cart/components/item"
-import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
+import SkeletonLineItem from "@modules/ecommerce/skeletons/components/skeleton-line-item"
 
 type ItemsTemplateProps = {
   cart: HttpTypes.StoreCart

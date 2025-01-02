@@ -6,7 +6,7 @@ import ProductOnboardingCta from "@modules/ecommerce/products/components/product
 import ProductTabs from "@modules/ecommerce/products/components/product-tabs"
 import RelatedProducts from "@modules/ecommerce/products/components/related-products"
 import ProductInfo from "@modules/ecommerce/products/templates/product-info"
-import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products"
+import SkeletonRelatedProducts from "@modules/ecommerce/skeletons/templates/skeleton-related-products"
 import { notFound } from "next/navigation"
 import ProductActionsWrapper from "./product-actions-wrapper"
 import { HttpTypes } from "@medusajs/types"

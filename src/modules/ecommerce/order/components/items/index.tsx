@@ -4,7 +4,7 @@ import { Table } from "@medusajs/ui"
 
 import Divider from "@modules/ecommerce/common/components/divider"
 import Item from "@modules/ecommerce/order/components/item"
-import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
+import SkeletonLineItem from "@modules/ecommerce/skeletons/components/skeleton-line-item"
 
 type ItemsProps = {
   order: HttpTypes.StoreOrder

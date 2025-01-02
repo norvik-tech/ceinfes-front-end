@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import { Suspense } from "react"
 
 import InteractiveLink from "@modules/ecommerce/common/components/interactive-link"
-import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-grid"
+import SkeletonProductGrid from "@modules/ecommerce/skeletons/templates/skeleton-product-grid"
 import RefinementList from "@modules/ecommerce/store/components/refinement-list"
 import { SortOptions } from "@modules/ecommerce/store/components/refinement-list/sort-products"
 import PaginatedProducts from "@modules/ecommerce/store/templates/paginated-products"

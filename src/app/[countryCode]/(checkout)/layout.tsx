@@ -1,6 +1,6 @@
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import ChevronDown from "@modules/ecommerce/common/icons/chevron-down"
-import MedusaCTA from "@modules/layout/components/medusa-cta"
+import MedusaCTA from "@modules/ecommerce/layout/components/medusa-cta"
 
 export default function CheckoutLayout({
   children,
