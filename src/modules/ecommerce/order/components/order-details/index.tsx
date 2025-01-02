@@ -25,13 +25,13 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
         </span>
         .
       </Text>
-      <Text className="mt-2">
+      <Text className="font-helvetica-neue mt-2">
         Order date:{" "}
         <span data-testid="order-date">
           {new Date(order.created_at).toDateString()}
         </span>
       </Text>
-      <Text className="mt-2 text-ui-fg-interactive">
+      <Text className="font-helvetica-neue mt-2 text-ui-fg-interactive">
         Order number: <span data-testid="order-id">{order.display_id}</span>
       </Text>
 

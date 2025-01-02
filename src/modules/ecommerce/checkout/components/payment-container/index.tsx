@@ -40,7 +40,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-x-4">
             <Radio checked={selectedPaymentOptionId === paymentProviderId} />
-            <Text className="text-base-regular">
+            <Text className="font-helvetica-neue text-base-regular">
               {paymentInfoMap[paymentProviderId]?.title || paymentProviderId}
             </Text>
             {isManual(paymentProviderId) && isDevelopment && (

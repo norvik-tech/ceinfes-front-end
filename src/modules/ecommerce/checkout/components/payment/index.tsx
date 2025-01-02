@@ -161,7 +161,7 @@ const Payment = ({
               </RadioGroup>
               {isStripe && stripeReady && (
                 <div className="mt-5 transition-all duration-150 ease-in-out">
-                  <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                  <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
                     Enter your card details:
                   </Text>
 
@@ -183,7 +183,7 @@ const Payment = ({
 
           {paidByGiftcard && (
             <div className="flex flex-col w-1/3">
-              <Text className="txt-medium-plus text-ui-fg-base mb-1">
+              <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
                 Payment method
               </Text>
               <Text
@@ -221,7 +221,7 @@ const Payment = ({
           {cart && paymentReady && activeSession ? (
             <div className="flex items-start gap-x-1 w-full">
               <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
                   Payment method
                 </Text>
                 <Text
@@ -233,7 +233,7 @@ const Payment = ({
                 </Text>
               </div>
               <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
                   Payment details
                 </Text>
                 <div
@@ -255,7 +255,7 @@ const Payment = ({
             </div>
           ) : paidByGiftcard ? (
             <div className="flex flex-col w-1/3">
-              <Text className="txt-medium-plus text-ui-fg-base mb-1">
+              <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
                 Payment method
               </Text>
               <Text

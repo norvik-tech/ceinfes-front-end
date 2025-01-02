@@ -16,17 +16,17 @@ export default async function TransferPage({
         <Heading level="h1" className="text-xl text-zinc-900">
           Transfer request for order {id}
         </Heading>
-        <Text className="text-zinc-600">
+        <Text className="font-helvetica-neue text-zinc-600">
           You&#39;ve received a request to transfer ownership of your order ({id}).
           If you agree to this request, you can approve the transfer by clicking
           the button below.
         </Text>
         <div className="w-full h-px bg-zinc-200" />
-        <Text className="text-zinc-600">
+        <Text className="font-helvetica-neue text-zinc-600">
           If you accept, the new owner will take over all responsibilities and
           permissions associated with this order.
         </Text>
-        <Text className="text-zinc-600">
+        <Text className="font-helvetica-neue text-zinc-600">
           If you do not recognize this request or wish to retain ownership, no
           further action is required.
         </Text>
