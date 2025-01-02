@@ -1,15 +1,15 @@
 "use client"
 
-import { Badge, Heading, Input, Label, Text, Tooltip } from "@medusajs/ui"
-import React, { useActionState } from "react";
+import React, { useActionState } from "react"
 
 import { applyPromotions, submitPromotionForm } from "@lib/data/cart"
 import { convertToLocale } from "@lib/util/money"
-import { InformationCircleSolid } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import Trash from "@modules/ecommerce/common/icons/trash"
 import ErrorMessage from "../error-message"
 import { SubmitButton } from "../submit-button"
+import { Label } from "@headlessui/react"
+import { Badge, Input } from "@nextui-org/react"
 
 type DiscountCodeProps = {
   cart: HttpTypes.StoreCart & {
@@ -100,9 +100,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
         {promotions.length > 0 && (
           <div className="w-full flex items-center">
             <div className="flex flex-col w-full">
-              <Heading className="txt-medium mb-2">
-                Promotion(s) applied:
-              </Heading>
+              <h3 className="txt-medium mb-2">Promotion(s) applied:</h3>
 
               {promotions.map((promotion) => {
                 return (
@@ -111,11 +109,10 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                     className="flex items-center justify-between w-full max-w-full mb-2"
                     data-testid="discount-row"
                   >
-                    <Text className="font-helvetica-neue flex gap-x-1 items-baseline txt-small-plus w-4/5 pr-1">
+                    <p className="flex gap-x-1 items-baseline txt-small-plus w-4/5 pr-1">
                       <span className="truncate" data-testid="discount-code">
                         <Badge
-                          color={promotion.is_automatic ? "green" : "grey"}
-                          size="small"
+                          color={promotion.is_automatic ? "success" : "default"}
                         >
                           {promotion.code}
                         </Badge>{" "}
@@ -142,7 +139,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                           </Tooltip>
                         )} */}
                       </span>
-                    </Text>
+                    </p>
                     {!promotion.is_automatic && (
                       <button
                         className="flex items-center"

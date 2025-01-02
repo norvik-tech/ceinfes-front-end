@@ -1,5 +1,4 @@
 import { Dialog, Transition } from "@headlessui/react"
-import { Button, clx } from "@medusajs/ui"
 import React, { Fragment, useMemo } from "react"
 
 import useToggleState from "@lib/hooks/use-toggle-state"
@@ -9,6 +8,7 @@ import X from "@modules/ecommerce/common/icons/x"
 import { getProductPrice } from "@lib/util/get-product-price"
 import OptionSelect from "./option-select"
 import { HttpTypes } from "@medusajs/types"
+import { Button, cn } from "@nextui-org/react"
 
 type MobileActionsProps = {
   product: HttpTypes.StoreProduct
@@ -52,7 +52,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
   return (
     <>
       <div
-        className={clx("lg:hidden inset-x-0 bottom-0 fixed", {
+        className={cn("lg:hidden inset-x-0 bottom-0 fixed", {
           "pointer-events-none": !show,
         })}
       >
@@ -83,7 +83,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                     </p>
                   )}
                   <span
-                    className={clx({
+                    className={cn({
                       "text-ui-fg-interactive":
                         selectedPrice.price_type === "sale",
                     })}
@@ -97,8 +97,8 @@ const MobileActions: React.FC<MobileActionsProps> = ({
             </div>
             <div className="grid grid-cols-2 w-full gap-x-4">
               <Button
-                onClick={open}
-                variant="secondary"
+                onPress={open}
+                variant="solid"
                 className="w-full"
                 data-testid="mobile-actions-button"
               >

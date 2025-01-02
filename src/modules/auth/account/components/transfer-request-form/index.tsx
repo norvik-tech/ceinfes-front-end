@@ -2,10 +2,9 @@
 
 import { useActionState } from "react"
 import { createTransferRequest } from "@lib/data/orders"
-import { Text, Heading, Input, Button, IconButton, Toaster } from "@medusajs/ui"
 import { SubmitButton } from "@modules/ecommerce/checkout/components/submit-button"
-import { CheckCircleMiniSolid, XCircleSolid } from "@medusajs/icons"
 import { useEffect, useState } from "react"
+import { Button, Input } from "@nextui-org/react"
 
 export default function TransferRequestForm() {
   const [showSuccess, setShowSuccess] = useState(false)
@@ -26,13 +25,11 @@ export default function TransferRequestForm() {
     <div className="flex flex-col gap-y-4 w-full">
       <div className="grid sm:grid-cols-2 items-center gap-x-8 gap-y-4 w-full">
         <div className="flex flex-col gap-y-1">
-          <Heading level="h3" className="text-lg text-neutral-950">
-            Order transfers
-          </Heading>
-          <Text className="font-helvetica-neue text-base-regular text-neutral-500">
+          <h3 className="text-lg text-neutral-950">Order transfers</h3>
+          <p className="text-base-regular text-neutral-500">
             Can&apos;t find the order you are looking for?
             <br /> Connect an order to your account.
-          </Text>
+          </p>
         </div>
         <form
           action={formAction}
@@ -50,30 +47,39 @@ export default function TransferRequestForm() {
         </form>
       </div>
       {!state.success && state.error && (
-        <Text className="font-helvetica-neue text-base-regular text-rose-500 text-right">
+        <p className="text-base-regular text-rose-500 text-right">
           {state.error}
-        </Text>
+        </p>
       )}
       {showSuccess && (
         <div className="flex justify-between p-4 bg-neutral-50 shadow-borders-base w-full self-stretch items-center">
           <div className="flex gap-x-2 items-center">
-            <CheckCircleMiniSolid className="w-4 h-4 text-emerald-500" />
+            <i
+              className="icon-[material-symbols-light--check-circle] w-4 h-4 text-emerald-500"
+              role="img"
+              aria-hidden="true"
+            ></i>
             <div className="flex flex-col gap-y-1">
-              <Text className="font-helvetica-neue text-medim-pl text-neutral-950">
+              <p className="text-medim-pl text-neutral-950">
                 Transfer for order {state.order?.id} requested
-              </Text>
-              <Text className="font-helvetica-neue text-base-regular text-neutral-600">
+              </p>
+              <p className="text-base-regular text-neutral-600">
                 Transfer request email sent to {state.order?.email}
-              </Text>
+              </p>
             </div>
           </div>
-          <IconButton
-            variant="transparent"
+          <Button
+            isIconOnly
+            variant="light"
             className="h-fit"
             onClick={() => setShowSuccess(false)}
           >
-            <XCircleSolid className="w-4 h-4 text-neutral-500" />
-          </IconButton>
+            <i
+              className="icon-[ph--x-circle-fill] w-4 h-4 text-neutral-500"
+              role="img"
+              aria-hidden="true"
+            ></i>
+          </Button>
         </div>
       )}
     </div>

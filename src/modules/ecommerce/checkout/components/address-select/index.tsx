@@ -1,11 +1,10 @@
 import { Listbox, Transition } from "@headlessui/react"
-import { ChevronUpDown } from "@medusajs/icons"
-import { clx } from "@medusajs/ui"
 import { Fragment, useMemo } from "react"
 
 import Radio from "@modules/ecommerce/common/components/radio"
 import compareAddresses from "@lib/util/compare-addresses"
 import { HttpTypes } from "@medusajs/types"
+import { cn } from "@nextui-org/react"
 
 type AddressSelectProps = {
   addresses: HttpTypes.StoreCustomerAddress[]
@@ -46,11 +45,17 @@ const AddressSelect = ({
                   ? selectedAddress.address_1
                   : "Choose an address"}
               </span>
-              <ChevronUpDown
-                className={clx("transition-rotate duration-200", {
-                  "transform rotate-180": open,
-                })}
-              />
+
+              <i
+                className={cn(
+                  "icon-[mynaui--chevron-up-down-solid] transition-rotate duration-200",
+                  {
+                    "transform rotate-180": open,
+                  }
+                )}
+                role="img"
+                aria-hidden="true"
+              ></i>
             </>
           )}
         </Listbox.Button>

@@ -3,12 +3,11 @@
 import { RadioGroup } from "@headlessui/react"
 import { isStripe as isStripeFunc, paymentInfoMap } from "@lib/constants"
 import { initiatePaymentSession } from "@lib/data/cart"
-import { CheckCircleSolid, CreditCard } from "@medusajs/icons"
-import { Button, Container, Heading, Text, clx } from "@medusajs/ui"
 import ErrorMessage from "@modules/ecommerce/checkout/components/error-message"
 import PaymentContainer from "@modules/ecommerce/checkout/components/payment-container"
 import { StripeContext } from "@modules/ecommerce/checkout/components/payment-wrapper/stripe-wrapper"
 import Divider from "@modules/ecommerce/common/components/divider"
+import { Button, cn } from "@nextui-org/react"
 import { CardElement } from "@stripe/react-stripe-js"
 import { StripeCardElementOptions } from "@stripe/stripe-js"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
@@ -115,9 +114,8 @@ const Payment = ({
   return (
     <div className="bg-white">
       <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
-          className={clx(
+        <h2
+          className={cn(
             "flex flex-row text-3xl-regular gap-x-2 items-baseline",
             {
               "opacity-50 pointer-events-none select-none":
@@ -126,10 +124,16 @@ const Payment = ({
           )}
         >
           Payment
-          {!isOpen && paymentReady && <CheckCircleSolid />}
-        </Heading>
+          {!isOpen && paymentReady && (
+            <i
+              className="icon-[material-symbols-light--check-circle]"
+              role="img"
+              aria-hidden="true"
+            ></i>
+          )}
+        </h2>
         {!isOpen && paymentReady && (
-          <Text>
+          <p>
             <button
               onClick={handleEdit}
               className="text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
@@ -137,7 +141,7 @@ const Payment = ({
             >
               Edit
             </button>
-          </Text>
+          </p>
         )}
       </div>
       <div>
@@ -161,9 +165,9 @@ const Payment = ({
               </RadioGroup>
               {isStripe && stripeReady && (
                 <div className="mt-5 transition-all duration-150 ease-in-out">
-                  <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
+                  <p className="txt-medium-plus text-ui-fg-base mb-1">
                     Enter your card details:
-                  </Text>
+                  </p>
 
                   <CardElement
                     options={useOptions as StripeCardElementOptions}
@@ -183,15 +187,15 @@ const Payment = ({
 
           {paidByGiftcard && (
             <div className="flex flex-col w-1/3">
-              <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
+              <p className="txt-medium-plus text-ui-fg-base mb-1">
                 Payment method
-              </Text>
-              <Text
+              </p>
+              <p
                 className="txt-medium text-ui-fg-subtle"
                 data-testid="payment-method-summary"
               >
                 Gift card
-              </Text>
+              </p>
             </div>
           )}
 
@@ -201,9 +205,8 @@ const Payment = ({
           />
 
           <Button
-            size="large"
             className="mt-6"
-            onClick={handleSubmit}
+            onPress={handleSubmit}
             isLoading={isLoading}
             disabled={
               (isStripe && !cardComplete) ||
@@ -221,49 +224,53 @@ const Payment = ({
           {cart && paymentReady && activeSession ? (
             <div className="flex items-start gap-x-1 w-full">
               <div className="flex flex-col w-1/3">
-                <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
+                <p className="txt-medium-plus text-ui-fg-base mb-1">
                   Payment method
-                </Text>
-                <Text
+                </p>
+                <p
                   className="txt-medium text-ui-fg-subtle"
                   data-testid="payment-method-summary"
                 >
                   {paymentInfoMap[selectedPaymentMethod]?.title ||
                     selectedPaymentMethod}
-                </Text>
+                </p>
               </div>
               <div className="flex flex-col w-1/3">
-                <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
+                <p className="txt-medium-plus text-ui-fg-base mb-1">
                   Payment details
-                </Text>
+                </p>
                 <div
                   className="flex gap-2 txt-medium text-ui-fg-subtle items-center"
                   data-testid="payment-details-summary"
                 >
-                  <Container className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
+                  <div className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
                     {paymentInfoMap[selectedPaymentMethod]?.icon || (
-                      <CreditCard />
+                      <i
+                        className="icon-[tabler--credit-card]"
+                        role="img"
+                        aria-hidden="true"
+                      ></i>
                     )}
-                  </Container>
-                  <Text>
+                  </div>
+                  <p>
                     {isStripeFunc(selectedPaymentMethod) && cardBrand
                       ? cardBrand
                       : "Another step will appear"}
-                  </Text>
+                  </p>
                 </div>
               </div>
             </div>
           ) : paidByGiftcard ? (
             <div className="flex flex-col w-1/3">
-              <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
+              <p className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
                 Payment method
-              </Text>
-              <Text
+              </p>
+              <p
                 className="txt-medium text-ui-fg-subtle"
                 data-testid="payment-method-summary"
               >
                 Gift card
-              </Text>
+              </p>
             </div>
           ) : null}
         </div>

@@ -1,5 +1,5 @@
-import { EllipseMiniSolid } from "@medusajs/icons"
-import { Label, RadioGroup, Text, clx } from "@medusajs/ui"
+import { Label } from "@headlessui/react"
+import { cn, Radio, RadioGroup } from "@nextui-org/react"
 
 type FilterRadioGroupProps = {
   title: string
@@ -21,17 +21,25 @@ const FilterRadioGroup = ({
 }: FilterRadioGroupProps) => {
   return (
     <div className="flex gap-x-3 flex-col gap-y-3">
-      <Text className="font-helvetica-neue txt-compact-small-plus text-ui-fg-muted">{title}</Text>
+      <p className="font-helvetica-neue txt-compact-small-plus text-ui-fg-muted">
+        {title}
+      </p>
       <RadioGroup data-testid={dataTestId} onValueChange={handleChange}>
         {items?.map((i) => (
           <div
             key={i.value}
-            className={clx("flex gap-x-2 items-center", {
+            className={cn("flex gap-x-2 items-center", {
               "ml-[-23px]": i.value === value,
             })}
           >
-            {i.value === value && <EllipseMiniSolid />}
-            <RadioGroup.Item
+            {i.value === value && (
+              <i
+                className="icon-[ion--ellipse-sharp]"
+                role="img"
+                aria-hidden="true"
+              ></i>
+            )}
+            <Radio
               checked={i.value === value}
               className="hidden peer"
               id={i.value}
@@ -39,7 +47,7 @@ const FilterRadioGroup = ({
             />
             <Label
               htmlFor={i.value}
-              className={clx(
+              className={cn(
                 "!txt-compact-small !transform-none text-ui-fg-subtle hover:cursor-pointer",
                 {
                   "text-ui-fg-base": i.value === value,

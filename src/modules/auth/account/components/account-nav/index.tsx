@@ -1,7 +1,5 @@
 "use client"
 
-import { clx } from "@medusajs/ui"
-import { ArrowRightOnRectangle } from "@medusajs/icons"
 import { useParams, usePathname } from "next/navigation"
 
 import ChevronDown from "@modules/ecommerce/common/icons/chevron-down"
@@ -11,6 +9,7 @@ import Package from "@modules/ecommerce/common/icons/package"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { HttpTypes } from "@medusajs/types"
 import { signout } from "@lib/data/customer"
+import { cn } from "@nextui-org/react"
 
 const AccountNav = ({
   customer,
@@ -96,7 +95,11 @@ const AccountNav = ({
                     data-testid="logout-button"
                   >
                     <div className="flex items-center gap-x-2">
-                      <ArrowRightOnRectangle />
+                      <i
+                        className="icon-[heroicons--arrow-right-end-on-rectangle]"
+                        role="img"
+                        aria-hidden="true"
+                      ></i>
                       <span>Log out</span>
                     </div>
                     <ChevronDown className="transform -rotate-90" />
@@ -186,7 +189,7 @@ const AccountNavLink = ({
   return (
     <LocalizedClientLink
       href={href}
-      className={clx("text-ui-fg-subtle hover:text-ui-fg-base", {
+      className={cn("text-ui-fg-subtle hover:text-ui-fg-base", {
         "text-ui-fg-base font-semibold": active,
       })}
       data-testid={dataTestId}

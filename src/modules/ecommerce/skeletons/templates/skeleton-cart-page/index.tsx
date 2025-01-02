@@ -1,6 +1,7 @@
-import { Table } from "@medusajs/ui"
+"use client"
 
 import repeat from "@lib/util/repeat"
+import { Card, CardBody, CardHeader } from "@nextui-org/react"
 import SkeletonCartItem from "@modules/ecommerce/skeletons/components/skeleton-cart-item"
 import SkeletonCodeForm from "@modules/ecommerce/skeletons/components/skeleton-code-form"
 import SkeletonOrderSummary from "@modules/ecommerce/skeletons/components/skeleton-order-summary"
@@ -24,32 +25,28 @@ const SkeletonCartPage = () => {
               <div className="pb-3 flex items-center">
                 <div className="w-20 h-12 bg-gray-200 animate-pulse" />
               </div>
-              <Table>
-                <Table.Header className="border-t-0">
-                  <Table.Row>
-                    <Table.HeaderCell className="!pl-0">
-                      <div className="w-10 h-6 bg-gray-200 animate-pulse" />
-                    </Table.HeaderCell>
-                    <Table.HeaderCell></Table.HeaderCell>
-                    <Table.HeaderCell>
-                      <div className="w-16 h-6 bg-gray-200 animate-pulse" />
-                    </Table.HeaderCell>
-                    <Table.HeaderCell>
-                      <div className="w-12 h-6 bg-gray-200 animate-pulse" />
-                    </Table.HeaderCell>
-                    <Table.HeaderCell className="!pr-0">
-                      <div className="flex justify-end">
-                        <div className="w-12 h-6 bg-gray-200 animate-pulse" />
-                      </div>
-                    </Table.HeaderCell>
-                  </Table.Row>
-                </Table.Header>
-                <Table.Body>
+              <Card>
+                <CardHeader className="grid grid-cols-12 gap-4 border-b border-gray-200">
+                  <div className="col-span-3">
+                    <div className="w-10 h-6 bg-gray-200 animate-pulse" />
+                  </div>
+                  <div className="col-span-3"></div>
+                  <div className="col-span-2">
+                    <div className="w-16 h-6 bg-gray-200 animate-pulse" />
+                  </div>
+                  <div className="col-span-2">
+                    <div className="w-12 h-6 bg-gray-200 animate-pulse" />
+                  </div>
+                  <div className="col-span-2 flex justify-end">
+                    <div className="w-12 h-6 bg-gray-200 animate-pulse" />
+                  </div>
+                </CardHeader>
+                <CardBody className="p-0">
                   {repeat(4).map((index) => (
                     <SkeletonCartItem key={index} />
                   ))}
-                </Table.Body>
-              </Table>
+                </CardBody>
+              </Card>
             </div>
           </div>
           <div className="flex flex-col gap-y-8">

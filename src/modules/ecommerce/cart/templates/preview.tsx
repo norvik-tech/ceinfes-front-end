@@ -2,10 +2,10 @@
 
 import repeat from "@lib/util/repeat"
 import { HttpTypes } from "@medusajs/types"
-import { Table, clx } from "@medusajs/ui"
-
+import { Card, CardBody } from "@nextui-org/react"
 import Item from "@modules/ecommerce/cart/components/item"
 import SkeletonLineItem from "@modules/ecommerce/skeletons/components/skeleton-line-item"
+import { cn } from "@nextui-org/react"
 
 type ItemsTemplateProps = {
   cart: HttpTypes.StoreCart
@@ -17,33 +17,29 @@ const ItemsPreviewTemplate = ({ cart }: ItemsTemplateProps) => {
 
   return (
     <div
-      className={clx({
+      className={cn({
         "pl-[1px] overflow-y-scroll overflow-x-hidden no-scrollbar max-h-[420px]":
           hasOverflow,
       })}
     >
-      <Table>
-        <Table.Body data-testid="items-table">
+      <Card>
+        <CardBody data-testid="items-table" className="gap-2">
           {items
             ? items
                 .sort((a, b) => {
                   return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1
                 })
-                .map((item) => {
-                  return (
-                    <Item
-                      key={item.id}
-                      item={item}
-                      type="preview"
-                      currencyCode={cart.currency_code}
-                    />
-                  )
-                })
-            : repeat(5).map((i) => {
-                return <SkeletonLineItem key={i} />
-              })}
-        </Table.Body>
-      </Table>
+                .map((item) => (
+                  <Item
+                    key={item.id}
+                    item={item}
+                    type="preview"
+                    currencyCode={cart.currency_code}
+                  />
+                ))
+            : repeat(5).map((i) => <SkeletonLineItem key={i} />)}
+        </CardBody>
+      </Card>
     </div>
   )
 }

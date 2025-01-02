@@ -1,7 +1,8 @@
+"use client"
+
 import repeat from "@lib/util/repeat"
 import { HttpTypes } from "@medusajs/types"
-import { Heading, Table } from "@medusajs/ui"
-
+import { Card, CardBody, CardHeader } from "@nextui-org/react"
 import Item from "@modules/ecommerce/cart/components/item"
 import SkeletonLineItem from "@modules/ecommerce/skeletons/components/skeleton-line-item"
 
@@ -11,45 +12,41 @@ type ItemsTemplateProps = {
 
 const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
   const items = cart?.items
+
   return (
-    <div>
+    <div className="w-full">
       <div className="pb-3 flex items-center">
-        <Heading className="text-[2rem] leading-[2.75rem]">Cart</Heading>
+        <h3 className="text-[2rem] leading-[2.75rem]">Cart</h3>
       </div>
-      <Table>
-        <Table.Header className="border-t-0">
-          <Table.Row className="text-ui-fg-subtle txt-medium-plus">
-            <Table.HeaderCell className="!pl-0">Item</Table.HeaderCell>
-            <Table.HeaderCell></Table.HeaderCell>
-            <Table.HeaderCell>Quantity</Table.HeaderCell>
-            <Table.HeaderCell className="hidden small:table-cell">
-              Price
-            </Table.HeaderCell>
-            <Table.HeaderCell className="!pr-0 text-right">
-              Total
-            </Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
+
+      <Card>
+        <CardHeader className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-gray-200">
+          <div className="col-span-4 text-gray-600 font-medium">Item</div>
+          <div className="col-span-2"></div>
+          <div className="col-span-2 text-gray-600 font-medium">Quantity</div>
+          <div className="hidden small:block col-span-2 text-gray-600 font-medium">
+            Price
+          </div>
+          <div className="col-span-2 text-right text-gray-600 font-medium">
+            Total
+          </div>
+        </CardHeader>
+        <CardBody>
           {items
             ? items
                 .sort((a, b) => {
                   return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1
                 })
-                .map((item) => {
-                  return (
-                    <Item
-                      key={item.id}
-                      item={item}
-                      currencyCode={cart?.currency_code}
-                    />
-                  )
-                })
-            : repeat(5).map((i) => {
-                return <SkeletonLineItem key={i} />
-              })}
-        </Table.Body>
-      </Table>
+                .map((item) => (
+                  <Item
+                    key={item.id}
+                    item={item}
+                    currencyCode={cart?.currency_code}
+                  />
+                ))
+            : repeat(5).map((i) => <SkeletonLineItem key={i} />)}
+        </CardBody>
+      </Card>
     </div>
   )
 }

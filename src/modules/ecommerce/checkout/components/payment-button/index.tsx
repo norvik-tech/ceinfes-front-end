@@ -3,10 +3,10 @@
 import { isManual, isStripe } from "@lib/constants"
 import { placeOrder } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
 import React, { useState } from "react"
 import ErrorMessage from "../error-message"
+import { Button } from "@nextui-org/react"
 
 type PaymentButtonProps = {
   cart: HttpTypes.StoreCart
@@ -136,8 +136,7 @@ const StripePaymentButton = ({
     <>
       <Button
         disabled={disabled || notReady}
-        onClick={handlePayment}
-        size="large"
+        onPress={handlePayment}
         isLoading={submitting}
         data-testid={dataTestId}
       >
@@ -177,7 +176,6 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
         disabled={notReady}
         isLoading={submitting}
         onClick={handlePayment}
-        size="large"
         data-testid="submit-order-button"
       >
         Place order

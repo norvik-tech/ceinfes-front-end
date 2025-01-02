@@ -1,8 +1,8 @@
-import { Label } from "@medusajs/ui"
 import React, { useEffect, useImperativeHandle, useState } from "react"
 
 import Eye from "@modules/ecommerce/common/icons/eye"
 import EyeOff from "@modules/ecommerce/common/icons/eye-off"
+import { Label } from "@headlessui/react"
 
 type InputProps = Omit<
   Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,

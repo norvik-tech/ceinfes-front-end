@@ -1,4 +1,5 @@
 import { getBaseURL } from "@lib/util/env"
+import { NextUIProvider } from "@nextui-org/react"
 import { Metadata } from "next"
 import localFont from "next/font/local"
 
@@ -98,7 +99,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" data-mode="light">
       <body className={`${HelveticaNeue.variable} font-helvetica-neue`}>
-        <main className="relative">{props.children}</main>
+        <NextUIProvider>
+          <main className="relative">{props.children}</main>
+        </NextUIProvider>
       </body>
     </html>
   )

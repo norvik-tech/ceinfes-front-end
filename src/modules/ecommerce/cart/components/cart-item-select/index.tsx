@@ -1,6 +1,5 @@
 "use client"
 
-import { IconBadge, clx } from "@medusajs/ui"
 import {
   SelectHTMLAttributes,
   forwardRef,
@@ -11,6 +10,7 @@ import {
 } from "react"
 
 import ChevronDown from "@modules/ecommerce/common/icons/chevron-down"
+import { Badge, cn } from "@nextui-org/react"
 
 type NativeSelectProps = {
   placeholder?: string
@@ -38,10 +38,10 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
 
     return (
       <div>
-        <IconBadge
+        <Badge
           onFocus={() => innerRef.current?.focus()}
           onBlur={() => innerRef.current?.blur()}
-          className={clx(
+          className={cn(
             "relative flex items-center txt-compact-small border text-ui-fg-base group",
             className,
             {
@@ -62,7 +62,7 @@ const CartItemSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
           <span className="absolute flex pointer-events-none justify-end w-8 group-hover:animate-pulse">
             <ChevronDown />
           </span>
-        </IconBadge>
+        </Badge>
       </div>
     )
   }

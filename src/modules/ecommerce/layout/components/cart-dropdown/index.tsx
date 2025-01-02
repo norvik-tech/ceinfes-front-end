@@ -8,12 +8,12 @@ import {
 } from "@headlessui/react"
 import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
 import DeleteButton from "@modules/ecommerce/common/components/delete-button"
 import LineItemOptions from "@modules/ecommerce/common/components/line-item-options"
 import LineItemPrice from "@modules/ecommerce/common/components/line-item-price"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import Thumbnail from "@modules/ecommerce/products/components/thumbnail"
+import { Button } from "@nextui-org/react"
 import { usePathname } from "next/navigation"
 import { Fragment, useEffect, useRef, useState } from "react"
 
@@ -192,11 +192,7 @@ const CartDropdown = ({
                     </span>
                   </div>
                   <LocalizedClientLink href="/cart" passHref>
-                    <Button
-                      className="w-full"
-                      size="large"
-                      data-testid="go-to-cart-button"
-                    >
+                    <Button className="w-full" data-testid="go-to-cart-button">
                       Go to cart
                     </Button>
                   </LocalizedClientLink>

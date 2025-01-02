@@ -4,12 +4,11 @@ import { RadioGroup, Radio } from "@headlessui/react"
 import { setShippingMethod } from "@lib/data/cart"
 import { calculatePriceForShippingOption } from "@lib/data/fulfillment"
 import { convertToLocale } from "@lib/util/money"
-import { CheckCircleSolid, Loader } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
-import { Button, Heading, Text, clx } from "@medusajs/ui"
 import ErrorMessage from "@modules/ecommerce/checkout/components/error-message"
 import Divider from "@modules/ecommerce/common/components/divider"
 import MedusaRadio from "@modules/ecommerce/common/components/radio"
+import { Button, cn } from "@nextui-org/react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
@@ -94,9 +93,8 @@ const Shipping: React.FC<ShippingProps> = ({
   return (
     <div className="bg-white">
       <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
-          className={clx(
+        <h2
+          className={cn(
             "flex flex-row text-3xl-regular gap-x-2 items-baseline",
             {
               "opacity-50 pointer-events-none select-none":
@@ -106,14 +104,18 @@ const Shipping: React.FC<ShippingProps> = ({
         >
           Delivery
           {!isOpen && (cart.shipping_methods?.length ?? 0) > 0 && (
-            <CheckCircleSolid />
+            <i
+              className="icon-[material-symbols-light--check-circle]"
+              role="img"
+              aria-hidden="true"
+            ></i>
           )}
-        </Heading>
+        </h2>
         {!isOpen &&
           cart?.shipping_address &&
           cart?.billing_address &&
           cart?.email && (
-            <Text>
+            <p>
               <button
                 onClick={handleEdit}
                 className="text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
@@ -121,7 +123,7 @@ const Shipping: React.FC<ShippingProps> = ({
               >
                 Edit
               </button>
-            </Text>
+            </p>
           )}
       </div>
       {isOpen ? (
@@ -143,7 +145,7 @@ const Shipping: React.FC<ShippingProps> = ({
                     value={option.id}
                     data-testid="delivery-option-radio"
                     disabled={isDisabled}
-                    className={clx(
+                    className={cn(
                       "flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active",
                       {
                         "border-ui-border-interactive":
@@ -169,7 +171,11 @@ const Shipping: React.FC<ShippingProps> = ({
                           currency_code: cart?.currency_code,
                         })
                       ) : isLoadingPrices ? (
-                        <Loader />
+                        <i
+                          className="icon-[ri--loader-line]"
+                          role="img"
+                          aria-hidden="true"
+                        ></i>
                       ) : (
                         "-"
                       )}
@@ -186,9 +192,8 @@ const Shipping: React.FC<ShippingProps> = ({
           />
 
           <Button
-            size="large"
             className="mt-6"
-            onClick={handleSubmit}
+            onPress={handleSubmit}
             isLoading={isLoading}
             disabled={!cart.shipping_methods?.[0]}
             data-testid="submit-delivery-option-button"
@@ -201,16 +206,16 @@ const Shipping: React.FC<ShippingProps> = ({
           <div className="text-small-regular">
             {cart && (cart.shipping_methods?.length ?? 0) > 0 && (
               <div className="flex flex-col w-1/3">
-                <Text className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
+                <p className="font-helvetica-neue txt-medium-plus text-ui-fg-base mb-1">
                   Method
-                </Text>
-                <Text className="font-helvetica-neue txt-medium text-ui-fg-subtle">
+                </p>
+                <p className="font-helvetica-neue txt-medium text-ui-fg-subtle">
                   {cart.shipping_methods?.at(-1)?.name}{" "}
                   {convertToLocale({
                     amount: cart.shipping_methods?.at(-1)?.amount!,
                     currency_code: cart?.currency_code,
                   })}
-                </Text>
+                </p>
               </div>
             )}
           </div>

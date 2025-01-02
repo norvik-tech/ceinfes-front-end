@@ -1,17 +1,25 @@
 "use client"
 
-import { Button } from "@medusajs/ui"
+import { Button } from "@nextui-org/react"
 import React from "react"
 import { useFormStatus } from "react-dom"
 
 export function SubmitButton({
   children,
-  variant = "primary",
+  variant = "solid",
   className,
   "data-testid": dataTestId,
 }: {
   children: React.ReactNode
-  variant?: "primary" | "secondary" | "transparent" | "danger" | null
+  variant?:
+    | "solid"
+    | "bordered"
+    | "faded"
+    | "light"
+    | "flat"
+    | "ghost"
+    | "shadow"
+    | null
   className?: string
   "data-testid"?: string
 }) {
@@ -19,11 +27,10 @@ export function SubmitButton({
 
   return (
     <Button
-      size="large"
       className={className}
       type="submit"
       isLoading={pending}
-      variant={variant || "primary"}
+      variant={variant || "solid"}
       data-testid={dataTestId}
     >
       {children}

@@ -1,12 +1,11 @@
 "use client"
 
-import { Button, Heading } from "@medusajs/ui"
-
 import CartTotals from "@modules/ecommerce/common/components/cart-totals"
 import Divider from "@modules/ecommerce/common/components/divider"
 import DiscountCode from "@modules/ecommerce/checkout/components/discount-code"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { HttpTypes } from "@medusajs/types"
+import { Button } from "@nextui-org/react"
 
 type SummaryProps = {
   cart: HttpTypes.StoreCart & {
@@ -29,9 +28,7 @@ const Summary = ({ cart }: SummaryProps) => {
 
   return (
     <div className="flex flex-col gap-y-4">
-      <Heading level="h2" className="text-[2rem] leading-[2.75rem]">
-        Summary
-      </Heading>
+      <h2 className="text-[2rem] leading-[2.75rem]">Summary</h2>
       <DiscountCode cart={cart} />
       <Divider />
       <CartTotals totals={cart} />

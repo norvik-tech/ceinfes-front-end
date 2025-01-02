@@ -1,12 +1,11 @@
 import { RadioGroup } from "@headlessui/react"
-import { InformationCircleSolid } from "@medusajs/icons"
-import { Text, Tooltip, clx } from "@medusajs/ui"
-import React, { type JSX } from "react";
+import React, { type JSX } from "react"
 
 import Radio from "@modules/ecommerce/common/components/radio"
 
 import PaymentTest from "../payment-test"
 import { isManual } from "@lib/constants"
+import { cn } from "@nextui-org/react"
 
 type PaymentContainerProps = {
   paymentProviderId: string
@@ -29,7 +28,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
         key={paymentProviderId}
         value={paymentProviderId}
         disabled={disabled}
-        className={clx(
+        className={cn(
           "flex flex-col gap-y-2 text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active",
           {
             "border-ui-border-interactive":
@@ -40,9 +39,9 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-x-4">
             <Radio checked={selectedPaymentOptionId === paymentProviderId} />
-            <Text className="font-helvetica-neue text-base-regular">
+            <p className="text-base-regular">
               {paymentInfoMap[paymentProviderId]?.title || paymentProviderId}
-            </Text>
+            </p>
             {isManual(paymentProviderId) && isDevelopment && (
               <PaymentTest className="hidden small:block" />
             )}

@@ -1,5 +1,4 @@
 import { HttpTypes } from "@medusajs/types"
-import { Text } from "@medusajs/ui"
 
 type OrderDetailsProps = {
   order: HttpTypes.StoreOrder
@@ -15,7 +14,7 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
 
   return (
     <div>
-      <Text>
+      <p>
         We have sent the order confirmation details to{" "}
         <span
           className="text-ui-fg-medium-plus font-semibold"
@@ -24,28 +23,28 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
           {order.email}
         </span>
         .
-      </Text>
-      <Text className="font-helvetica-neue mt-2">
+      </p>
+      <p className="font-helvetica-neue mt-2">
         Order date:{" "}
         <span data-testid="order-date">
           {new Date(order.created_at).toDateString()}
         </span>
-      </Text>
-      <Text className="font-helvetica-neue mt-2 text-ui-fg-interactive">
+      </p>
+      <p className="font-helvetica-neue mt-2 text-ui-fg-interactive">
         Order number: <span data-testid="order-id">{order.display_id}</span>
-      </Text>
+      </p>
 
       <div className="flex items-center text-compact-small gap-x-4 mt-4">
         {showStatus && (
           <>
-            <Text>
+            <p>
               Order status:{" "}
               <span className="text-ui-fg-subtle " data-testid="order-status">
                 {/* TODO: Check where the statuses should come from */}
                 {/* {formatStatus(order.fulfillment_status)} */}
               </span>
-            </Text>
-            <Text>
+            </p>
+            <p>
               Payment status:{" "}
               <span
                 className="text-ui-fg-subtle "
@@ -53,7 +52,7 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
               >
                 {/* {formatStatus(order.payment_status)} */}
               </span>
-            </Text>
+            </p>
           </>
         )}
       </div>

@@ -3,7 +3,6 @@
 import { addToCart } from "@lib/data/cart"
 import { useIntersection } from "@lib/hooks/use-in-view"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
 import Divider from "@modules/ecommerce/common/components/divider"
 import OptionSelect from "@modules/ecommerce/products/components/product-actions/option-select"
 import { isEqual } from "lodash"
@@ -11,6 +10,7 @@ import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
+import { Button } from "@nextui-org/react"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -141,7 +141,7 @@ export default function ProductActions({
         <ProductPrice product={product} variant={selectedVariant} />
 
         <Button
-          onClick={handleAddToCart}
+          onPress={handleAddToCart}
           disabled={
             !inStock ||
             !selectedVariant ||
@@ -149,7 +149,7 @@ export default function ProductActions({
             isAdding ||
             !isValidVariant
           }
-          variant="primary"
+          variant="solid"
           className="w-full h-10"
           isLoading={isAdding}
           data-testid="add-product-button"

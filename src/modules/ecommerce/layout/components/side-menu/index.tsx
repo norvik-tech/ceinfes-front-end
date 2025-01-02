@@ -1,13 +1,13 @@
 "use client"
 
 import { Popover, PopoverPanel, Transition } from "@headlessui/react"
-import { ArrowRightMini, XMark } from "@medusajs/icons"
-import { Text, clx, useToggleState } from "@medusajs/ui"
 import { Fragment } from "react"
 
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import CountrySelect from "../country-select"
 import { HttpTypes } from "@medusajs/types"
+import { cn } from "@nextui-org/react"
+import useToggleState from "@lib/hooks/use-toggle-state"
 
 const SideMenuItems = {
   Home: "/",
@@ -51,7 +51,11 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                   >
                     <div className="flex justify-end" id="xmark">
                       <button data-testid="close-menu-button" onClick={close}>
-                        <XMark />
+                        <i
+                          className="icon-[heroicons--x-mark]"
+                          role="img"
+                          aria-hidden="true"
+                        ></i>
                       </button>
                     </div>
                     <ul className="flex flex-col gap-6 items-start justify-start">
@@ -82,17 +86,19 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                             regions={regions}
                           />
                         )}
-                        <ArrowRightMini
-                          className={clx(
-                            "transition-transform duration-150",
+                        <i
+                          className={cn(
+                            "icon-[material-symbols--arrow-right-alt-rounded] transition-transform duration-150",
                             toggleState.state ? "-rotate-90" : ""
                           )}
-                        />
+                          role="img"
+                          aria-hidden="true"
+                        ></i>
                       </div>
-                      <Text className="font-helvetica-neue flex justify-between txt-compact-small">
+                      <p className="font-helvetica-neue flex justify-between txt-compact-small">
                         © {new Date().getFullYear()} Medusa Store. All rights
                         reserved.
-                      </Text>
+                      </p>
                     </div>
                   </div>
                 </PopoverPanel>

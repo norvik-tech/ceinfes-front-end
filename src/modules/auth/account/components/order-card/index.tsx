@@ -1,10 +1,10 @@
-import { Button } from "@medusajs/ui"
 import { useMemo } from "react"
 
 import Thumbnail from "@modules/ecommerce/products/components/thumbnail"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
+import { Button } from "@nextui-org/react"
 
 type OrderCardProps = {
   order: HttpTypes.StoreOrder
@@ -75,7 +75,7 @@ const OrderCard = ({ order }: OrderCardProps) => {
       </div>
       <div className="flex justify-end">
         <LocalizedClientLink href={`/account/orders/details/${order.id}`}>
-          <Button data-testid="order-details-link" variant="secondary">
+          <Button data-testid="order-details-link" variant="solid">
             See details
           </Button>
         </LocalizedClientLink>

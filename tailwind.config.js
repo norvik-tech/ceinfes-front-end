@@ -1,11 +1,12 @@
 const path = require("path")
+import { nextui } from "@nextui-org/react"
+import { addDynamicIconSelectors } from "@iconify/tailwind"
 
 module.exports = {
   darkMode: "class",
-  presets: [require("@medusajs/ui-preset")],
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@medusajs/ui/dist/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -146,5 +147,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-radix")()],
+  plugins: [
+    require("tailwindcss-radix")(),
+    nextui(),
+    addDynamicIconSelectors(),
+  ],
 }

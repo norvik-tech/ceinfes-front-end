@@ -1,5 +1,4 @@
-import { ChevronUpDown } from "@medusajs/icons"
-import { clx } from "@medusajs/ui"
+import { cn } from "@nextui-org/react"
 import {
   SelectHTMLAttributes,
   forwardRef,
@@ -41,7 +40,7 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
         <div
           onFocus={() => innerRef.current?.focus()}
           onBlur={() => innerRef.current?.blur()}
-          className={clx(
+          className={cn(
             "relative flex items-center text-base-regular border border-ui-border-base bg-ui-bg-subtle rounded-md hover:bg-ui-bg-field-hover",
             className,
             {
@@ -61,7 +60,11 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             {children}
           </select>
           <span className="absolute right-4 inset-y-0 flex items-center pointer-events-none ">
-            <ChevronUpDown />
+            <i
+              className="icon-[mynaui--chevron-up-down-solid]"
+              role="img"
+              aria-hidden="true"
+            ></i>
           </span>
         </div>
       </div>

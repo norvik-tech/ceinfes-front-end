@@ -1,6 +1,7 @@
-import { HttpTypes } from "@medusajs/types"
-import { Table, Text } from "@medusajs/ui"
+"use client"
 
+import { HttpTypes } from "@medusajs/types"
+import { Card, CardBody } from "@nextui-org/react"
 import LineItemOptions from "@modules/ecommerce/common/components/line-item-options"
 import LineItemPrice from "@modules/ecommerce/common/components/line-item-price"
 import LineItemUnitPrice from "@modules/ecommerce/common/components/line-item-unit-price"
@@ -13,29 +14,29 @@ type ItemProps = {
 
 const Item = ({ item, currencyCode }: ItemProps) => {
   return (
-    <Table.Row className="w-full" data-testid="product-row">
-      <Table.Cell className="!pl-0 p-4 w-24">
-        <div className="flex w-16">
-          <Thumbnail thumbnail={item.thumbnail} size="square" />
+    <Card className="w-full mb-2" data-testid="product-row">
+      <CardBody className="flex flex-row items-center p-4 gap-4">
+        <div className="w-24 !pl-0">
+          <div className="flex w-16">
+            <Thumbnail thumbnail={item.thumbnail} size="square" />
+          </div>
         </div>
-      </Table.Cell>
 
-      <Table.Cell className="text-left">
-        <Text
-          className="txt-medium-plus text-ui-fg-base"
-          data-testid="product-name"
-        >
-          {item.title}
-        </Text>
-        <LineItemOptions variant={item.variant} data-testid="product-variant" />
-      </Table.Cell>
+        <div className="flex-grow text-left">
+          <p className="text-base font-medium" data-testid="product-name">
+            {item.title}
+          </p>
+          <LineItemOptions
+            variant={item.variant}
+            data-testid="product-variant"
+          />
+        </div>
 
-      <Table.Cell className="!pr-0">
-        <span className="!pr-0 flex flex-col items-end h-full justify-center">
-          <span className="flex gap-x-1 ">
-            <Text className="font-helvetica-neue text-ui-fg-muted">
+        <div className="flex flex-col items-end justify-center">
+          <span className="flex gap-x-1">
+            <p className="text-gray-600">
               <span data-testid="product-quantity">{item.quantity}</span>x{" "}
-            </Text>
+            </p>
             <LineItemUnitPrice
               item={item}
               style="tight"
@@ -48,9 +49,9 @@ const Item = ({ item, currencyCode }: ItemProps) => {
             style="tight"
             currencyCode={currencyCode}
           />
-        </span>
-      </Table.Cell>
-    </Table.Row>
+        </div>
+      </CardBody>
+    </Card>
   )
 }
 

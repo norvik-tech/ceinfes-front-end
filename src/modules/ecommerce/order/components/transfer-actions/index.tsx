@@ -1,7 +1,7 @@
 "use client"
 
 import { acceptTransferRequest, declineTransferRequest } from "@lib/data/orders"
-import { Button, Text } from "@medusajs/ui"
+import { Button } from "@nextui-org/react"
 import { useState } from "react"
 
 type TransferStatus = "pending" | "success" | "error"
@@ -39,20 +39,19 @@ const TransferActions = ({ id, token }: { id: string; token: string }) => {
   return (
     <div className="flex flex-col gap-y-4">
       {status?.accept === "success" && (
-        <Text className="font-helvetica-neue text-emerald-500">
+        <p className="font-helvetica-neue text-emerald-500">
           Order transferred successfully!
-        </Text>
+        </p>
       )}
       {status?.decline === "success" && (
-        <Text className="font-helvetica-neue text-emerald-500">
+        <p className="font-helvetica-neue text-emerald-500">
           Order transfer declined successfully!
-        </Text>
+        </p>
       )}
       {status?.accept !== "success" && status?.decline !== "success" && (
         <div className="flex gap-x-4">
           <Button
-            size="large"
-            onClick={acceptTransfer}
+            onPress={acceptTransfer}
             isLoading={status?.accept === "pending"}
             disabled={
               status?.accept === "pending" || status?.decline === "pending"
@@ -61,8 +60,7 @@ const TransferActions = ({ id, token }: { id: string; token: string }) => {
             Accept transfer
           </Button>
           <Button
-            size="large"
-            variant="secondary"
+            variant="solid"
             onClick={declineTransfer}
             isLoading={status?.decline === "pending"}
             disabled={
@@ -73,7 +71,9 @@ const TransferActions = ({ id, token }: { id: string; token: string }) => {
           </Button>
         </div>
       )}
-      {errorMessage && <Text className="font-helvetica-neue text-red-500">{errorMessage}</Text>}
+      {errorMessage && (
+        <p className="font-helvetica-neue text-red-500">{errorMessage}</p>
+      )}
     </div>
   )
 }
