@@ -1,7 +1,6 @@
 import { Text } from "@medusajs/ui"
-
-import Medusa from "../../../common/icons/medusa"
-import NextJs from "../../../common/icons/nextjs"
+import Medusa from "@modules/ecommerce/common/icons/medusa"
+import NextJs from "@modules/ecommerce/common/icons/nextjs"
 
 const MedusaCTA = () => {
   return (

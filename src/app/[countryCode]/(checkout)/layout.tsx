@@ -1,5 +1,5 @@
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import ChevronDown from "@modules/common/icons/chevron-down"
+import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
+import ChevronDown from "@modules/ecommerce/common/icons/chevron-down"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
 
 export default function CheckoutLayout({

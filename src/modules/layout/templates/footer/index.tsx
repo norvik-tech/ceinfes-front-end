@@ -2,7 +2,7 @@ import { listCategories } from "@lib/data/categories"
 import { listCollections } from "@lib/data/collections"
 import { Text, clx } from "@medusajs/ui"
 
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
 
 export default async function Footer() {

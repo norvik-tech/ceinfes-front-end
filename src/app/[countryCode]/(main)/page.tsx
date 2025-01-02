@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
-import FeaturedProducts from "@modules/home/components/featured-products"
-import Hero from "@modules/home/components/hero"
+import FeaturedProducts from "@modules/ecommerce/home/components/featured-products"
+import Hero from "@modules/ecommerce/home/components/hero"
 import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 

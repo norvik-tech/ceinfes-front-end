@@ -7,7 +7,7 @@ import { StoreCartShippingOption } from "@medusajs/types"
 import CartMismatchBanner from "@modules/layout/components/cart-mismatch-banner"
 import Footer from "@modules/layout/templates/footer"
 import Nav from "@modules/layout/templates/nav"
-import FreeShippingPriceNudge from "@modules/shipping/components/free-shipping-price-nudge"
+import FreeShippingPriceNudge from "@modules/ecommerce/shipping/components/free-shipping-price-nudge"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
