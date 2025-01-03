@@ -98,7 +98,9 @@ const HelveticaNeue = localFont({
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" data-mode="light">
-      <body className={`${HelveticaNeue.variable} font-helvetica-neue`}>
+      <body
+        className={`${HelveticaNeue.variable} font-helvetica-neue text-dark`}
+      >
         <NextUIProvider>
           <main className="relative">{props.children}</main>
         </NextUIProvider>

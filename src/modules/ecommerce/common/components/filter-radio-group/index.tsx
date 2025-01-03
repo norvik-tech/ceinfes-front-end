@@ -1,4 +1,3 @@
-import { Label } from "@headlessui/react"
 import { cn, Radio, RadioGroup } from "@nextui-org/react"
 
 type FilterRadioGroupProps = {
@@ -45,7 +44,7 @@ const FilterRadioGroup = ({
               id={i.value}
               value={i.value}
             />
-            <Label
+            <label
               htmlFor={i.value}
               className={cn(
                 "!txt-compact-small !transform-none text-ui-fg-subtle hover:cursor-pointer",
@@ -57,7 +56,7 @@ const FilterRadioGroup = ({
               data-active={i.value === value}
             >
               {i.label}
-            </Label>
+            </label>
           </div>
         ))}
       </RadioGroup>

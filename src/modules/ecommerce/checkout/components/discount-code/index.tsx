@@ -8,7 +8,6 @@ import { HttpTypes } from "@medusajs/types"
 import Trash from "@modules/ecommerce/common/icons/trash"
 import ErrorMessage from "../error-message"
 import { SubmitButton } from "../submit-button"
-import { Label } from "@headlessui/react"
 import { Badge, Input } from "@nextui-org/react"
 
 type DiscountCodeProps = {
@@ -55,7 +54,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
     <div className="w-full bg-white flex flex-col">
       <div className="txt-medium">
         <form action={(a) => addPromotionCode(a)} className="w-full mb-5">
-          <Label className="flex gap-x-1 my-2 items-center">
+          <label className="flex gap-x-1 my-2 items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
@@ -68,7 +67,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
             {/* <Tooltip content="You can add multiple promotion codes">
               <InformationCircleSolid color="var(--fg-muted)" />
             </Tooltip> */}
-          </Label>
+          </label>
 
           {isOpen && (
             <>

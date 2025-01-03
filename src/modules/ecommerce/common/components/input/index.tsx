@@ -2,7 +2,6 @@ import React, { useEffect, useImperativeHandle, useState } from "react"
 
 import Eye from "@modules/ecommerce/common/icons/eye"
 import EyeOff from "@modules/ecommerce/common/icons/eye-off"
-import { Label } from "@headlessui/react"
 
 type InputProps = Omit<
   Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
@@ -36,7 +35,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="flex flex-col w-full">
         {topLabel && (
-          <Label className="mb-2 txt-compact-medium-plus">{topLabel}</Label>
+          <label className="mb-2 txt-compact-medium-plus">{topLabel}</label>
         )}
         <div className="flex relative z-0 w-full txt-compact-medium">
           <input

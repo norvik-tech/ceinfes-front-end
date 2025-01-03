@@ -12,7 +12,9 @@
     "build": "next build",
     "start": "next start -p 8000",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "prebuild": "bun run typegen",
+    "typegen": "sanity schema extract --path=./src/modules/blog/sanity/extract.json && sanity typegen generate"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

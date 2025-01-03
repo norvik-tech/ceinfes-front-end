@@ -3,7 +3,7 @@ import { listCollections } from "@lib/data/collections"
 import { cn } from "@nextui-org/react"
 
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
-import MedusaCTA from "@modules/ecommerce/layout/components/medusa-cta"
+import MedusaCTA from "@modules/layout/components/medusa-cta"
 
 export default async function Footer() {
   const { collections } = await listCollections({
