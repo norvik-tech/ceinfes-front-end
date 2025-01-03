@@ -82,7 +82,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                   data-testid="discount-input"
                 />
                 <SubmitButton
-                  variant="secondary"
+                  variant="solid"
                   data-testid="discount-apply-button"
                 >
                   Apply
