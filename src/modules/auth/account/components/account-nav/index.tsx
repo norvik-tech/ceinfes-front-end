@@ -8,8 +8,8 @@ import MapPin from "@modules/ecommerce/common/icons/map-pin"
 import Package from "@modules/ecommerce/common/icons/package"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { HttpTypes } from "@medusajs/types"
-import { signout } from "@lib/data/customer"
 import { cn } from "@nextui-org/react"
+import { signout } from "@modules/ecommerce/common/data/customer"
 
 const AccountNav = ({
   customer,

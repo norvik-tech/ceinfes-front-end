@@ -6,7 +6,7 @@ import Input from "@modules/ecommerce/common/components/input"
 
 import AccountInfo from "../account-info"
 import { HttpTypes } from "@medusajs/types"
-import { updateCustomer } from "@lib/data/customer"
+import { updateCustomer } from "@modules/ecommerce/common/data/customer";
 
 type MyInformationProps = {
   customer: HttpTypes.StoreCustomer

@@ -1,4 +1,4 @@
-import { retrieveOrder } from "@lib/data/orders"
+import { retrieveOrder } from "@modules/ecommerce/common/data/orders"
 import OrderCompletedTemplate from "@modules/ecommerce/order/templates/order-completed-template"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"

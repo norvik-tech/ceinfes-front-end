@@ -1,7 +1,6 @@
 "use client"
 
-import { setAddresses } from "@lib/data/cart"
-import compareAddresses from "@lib/util/compare-addresses"
+
 import { HttpTypes } from "@medusajs/types"
 import Divider from "@modules/ecommerce/common/components/divider"
 import Spinner from "@modules/ecommerce/common/icons/spinner"
@@ -11,7 +10,9 @@ import BillingAddress from "../billing_address"
 import ErrorMessage from "../error-message"
 import ShippingAddress from "../shipping-address"
 import { SubmitButton } from "../submit-button"
-import useToggleState from "@lib/hooks/use-toggle-state"
+import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
+import compareAddresses from "@modules/ecommerce/common/util/compare-addresses"
+import { setAddresses } from "@modules/ecommerce/common/data/cart"
 
 const Addresses = ({
   cart,

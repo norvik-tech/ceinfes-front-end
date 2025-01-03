@@ -1,7 +1,7 @@
-import repeat from "@lib/util/repeat"
 import { HttpTypes } from "@medusajs/types"
 
 import Divider from "@modules/ecommerce/common/components/divider"
+import repeat from "@modules/ecommerce/common/util/repeat"
 import Item from "@modules/ecommerce/order/components/item"
 import SkeletonLineItem from "@modules/ecommerce/skeletons/components/skeleton-line-item"
 import { Card, CardBody } from "@nextui-org/react"

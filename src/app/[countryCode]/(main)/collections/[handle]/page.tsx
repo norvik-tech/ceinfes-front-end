@@ -1,11 +1,14 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { getCollectionByHandle, listCollections } from "@lib/data/collections"
-import { listRegions } from "@lib/data/regions"
 import { StoreCollection, StoreRegion } from "@medusajs/types"
 import CollectionTemplate from "@modules/ecommerce/collections/templates"
 import { SortOptions } from "@modules/ecommerce/store/components/refinement-list/sort-products"
+import {
+  getCollectionByHandle,
+  listCollections,
+} from "@modules/ecommerce/common/data/collections"
+import { listRegions } from "@modules/ecommerce/common/data/regions"
 
 type Props = {
   params: Promise<{ handle: string; countryCode: string }>
@@ -59,7 +62,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   }
 
   const metadata = {
-    title: `${collection.title} | Medusa Store`,
+    title: `${collection.title} | Ceinfes Store`,
     description: `${collection.title} collection`,
   } as Metadata
 

@@ -1,7 +1,7 @@
-import { getPricesForVariant } from "@lib/util/get-product-price"
-import { convertToLocale } from "@lib/util/money"
+
 import { HttpTypes } from "@medusajs/types"
 import { cn } from "@nextui-org/react"
+import { convertToLocale } from "../../util/money"
 
 type LineItemUnitPriceProps = {
   item: HttpTypes.StoreCartLineItem | HttpTypes.StoreOrderLineItem

@@ -1,6 +1,9 @@
 "use client"
 
-import { acceptTransferRequest, declineTransferRequest } from "@lib/data/orders"
+import {
+  acceptTransferRequest,
+  declineTransferRequest,
+} from "@modules/ecommerce/common/data/orders"
 import { Button } from "@nextui-org/react"
 import { useState } from "react"
 

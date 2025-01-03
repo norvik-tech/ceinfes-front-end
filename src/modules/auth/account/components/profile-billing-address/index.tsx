@@ -7,7 +7,10 @@ import NativeSelect from "@modules/ecommerce/common/components/native-select"
 
 import AccountInfo from "../account-info"
 import { HttpTypes } from "@medusajs/types"
-import { addCustomerAddress, updateCustomerAddress } from "@lib/data/customer"
+import {
+  addCustomerAddress,
+  updateCustomerAddress,
+} from "@modules/ecommerce/common/data/customer"
 
 type MyInformationProps = {
   customer: HttpTypes.StoreCustomer

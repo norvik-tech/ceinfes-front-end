@@ -1,6 +1,6 @@
 "use client"
 
-import { resetOnboardingState } from "@lib/data/onboarding"
+import { resetOnboardingState } from "@modules/ecommerce/common/data/onboarding"
 import { Button } from "@nextui-org/react"
 
 const OnboardingCta = ({ orderId }: { orderId: string }) => {

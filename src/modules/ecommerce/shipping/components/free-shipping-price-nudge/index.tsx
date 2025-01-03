@@ -1,6 +1,5 @@
 "use client"
 
-import { convertToLocale } from "@lib/util/money"
 import {
   HttpTypes,
   StoreCart,
@@ -11,6 +10,7 @@ import { Button, cn } from "@nextui-org/react"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { useState } from "react"
 import { StoreFreeShippingPrice } from "types/global"
+import { convertToLocale } from "@modules/ecommerce/common/util/money"
 
 const computeTarget = (
   cart: HttpTypes.StoreCart,

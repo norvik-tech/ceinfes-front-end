@@ -1,5 +1,6 @@
-import { listProductsWithSort } from "@lib/data/products"
-import { getRegion } from "@lib/data/regions"
+
+import { listProductsWithSort } from "@modules/ecommerce/common/data/products"
+import { getRegion } from "@modules/ecommerce/common/data/regions"
 import ProductPreview from "@modules/ecommerce/products/components/product-preview"
 import { Pagination } from "@modules/ecommerce/store/components/pagination"
 import { SortOptions } from "@modules/ecommerce/store/components/refinement-list/sort-products"

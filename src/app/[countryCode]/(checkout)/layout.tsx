@@ -1,6 +1,7 @@
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import ChevronDown from "@modules/ecommerce/common/icons/chevron-down"
-import MedusaCTA from "@modules/ecommerce/layout/components/medusa-cta"
+import MedusaCTA from "@modules/layout/components/medusa-cta"
+import { Image } from "@nextui-org/react"
 
 export default function CheckoutLayout({
   children,
@@ -29,12 +30,20 @@ export default function CheckoutLayout({
             className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             data-testid="store-link"
           >
-            Medusa Store
+            <Image
+              src="/ceinfes-logo.png"
+              radius="none"
+              width={240}
+              height={70}
+              alt="Ceinfes"
+            />
           </LocalizedClientLink>
           <div className="flex-1 basis-0" />
         </nav>
       </div>
-      <div className="relative" data-testid="checkout-container">{children}</div>
+      <div className="relative" data-testid="checkout-container">
+        {children}
+      </div>
       <div className="py-4 w-full flex items-center justify-center">
         <MedusaCTA />
       </div>

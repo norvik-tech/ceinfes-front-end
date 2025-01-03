@@ -2,8 +2,8 @@ import { Metadata } from "next"
 
 import Overview from "@modules/auth/account/components/overview"
 import { notFound } from "next/navigation"
-import { retrieveCustomer } from "@lib/data/customer"
-import { listOrders } from "@lib/data/orders"
+import { retrieveCustomer } from "@modules/ecommerce/common/data/customer"
+import { listOrders } from "@modules/ecommerce/common/data/orders"
 
 export const metadata: Metadata = {
   title: "Account",

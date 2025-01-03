@@ -2,9 +2,8 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import AddressBook from "@modules/auth/account/components/address-book"
-
-import { getRegion } from "@lib/data/regions"
-import { retrieveCustomer } from "@lib/data/customer"
+import { retrieveCustomer } from "@modules/ecommerce/common/data/customer"
+import { getRegion } from "@modules/ecommerce/common/data/regions"
 
 export const metadata: Metadata = {
   title: "Addresses",

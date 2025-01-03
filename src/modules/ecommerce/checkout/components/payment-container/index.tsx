@@ -4,8 +4,8 @@ import React, { type JSX } from "react"
 import Radio from "@modules/ecommerce/common/components/radio"
 
 import PaymentTest from "../payment-test"
-import { isManual } from "@lib/constants"
 import { cn } from "@nextui-org/react"
+import { isManual } from "@modules/ecommerce/common/config/constants"
 
 type PaymentContainerProps = {
   paymentProviderId: string

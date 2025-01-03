@@ -2,9 +2,9 @@ import { Metadata } from "next"
 
 import OrderOverview from "@modules/auth/account/components/order-overview"
 import { notFound } from "next/navigation"
-import { listOrders } from "@lib/data/orders"
 import Divider from "@modules/ecommerce/common/components/divider"
 import TransferRequestForm from "@modules/auth/account/components/transfer-request-form"
+import { listOrders } from "@modules/ecommerce/common/data/orders"
 
 export const metadata: Metadata = {
   title: "Orders",

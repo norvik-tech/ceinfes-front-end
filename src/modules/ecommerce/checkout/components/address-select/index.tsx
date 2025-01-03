@@ -2,9 +2,9 @@ import { Listbox, Transition } from "@headlessui/react"
 import { Fragment, useMemo } from "react"
 
 import Radio from "@modules/ecommerce/common/components/radio"
-import compareAddresses from "@lib/util/compare-addresses"
 import { HttpTypes } from "@medusajs/types"
 import { cn } from "@nextui-org/react"
+import compareAddresses from "@modules/ecommerce/common/util/compare-addresses"
 
 type AddressSelectProps = {
   addresses: HttpTypes.StoreCustomerAddress[]

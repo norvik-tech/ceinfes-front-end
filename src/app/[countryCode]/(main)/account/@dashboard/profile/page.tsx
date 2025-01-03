@@ -4,15 +4,14 @@ import ProfilePhone from "@modules/auth/account/components/profile-phone"
 import ProfileBillingAddress from "@modules/auth/account/components/profile-billing-address"
 import ProfileEmail from "@modules/auth/account/components/profile-email"
 import ProfileName from "@modules/auth/account/components/profile-name"
-import ProfilePassword from "@modules/auth/account/components/profile-password"
 
 import { notFound } from "next/navigation"
-import { listRegions } from "@lib/data/regions"
-import { retrieveCustomer } from "@lib/data/customer"
+import { retrieveCustomer } from "@modules/ecommerce/common/data/customer"
+import { listRegions } from "@modules/ecommerce/common/data/regions"
 
 export const metadata: Metadata = {
   title: "Profile",
-  description: "View and edit your Medusa Store profile.",
+  description: "View and edit your Ceinfes Store profile.",
 }
 
 export default async function Profile() {

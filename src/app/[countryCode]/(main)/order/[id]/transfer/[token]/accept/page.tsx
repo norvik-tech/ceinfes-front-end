@@ -1,4 +1,4 @@
-import { acceptTransferRequest } from "@lib/data/orders"
+import { acceptTransferRequest } from "@modules/ecommerce/common/data/orders";
 import TransferImage from "@modules/ecommerce/order/components/transfer-image"
 
 export default async function TransferPage({

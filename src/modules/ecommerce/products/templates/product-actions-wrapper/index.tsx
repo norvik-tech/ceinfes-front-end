@@ -1,5 +1,5 @@
-import { listProducts } from "@lib/data/products"
 import { HttpTypes } from "@medusajs/types"
+import { listProducts } from "@modules/ecommerce/common/data/products"
 import ProductActions from "@modules/ecommerce/products/components/product-actions"
 
 /**

@@ -1,4 +1,3 @@
-import { Label } from "@headlessui/react"
 import { Checkbox } from "@nextui-org/react"
 import React from "react"
 
@@ -30,9 +29,9 @@ const CheckboxWithLabel: React.FC<CheckboxProps> = ({
         name={name}
         data-testid={dataTestId}
       />
-      <Label htmlFor="checkbox" className="!transform-none !txt-medium">
+      <label htmlFor="checkbox" className="!transform-none !txt-medium">
         {label}
-      </Label>
+      </label>
     </div>
   )
 }
