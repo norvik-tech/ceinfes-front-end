@@ -38,7 +38,7 @@ export default function TransferRequestForm() {
           <div className="flex flex-col gap-y-2 w-full">
             <Input className="w-full" name="order_id" placeholder="Order ID" />
             <SubmitButton
-              variant="secondary"
+              variant="solid"
               className="w-fit whitespace-nowrap self-end"
             >
               Request transfer
