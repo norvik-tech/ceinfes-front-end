@@ -3,7 +3,7 @@
 import React from "react"
 import StripeWrapper from "./stripe-wrapper"
 import { HttpTypes } from "@medusajs/types"
-import { isStripe } from "@lib/constants"
+import { isStripe } from "@modules/ecommerce/common/config/constants"
 
 type PaymentWrapperProps = {
   cart: HttpTypes.StoreCart

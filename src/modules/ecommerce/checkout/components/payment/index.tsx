@@ -1,8 +1,6 @@
 "use client"
 
 import { RadioGroup } from "@headlessui/react"
-import { isStripe as isStripeFunc, paymentInfoMap } from "@lib/constants"
-import { initiatePaymentSession } from "@lib/data/cart"
 import ErrorMessage from "@modules/ecommerce/checkout/components/error-message"
 import PaymentContainer from "@modules/ecommerce/checkout/components/payment-container"
 import { StripeContext } from "@modules/ecommerce/checkout/components/payment-wrapper/stripe-wrapper"
@@ -10,6 +8,11 @@ import Divider from "@modules/ecommerce/common/components/divider"
 import { Button, cn } from "@nextui-org/react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
+import {
+  paymentInfoMap,
+  isStripe as isStripeFunc,
+} from "@modules/ecommerce/common/config/constants"
+import { initiatePaymentSession } from "@modules/ecommerce/common/data/cart"
 
 const Payment = ({
   cart,

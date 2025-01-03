@@ -1,7 +1,7 @@
 "use client"
 
-import { transferCart } from "@lib/data/customer"
 import { StoreCart, StoreCustomer } from "@medusajs/types"
+import { transferCart } from "@modules/ecommerce/common/data/customer"
 import { Button } from "@nextui-org/react"
 import { useState } from "react"
 

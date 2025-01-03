@@ -2,7 +2,6 @@
 
 import { Card, CardBody } from "@nextui-org/react"
 import { Select, SelectItem } from "@nextui-org/react"
-import { updateLineItem } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
 import ErrorMessage from "@modules/ecommerce/checkout/components/error-message"
 import DeleteButton from "@modules/ecommerce/common/components/delete-button"
@@ -13,6 +12,7 @@ import LocalizedClientLink from "@modules/ecommerce/common/components/localized-
 import Spinner from "@modules/ecommerce/common/icons/spinner"
 import Thumbnail from "@modules/ecommerce/products/components/thumbnail"
 import { useState } from "react"
+import { updateLineItem } from "@modules/ecommerce/common/data/cart"
 
 type ItemProps = {
   item: HttpTypes.StoreCartLineItem

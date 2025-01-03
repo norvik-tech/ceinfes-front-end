@@ -1,6 +1,6 @@
-import { deleteLineItem } from "@lib/data/cart"
 import { cn } from "@nextui-org/react"
 import { useState } from "react"
+import { deleteLineItem } from "../../data/cart"
 
 const DeleteButton = ({
   id,

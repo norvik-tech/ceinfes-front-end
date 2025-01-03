@@ -1,7 +1,7 @@
-import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
 
 import Divider from "@modules/ecommerce/common/components/divider"
+import { convertToLocale } from "@modules/ecommerce/common/util/money"
 
 type ShippingDetailsProps = {
   order: HttpTypes.StoreOrder

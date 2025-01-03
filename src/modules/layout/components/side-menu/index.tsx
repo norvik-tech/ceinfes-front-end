@@ -7,7 +7,7 @@ import LocalizedClientLink from "@modules/ecommerce/common/components/localized-
 import CountrySelect from "../country-select"
 import { HttpTypes } from "@medusajs/types"
 import { cn } from "@nextui-org/react"
-import useToggleState from "@lib/hooks/use-toggle-state"
+import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
 
 const SideMenuItems = {
   Home: "/",
@@ -96,7 +96,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                         ></i>
                       </div>
                       <p className="font-helvetica-neue flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Medusa Store. All rights
+                        © {new Date().getFullYear()} Ceinfes Store. All rights
                         reserved.
                       </p>
                     </div>

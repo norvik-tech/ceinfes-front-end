@@ -6,12 +6,12 @@ import {
   PopoverPanel,
   Transition,
 } from "@headlessui/react"
-import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
 import DeleteButton from "@modules/ecommerce/common/components/delete-button"
 import LineItemOptions from "@modules/ecommerce/common/components/line-item-options"
 import LineItemPrice from "@modules/ecommerce/common/components/line-item-price"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
+import { convertToLocale } from "@modules/ecommerce/common/util/money"
 import Thumbnail from "@modules/ecommerce/products/components/thumbnail"
 import { Button } from "@nextui-org/react"
 import { usePathname } from "next/navigation"

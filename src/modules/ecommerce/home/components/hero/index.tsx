@@ -7,7 +7,7 @@ const Hero = () => {
             Ecommerce Starter Template
           </h1>
           <h2 className="text-3xl leading-10 text-ui-fg-subtle font-normal">
-            Powered by Medusa and Next.js
+            Powered by Norvik Tech and Next.js
           </h2>
         </span>
         <a

@@ -1,8 +1,8 @@
 import { Disclosure } from "@headlessui/react"
+import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
 import { Badge, Button, cn } from "@nextui-org/react"
 import { useEffect } from "react"
 
-import useToggleState from "@lib/hooks/use-toggle-state"
 import { useFormStatus } from "react-dom"
 
 type AccountInfoProps = {

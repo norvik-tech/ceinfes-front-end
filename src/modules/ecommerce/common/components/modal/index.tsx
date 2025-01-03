@@ -2,8 +2,8 @@ import { Dialog, Transition } from "@headlessui/react"
 import { cn } from "@nextui-org/react"
 import React, { Fragment } from "react"
 
-import { ModalProvider, useModal } from "@lib/context/modal-context"
 import X from "@modules/ecommerce/common/icons/x"
+import { ModalProvider, useModal } from "../../context/modal-context"
 
 type ModalProps = {
   isOpen: boolean

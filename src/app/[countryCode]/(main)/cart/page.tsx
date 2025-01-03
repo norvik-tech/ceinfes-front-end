@@ -1,6 +1,6 @@
-import { retrieveCart } from "@lib/data/cart"
-import { retrieveCustomer } from "@lib/data/customer"
 import CartTemplate from "@modules/ecommerce/cart/templates"
+import { retrieveCart } from "@modules/ecommerce/common/data/cart"
+import { retrieveCustomer } from "@modules/ecommerce/common/data/customer"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 

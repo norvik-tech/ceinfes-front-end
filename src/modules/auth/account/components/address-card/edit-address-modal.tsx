@@ -2,18 +2,19 @@
 
 import React, { useEffect, useState, useActionState } from "react"
 
-import useToggleState from "@lib/hooks/use-toggle-state"
 import CountrySelect from "@modules/ecommerce/checkout/components/country-select"
 import Input from "@modules/ecommerce/common/components/input"
 import Modal from "@modules/ecommerce/common/components/modal"
 import Spinner from "@modules/ecommerce/common/icons/spinner"
 import { SubmitButton } from "@modules/ecommerce/checkout/components/submit-button"
 import { HttpTypes } from "@medusajs/types"
+
+import { Button, cn } from "@nextui-org/react"
+import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
 import {
   deleteCustomerAddress,
   updateCustomerAddress,
-} from "@lib/data/customer"
-import { Button, cn } from "@nextui-org/react"
+} from "@modules/ecommerce/common/data/customer"
 
 type EditAddressProps = {
   region: HttpTypes.StoreRegion

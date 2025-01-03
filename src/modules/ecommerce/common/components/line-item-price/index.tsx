@@ -1,7 +1,8 @@
-import { getPercentageDiff } from "@lib/util/get-precentage-diff"
-import { convertToLocale } from "@lib/util/money"
+
 import { HttpTypes } from "@medusajs/types"
 import { cn } from "@nextui-org/react"
+import { convertToLocale } from "../../util/money"
+import { getPercentageDiff } from "../../util/get-precentage-diff"
 
 type LineItemPriceProps = {
   item: HttpTypes.StoreCartLineItem | HttpTypes.StoreOrderLineItem

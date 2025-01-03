@@ -1,9 +1,9 @@
-import { listCategories } from "@lib/data/categories"
-import { listCollections } from "@lib/data/collections"
-import { cn } from "@nextui-org/react"
+import { cn, Image } from "@nextui-org/react"
 
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
+import { listCollections } from "@modules/ecommerce/common/data/collections"
+import { listCategories } from "@modules/ecommerce/common/data/categories"
 
 export default async function Footer() {
   const { collections } = await listCollections({
@@ -20,7 +20,13 @@ export default async function Footer() {
               href="/"
               className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             >
-              Medusa Store
+              <Image
+                src="/ceinfes-logo.png"
+                radius="none"
+                width={240}
+                height={70}
+                alt="Ceinfes"
+              />
             </LocalizedClientLink>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
@@ -147,7 +153,7 @@ export default async function Footer() {
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
           <p className="font-helvetica-neue txt-compact-small">
-            © {new Date().getFullYear()} Medusa Store. All rights reserved.
+            © {new Date().getFullYear()} Ceinfes Store. All rights reserved.
           </p>
           <MedusaCTA />
         </div>

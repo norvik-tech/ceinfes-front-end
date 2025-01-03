@@ -1,7 +1,7 @@
 import ChevronDown from "@modules/ecommerce/common/icons/chevron-down"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
-import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
+import { convertToLocale } from "@modules/ecommerce/common/util/money"
 
 type OverviewProps = {
   customer: HttpTypes.StoreCustomer | null

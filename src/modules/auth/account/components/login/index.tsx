@@ -1,8 +1,8 @@
-import { login } from "@lib/data/customer"
 import { LOGIN_VIEW } from "@modules/auth/account/templates/login-template"
 import ErrorMessage from "@modules/ecommerce/checkout/components/error-message"
 import { SubmitButton } from "@modules/ecommerce/checkout/components/submit-button"
 import Input from "@modules/ecommerce/common/components/input"
+import { login } from "@modules/ecommerce/common/data/customer"
 import { useActionState } from "react"
 
 type Props = {

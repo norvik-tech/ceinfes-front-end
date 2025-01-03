@@ -1,5 +1,5 @@
-import { listCollections } from "@lib/data/collections"
-import { getRegion } from "@lib/data/regions"
+import { listCollections } from "@modules/ecommerce/common/data/collections"
+import { getRegion } from "@modules/ecommerce/common/data/regions"
 import FeaturedProducts from "@modules/ecommerce/home/components/featured-products"
 import Hero from "@modules/ecommerce/home/components/hero"
 import { Metadata } from "next"

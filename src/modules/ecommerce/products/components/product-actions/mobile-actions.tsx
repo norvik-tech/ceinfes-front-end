@@ -1,14 +1,14 @@
 import { Dialog, Transition } from "@headlessui/react"
 import React, { Fragment, useMemo } from "react"
 
-import useToggleState from "@lib/hooks/use-toggle-state"
 import ChevronDown from "@modules/ecommerce/common/icons/chevron-down"
 import X from "@modules/ecommerce/common/icons/x"
 
-import { getProductPrice } from "@lib/util/get-product-price"
 import OptionSelect from "./option-select"
 import { HttpTypes } from "@medusajs/types"
 import { Button, cn } from "@nextui-org/react"
+import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
+import { getProductPrice } from "@modules/ecommerce/common/util/get-product-price"
 
 type MobileActionsProps = {
   product: HttpTypes.StoreProduct

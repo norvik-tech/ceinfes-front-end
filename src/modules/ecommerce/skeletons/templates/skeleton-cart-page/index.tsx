@@ -1,10 +1,10 @@
 "use client"
 
-import repeat from "@lib/util/repeat"
 import { Card, CardBody, CardHeader } from "@nextui-org/react"
 import SkeletonCartItem from "@modules/ecommerce/skeletons/components/skeleton-cart-item"
 import SkeletonCodeForm from "@modules/ecommerce/skeletons/components/skeleton-code-form"
 import SkeletonOrderSummary from "@modules/ecommerce/skeletons/components/skeleton-order-summary"
+import repeat from "@modules/ecommerce/common/util/repeat"
 
 const SkeletonCartPage = () => {
   return (

@@ -1,9 +1,9 @@
-import { listProducts } from "@lib/data/products"
-import { getProductPrice } from "@lib/util/get-product-price"
+
 import { HttpTypes } from "@medusajs/types"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import Thumbnail from "../thumbnail"
 import PreviewPrice from "./price"
+import { getProductPrice } from "@modules/ecommerce/common/util/get-product-price"
 
 export default async function ProductPreview({
   product,

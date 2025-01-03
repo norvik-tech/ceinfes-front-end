@@ -1,11 +1,14 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { getCategoryByHandle, listCategories } from "@lib/data/categories"
-import { listRegions } from "@lib/data/regions"
 import { StoreRegion } from "@medusajs/types"
 import CategoryTemplate from "@modules/ecommerce/categories/templates"
 import { SortOptions } from "@modules/ecommerce/store/components/refinement-list/sort-products"
+import {
+  getCategoryByHandle,
+  listCategories,
+} from "@modules/ecommerce/common/data/categories"
+import { listRegions } from "@modules/ecommerce/common/data/regions"
 
 type Props = {
   params: Promise<{ category: string[]; countryCode: string }>
@@ -47,12 +50,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   try {
     const productCategory = await getCategoryByHandle(params.category)
 
-    const title = productCategory.name + " | Medusa Store"
+    const title = productCategory.name + " | Ceinfes Store"
 
     const description = productCategory.description ?? `${title} category.`
 
     return {
-      title: `${title} | Medusa Store`,
+      title: `${title} | Ceinfes Store`,
       description,
       alternates: {
         canonical: `${params.category.join("/")}`,

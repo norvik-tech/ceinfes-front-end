@@ -1,7 +1,6 @@
 "use server"
 
-import { sdk } from "@lib/config"
-import medusaError from "@lib/util/medusa-error"
+
 import { HttpTypes } from "@medusajs/types"
 import { revalidateTag } from "next/cache"
 import { redirect } from "next/navigation"
@@ -14,6 +13,8 @@ import {
   setCartId,
 } from "./cookies"
 import { getRegion } from "./regions"
+import { sdk } from "../config/config"
+import medusaError from "../util/medusa-error"
 
 export async function retrieveCart() {
   const cartId = await getCartId()

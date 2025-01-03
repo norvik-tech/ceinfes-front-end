@@ -2,14 +2,14 @@
 
 import { useEffect, useState, useActionState } from "react"
 
-import useToggleState from "@lib/hooks/use-toggle-state"
 import CountrySelect from "@modules/ecommerce/checkout/components/country-select"
 import Input from "@modules/ecommerce/common/components/input"
 import Modal from "@modules/ecommerce/common/components/modal"
 import { SubmitButton } from "@modules/ecommerce/checkout/components/submit-button"
 import { HttpTypes } from "@medusajs/types"
-import { addCustomerAddress } from "@lib/data/customer"
 import { Button } from "@nextui-org/react"
+import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
+import { addCustomerAddress } from "@modules/ecommerce/common/data/customer"
 
 const AddAddress = ({
   region,

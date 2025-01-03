@@ -1,4 +1,4 @@
-import repeat from "@lib/util/repeat"
+import repeat from "@modules/ecommerce/common/util/repeat"
 import SkeletonProductPreview from "@modules/ecommerce/skeletons/components/skeleton-product-preview"
 
 const SkeletonRelatedProducts = () => {

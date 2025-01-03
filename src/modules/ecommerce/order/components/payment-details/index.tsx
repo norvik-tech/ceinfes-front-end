@@ -1,7 +1,10 @@
-import { isStripe, paymentInfoMap } from "@lib/constants"
 import Divider from "@modules/ecommerce/common/components/divider"
-import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
+import {
+  isStripe,
+  paymentInfoMap,
+} from "@modules/ecommerce/common/config/constants"
+import { convertToLocale } from "@modules/ecommerce/common/util/money"
 
 type PaymentDetailsProps = {
   order: HttpTypes.StoreOrder

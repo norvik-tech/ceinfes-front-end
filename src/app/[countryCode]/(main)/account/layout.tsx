@@ -1,6 +1,6 @@
-import { retrieveCustomer } from "@lib/data/customer"
 import { Toaster } from "sonner"
 import AccountLayout from "@modules/auth/account/templates/account-layout"
+import { retrieveCustomer } from "@modules/ecommerce/common/data/customer"
 
 export default async function AccountPageLayout({
   dashboard,

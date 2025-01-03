@@ -1,8 +1,8 @@
-import { retrieveCart } from "@lib/data/cart"
-import { retrieveCustomer } from "@lib/data/customer"
 import PaymentWrapper from "@modules/ecommerce/checkout/components/payment-wrapper"
 import CheckoutForm from "@modules/ecommerce/checkout/templates/checkout-form"
 import CheckoutSummary from "@modules/ecommerce/checkout/templates/checkout-summary"
+import { retrieveCart } from "@modules/ecommerce/common/data/cart"
+import { retrieveCustomer } from "@modules/ecommerce/common/data/customer"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 

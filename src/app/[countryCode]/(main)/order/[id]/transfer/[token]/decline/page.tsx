@@ -1,4 +1,4 @@
-import { declineTransferRequest } from "@lib/data/orders"
+import { declineTransferRequest } from "@modules/ecommerce/common/data/orders";
 import TransferImage from "@modules/ecommerce/order/components/transfer-image"
 
 export default async function TransferPage({

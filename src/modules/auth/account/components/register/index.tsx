@@ -6,7 +6,7 @@ import { LOGIN_VIEW } from "@modules/auth/account/templates/login-template"
 import ErrorMessage from "@modules/ecommerce/checkout/components/error-message"
 import { SubmitButton } from "@modules/ecommerce/checkout/components/submit-button"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
-import { signup } from "@lib/data/customer"
+import { signup } from "@modules/ecommerce/common/data/customer"
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void
@@ -21,10 +21,10 @@ const Register = ({ setCurrentView }: Props) => {
       data-testid="register-page"
     >
       <h1 className="text-large-semi uppercase mb-6">
-        Become a Medusa Store Member
+        Become a Ceinfes Store Member
       </h1>
       <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your Medusa Store Member profile, and get access to an enhanced
+        Create your Ceinfes Store Member profile, and get access to an enhanced
         shopping experience.
       </p>
       <form className="w-full flex flex-col" action={formAction}>
@@ -69,7 +69,7 @@ const Register = ({ setCurrentView }: Props) => {
         </div>
         <ErrorMessage error={message} data-testid="register-error" />
         <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to Medusa Store&apos;s{" "}
+          By creating an account, you agree to Ceinfes Store&apos;s{" "}
           <LocalizedClientLink
             href="/content/privacy-policy"
             className="underline"

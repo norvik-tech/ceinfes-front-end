@@ -1,7 +1,7 @@
-import { listProducts } from "@lib/data/products"
 import { HttpTypes } from "@medusajs/types"
 
 import InteractiveLink from "@modules/ecommerce/common/components/interactive-link"
+import { listProducts } from "@modules/ecommerce/common/data/products"
 import ProductPreview from "@modules/ecommerce/products/components/product-preview"
 
 export default async function ProductRail({

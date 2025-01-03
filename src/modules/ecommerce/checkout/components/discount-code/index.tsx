@@ -2,13 +2,13 @@
 
 import React, { useActionState } from "react"
 
-import { applyPromotions, submitPromotionForm } from "@lib/data/cart"
-import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
 import Trash from "@modules/ecommerce/common/icons/trash"
 import ErrorMessage from "../error-message"
 import { SubmitButton } from "../submit-button"
 import { Badge, Input } from "@nextui-org/react"
+import { applyPromotions, submitPromotionForm } from "@modules/ecommerce/common/data/cart"
+import { convertToLocale } from "@modules/ecommerce/common/util/money"
 
 type DiscountCodeProps = {
   cart: HttpTypes.StoreCart & {

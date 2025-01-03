@@ -1,7 +1,5 @@
 "use client"
 
-import { addToCart } from "@lib/data/cart"
-import { useIntersection } from "@lib/hooks/use-in-view"
 import { HttpTypes } from "@medusajs/types"
 import Divider from "@modules/ecommerce/common/components/divider"
 import OptionSelect from "@modules/ecommerce/products/components/product-actions/option-select"
@@ -11,6 +9,8 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
 import { Button } from "@nextui-org/react"
+import { useIntersection } from "@modules/ecommerce/common/hooks/use-in-view"
+import { addToCart } from "@modules/ecommerce/common/data/cart"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct

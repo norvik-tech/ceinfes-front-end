@@ -1,7 +1,7 @@
 "use client"
 
-import { convertToLocale } from "@lib/util/money"
 import React from "react"
+import { convertToLocale } from "../../util/money"
 
 type CartTotalsProps = {
   totals: {
