@@ -1,6 +1,6 @@
 import { sanityFetch, SanityLive } from "@modules/blog/sanity/lib/live"
 import { POSTS_QUERY } from "@modules/blog/sanity/lib/queries"
-import { BlogPage } from "@modules/blog/templates/events-page"
+import { BlogPage } from "@modules/blog/templates/blog-page"
 import { Metadata } from "next"
 import { PostType } from "types/blog"
 
@@ -25,7 +25,7 @@ const Blog = async (props: BlogProps) => {
 
   return (
     <>
-      <BlogPage posts={posts as PostType[]} />
+      <BlogPage posts={posts as PostType[]} query={categoryQuery} />
       <SanityLive />
     </>
   )

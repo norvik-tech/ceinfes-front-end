@@ -792,7 +792,7 @@
         },
         "optional": true
       },
-      "mainImage": {
+      "thumbnail": {
         "type": "objectAttribute",
         "value": {
           "type": "string"

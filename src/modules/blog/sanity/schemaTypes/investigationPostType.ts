@@ -23,7 +23,7 @@ export const investigationPostType = defineType({
       },
     }),
     defineField({
-      name: "mainImage",
+      name: "thumbnail",
       type: "url",
       validation: (Rule) => Rule.required(),
     }),

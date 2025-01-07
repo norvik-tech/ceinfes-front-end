@@ -13,7 +13,7 @@ export const INVESTIGATION_POSTS_QUERY = defineQuery(`
     slug,
     publishedAt,
     views,
-    mainImage,
+    thumbnail,
     categories[] -> {
       _id,
       title,
@@ -35,7 +35,7 @@ export const INVESTIGATION_POST_BY_ID_QUERY = defineQuery(`
     slug,
     publishedAt,
     views,
-    mainImage,
+    thumbnail,
     categories[] -> {
       _id,
       title,
@@ -58,7 +58,7 @@ export const INVESTIGATION_POSTS_BY_CATEGORY_QUERY = defineQuery(`
     slug,
     publishedAt,
     views,
-    mainImage,
+    thumbnail,
     categories[] -> {
       _id,
       title,
