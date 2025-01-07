@@ -3,6 +3,7 @@ import { getBaseURL } from "@modules/ecommerce/common/util/env"
 import { NextUIProvider } from "@nextui-org/react"
 import { Metadata } from "next"
 
+import "easymde/dist/easymde.min.css"
 import "styles/globals.css"
 
 export const metadata: Metadata = {

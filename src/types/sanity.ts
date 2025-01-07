@@ -125,6 +125,41 @@ export type SanityAssetSourceData = {
   url?: string
 }
 
+export type InvestigationCategory = {
+  _id: string
+  _type: "investigationCategory"
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  thumbnail?: string
+  bannerImage?: string
+  slug?: Slug
+  description?: string
+}
+
+export type InvestigationPost = {
+  _id: string
+  _type: "investigationPost"
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  description?: string
+  slug?: Slug
+  mainImage?: string
+  categories?: Array<{
+    _ref: string
+    _type: "reference"
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: "investigationCategory"
+  }>
+  views?: number
+  publishedAt?: string
+  body?: string
+}
+
 export type Post = {
   _id: string
   _type: "post"
@@ -133,43 +168,23 @@ export type Post = {
   _rev: string
   title?: string
   slug?: Slug
-  author?: {
-    _ref: string
-    _type: "reference"
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: "author"
-  }
-  mainImage?: string
+  description?: string
+  thumbnail?: string
   categories?: Array<{
     _ref: string
     _type: "reference"
     _weak?: boolean
     _key: string
-    [internalGroqTypeReferenceTo]?: "category"
+    [internalGroqTypeReferenceTo]?: "postCategory"
   }>
   views?: number
   publishedAt?: string
   body?: string
 }
 
-export type Author = {
+export type PostCategory = {
   _id: string
-  _type: "author"
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  id?: number
-  name?: string
-  username?: string
-  email?: string
-  hashPassword?: string
-  image?: string
-  bio?: string
-}
-
-export type Category = {
-  _id: string
-  _type: "category"
+  _type: "postCategory"
   _createdAt: string
   _updatedAt: string
   _rev: string
@@ -197,85 +212,212 @@ export type AllSanitySchemaTypes =
   | SanityImageMetadata
   | Geopoint
   | SanityAssetSourceData
+  | InvestigationCategory
+  | InvestigationPost
   | Post
-  | Author
-  | Category
+  | PostCategory
   | Slug
   | Markdown
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./src/modules/blog/sanity/lib/queries.ts
-// Variable: ARTICLES_QUERY
-// Query: *[  _type == "article" &&   defined(slug.current) &&   (!defined($search) || title match $search || categories[]->title match $search || author->name match $search)] | order(publishedAt desc) {  _id,  title,  slug,  publishedAt,  views,  author -> {    _id,    name,    image,    bio  },  mainImage,  categories[] -> {    _id,    title  },  body}
-export type ARTICLES_QUERYResult = Array<never>
-// Variable: ARTICLE_VIEW_QUERY
-// Query: *[    _type == "article" &&     _id == $id  ][0] {    _id,    views  }
-export type ARTICLE_VIEW_QUERYResult = null
-// Variable: AUTHOR_BY_GOOGLE_ID_QUERY
-// Query: *[    _type == "author" &&     id == $id  ][0] {    _id,    id,    name,    username,    email,    image,    bio  }
-export type AUTHOR_BY_GOOGLE_ID_QUERYResult = {
-  _id: string
-  id: number | null
-  name: string | null
-  username: string | null
-  email: string | null
-  image: string | null
-  bio: string | null
-} | null
-// Variable: AUTHOR_BY_EMAIL_QUERY
-// Query: *[    _type == "author" &&     email == $email  ][0] {    _id,    id,    name,    username,    email,    image,    bio,    hashPassword  }
-export type AUTHOR_BY_EMAIL_QUERYResult = {
-  _id: string
-  id: number | null
-  name: string | null
-  username: string | null
-  email: string | null
-  image: string | null
-  bio: string | null
-  hashPassword: string | null
-} | null
-// Variable: AUTHOR_BY_ID_QUERY
-// Query: *[    _type == "author" &&     _id == $id  ][0] {    _id,    id,    name,    username,    email,    image,    bio  }
-export type AUTHOR_BY_ID_QUERYResult = {
-  _id: string
-  id: number | null
-  name: string | null
-  username: string | null
-  email: string | null
-  image: string | null
-  bio: string | null
-} | null
-// Variable: PLAYLIST_BY_SLUG_QUERY
-// Query: *[    _type == "playlist" &&     slug.current == $slug  ][0] {    _id,    title,    slug,    select[] -> {      _id,      publishedAt,      title,      slug,      author -> {        _id,        name,        slug,        image,        bio      },      mainImage,      categories[] -> {        _id,        title      },      body    }  }
-export type PLAYLIST_BY_SLUG_QUERYResult = null
-// Variable: ARTICLES_BY_AUTHOR_QUERY
-// Query: *[    _type == "article" &&     author._ref == $id  ] | order(publishedAt desc) {    _id,    title,    slug,    publishedAt,    views,    author -> {      _id,      name,      image,      bio    },    mainImage,    categories[] -> {      _id,      title    },    body  }
-export type ARTICLES_BY_AUTHOR_QUERYResult = Array<never>
-// Variable: ARTICLES_BY_ID_QUERY
-// Query: *[    _type == "article" &&     _id == $id  ][0] {    _id,    title,    slug,    publishedAt,    views,    author -> {      _id,      name,      username,      image,      bio    },    mainImage,    categories[] -> {      _id,      title    },    body  }
-export type ARTICLES_BY_ID_QUERYResult = null
-// Variable: ARTICLES_BY_CATEGORY_QUERY
-// Query: *[    _type == "article" &&     $categoryId in categories[]._ref  ] | order(publishedAt desc) {    _id,    title,    slug,    publishedAt,    views,    author -> {      _id,      name,      image,      bio    },    mainImage,    categories[] -> {      _id,      title    },    body  }
-export type ARTICLES_BY_CATEGORY_QUERYResult = Array<never>
-// Variable: CATEGORIES_QUERY
-// Query: *[_type == "category"] | order(publishedAt desc) {    _id,    title  }
-export type CATEGORIES_QUERYResult = Array<{
+// Variable: INVESTIGATION_POSTS_QUERY
+// Query: *[    _type == "investigationPost" &&    defined(slug.current) &&    (!defined($search) || title match $search || categories[]->title match $search)  ] | order(publishedAt desc) {    _id,    title,    description,    slug,    publishedAt,    views,    mainImage,    categories[] -> {      _id,      title,      thumbnail,      description    },    body  }
+export type INVESTIGATION_POSTS_QUERYResult = Array<{
   _id: string
   title: string | null
+  description: string | null
+  slug: Slug | null
+  publishedAt: string | null
+  views: number | null
+  mainImage: string | null
+  categories: Array<{
+    _id: string
+    title: string | null
+    thumbnail: string | null
+    description: string | null
+  }> | null
+  body: string | null
 }>
+// Variable: INVESTIGATION_POST_BY_ID_QUERY
+// Query: *[    _type == "investigationPost" &&    _id == $id  ][0] {    _id,    title,    description,    slug,    publishedAt,    views,    mainImage,    categories[] -> {      _id,      title,      thumbnail,      bannerImage,      description    },    body  }
+export type INVESTIGATION_POST_BY_ID_QUERYResult = {
+  _id: string
+  title: string | null
+  description: string | null
+  slug: Slug | null
+  publishedAt: string | null
+  views: number | null
+  mainImage: string | null
+  categories: Array<{
+    _id: string
+    title: string | null
+    thumbnail: string | null
+    bannerImage: string | null
+    description: string | null
+  }> | null
+  body: string | null
+} | null
+// Variable: INVESTIGATION_POSTS_BY_CATEGORY_QUERY
+// Query: *[    _type == "investigationPost" &&    $categoryId in categories[]._ref  ] | order(publishedAt desc) {    _id,    title,    description,    slug,    publishedAt,    views,    mainImage,    categories[] -> {      _id,      title,      thumbnail,      description    },    body  }
+export type INVESTIGATION_POSTS_BY_CATEGORY_QUERYResult = Array<{
+  _id: string
+  title: string | null
+  description: string | null
+  slug: Slug | null
+  publishedAt: string | null
+  views: number | null
+  mainImage: string | null
+  categories: Array<{
+    _id: string
+    title: string | null
+    thumbnail: string | null
+    description: string | null
+  }> | null
+  body: string | null
+}>
+// Variable: INVESTIGATION_CATEGORIES_QUERY
+// Query: *[_type == "investigationCategory"] | order(title asc) {    _id,    title,    description,    thumbnail,    bannerImage,    "slug": slug.current,    "postCount": count(*[      _type == "investigationPost" &&      references(^._id)    ])  }
+export type INVESTIGATION_CATEGORIES_QUERYResult = Array<{
+  _id: string
+  title: string | null
+  description: string | null
+  thumbnail: string | null
+  bannerImage: string | null
+  slug: string | null
+  postCount: number
+}>
+// Variable: INVESTIGATION_CATEGORY_BY_SLUG_QUERY
+// Query: *[    _type == "investigationCategory" &&    slug.current == $slug  ][0] {    _id,    title,    description,    thumbnail,    bannerImage,    "slug": slug.current,    "posts": *[      _type == "investigationPost" &&      references(^._id)    ] | order(publishedAt desc) {      _id,      title,      description,      slug,      publishedAt,      views,      mainImage,      categories[] -> {        _id,        title      }    }  }
+export type INVESTIGATION_CATEGORY_BY_SLUG_QUERYResult = {
+  _id: string
+  title: string | null
+  description: string | null
+  thumbnail: string | null
+  bannerImage: string | null
+  slug: string | null
+  posts: Array<{
+    _id: string
+    title: string | null
+    description: string | null
+    slug: Slug | null
+    publishedAt: string | null
+    views: number | null
+    mainImage: string | null
+    categories: Array<{
+      _id: string
+      title: string | null
+    }> | null
+  }>
+} | null
+// Variable: INVESTIGATION_POST_VIEW_QUERY
+// Query: *[    _type == "investigationPost" &&    _id == $id  ][0] {    _id,    views  }
+export type INVESTIGATION_POST_VIEW_QUERYResult = {
+  _id: string
+  views: number | null
+} | null
+// Variable: POSTS_QUERY
+// Query: *[    _type == "post" &&    defined(slug.current) &&    (!defined($search) || title match $search || categories[]->title match $search)  ] | order(publishedAt desc) {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      description    },    body  }
+export type POSTS_QUERYResult = Array<{
+  _id: string
+  title: string | null
+  description: string | null
+  slug: Slug | null
+  publishedAt: string | null
+  views: number | null
+  thumbnail: string | null
+  categories: Array<{
+    _id: string
+    title: string | null
+    description: string | null
+  }> | null
+  body: string | null
+}>
+// Variable: POST_BY_ID_QUERY
+// Query: *[    _type == "post" &&    _id == $id  ][0] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      description    },    body  }
+export type POST_BY_ID_QUERYResult = {
+  _id: string
+  title: string | null
+  description: string | null
+  slug: Slug | null
+  publishedAt: string | null
+  views: number | null
+  thumbnail: string | null
+  categories: Array<{
+    _id: string
+    title: string | null
+    description: string | null
+  }> | null
+  body: string | null
+} | null
+// Variable: POSTS_BY_CATEGORY_QUERY
+// Query: *[    _type == "post" &&    $categoryId in categories[]._ref  ] | order(publishedAt desc) {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      description    },    body  }
+export type POSTS_BY_CATEGORY_QUERYResult = Array<{
+  _id: string
+  title: string | null
+  description: string | null
+  slug: Slug | null
+  publishedAt: string | null
+  views: number | null
+  thumbnail: string | null
+  categories: Array<{
+    _id: string
+    title: string | null
+    description: string | null
+  }> | null
+  body: string | null
+}>
+// Variable: POST_CATEGORIES_QUERY
+// Query: *[_type == "postCategory"] | order(title asc) {    _id,    title,    description,    "slug": slug.current,    "postCount": count(*[      _type == "post" &&      references(^._id)    ])  }
+export type POST_CATEGORIES_QUERYResult = Array<{
+  _id: string
+  title: string | null
+  description: string | null
+  slug: string | null
+  postCount: number
+}>
+// Variable: POST_CATEGORY_BY_SLUG_QUERY
+// Query: *[    _type == "postCategory" &&    slug.current == $slug  ][0] {    _id,    title,    description,    "slug": slug.current,    "posts": *[      _type == "post" &&      references(^._id)    ] | order(publishedAt desc) {      _id,      title,      description,      slug,      publishedAt,      views,      thumbnail,      categories[] -> {        _id,        title      }    }  }
+export type POST_CATEGORY_BY_SLUG_QUERYResult = {
+  _id: string
+  title: string | null
+  description: string | null
+  slug: string | null
+  posts: Array<{
+    _id: string
+    title: string | null
+    description: string | null
+    slug: Slug | null
+    publishedAt: string | null
+    views: number | null
+    thumbnail: string | null
+    categories: Array<{
+      _id: string
+      title: string | null
+    }> | null
+  }>
+} | null
+// Variable: POST_VIEW_QUERY
+// Query: *[    _type == "post" &&    _id == $id  ][0] {    _id,    views  }
+export type POST_VIEW_QUERYResult = {
+  _id: string
+  views: number | null
+} | null
 
 // Query TypeMap
 import "@sanity/client"
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[\n  _type == "article" && \n  defined(slug.current) && \n  (!defined($search) || title match $search || categories[]->title match $search || author->name match $search)\n] | order(publishedAt desc) {\n  _id,\n  title,\n  slug,\n  publishedAt,\n  views,\n  author -> {\n    _id,\n    name,\n    image,\n    bio\n  },\n  mainImage,\n  categories[] -> {\n    _id,\n    title\n  },\n  body\n}': ARTICLES_QUERYResult
-    '\n  *[\n    _type == "article" && \n    _id == $id\n  ][0] {\n    _id,\n    views\n  }\n': ARTICLE_VIEW_QUERYResult
-    '\n  *[\n    _type == "author" && \n    id == $id\n  ][0] {\n    _id,\n    id,\n    name,\n    username,\n    email,\n    image,\n    bio\n  }\n': AUTHOR_BY_GOOGLE_ID_QUERYResult
-    '\n  *[\n    _type == "author" && \n    email == $email\n  ][0] {\n    _id,\n    id,\n    name,\n    username,\n    email,\n    image,\n    bio,\n    hashPassword\n  }\n': AUTHOR_BY_EMAIL_QUERYResult
-    '\n  *[\n    _type == "author" && \n    _id == $id\n  ][0] {\n    _id,\n    id,\n    name,\n    username,\n    email,\n    image,\n    bio\n  }\n': AUTHOR_BY_ID_QUERYResult
-    '\n  *[\n    _type == "playlist" && \n    slug.current == $slug\n  ][0] {\n    _id,\n    title,\n    slug,\n    select[] -> {\n      _id,\n      publishedAt,\n      title,\n      slug,\n      author -> {\n        _id,\n        name,\n        slug,\n        image,\n        bio\n      },\n      mainImage,\n      categories[] -> {\n        _id,\n        title\n      },\n      body\n    }\n  }\n': PLAYLIST_BY_SLUG_QUERYResult
-    '\n  *[\n    _type == "article" && \n    author._ref == $id\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    slug,\n    publishedAt,\n    views,\n    author -> {\n      _id,\n      name,\n      image,\n      bio\n    },\n    mainImage,\n    categories[] -> {\n      _id,\n      title\n    },\n    body\n  }\n': ARTICLES_BY_AUTHOR_QUERYResult
-    '\n  *[\n    _type == "article" && \n    _id == $id\n  ][0] {\n    _id,\n    title,\n    slug,\n    publishedAt,\n    views,\n    author -> {\n      _id,\n      name,\n      username,\n      image,\n      bio\n    },\n    mainImage,\n    categories[] -> {\n      _id,\n      title\n    },\n    body\n  }\n': ARTICLES_BY_ID_QUERYResult
-    '\n  *[\n    _type == "article" && \n    $categoryId in categories[]._ref\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    slug,\n    publishedAt,\n    views,\n    author -> {\n      _id,\n      name,\n      image,\n      bio\n    },\n    mainImage,\n    categories[] -> {\n      _id,\n      title\n    },\n    body\n  }\n': ARTICLES_BY_CATEGORY_QUERYResult
-    ' \n  *[_type == "category"] | order(publishedAt desc) {\n    _id,\n    title\n  }': CATEGORIES_QUERYResult
+    '\n  *[\n    _type == "investigationPost" &&\n    defined(slug.current) &&\n    (!defined($search) || title match $search || categories[]->title match $search)\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    mainImage,\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POSTS_QUERYResult
+    '\n  *[\n    _type == "investigationPost" &&\n    _id == $id\n  ][0] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    mainImage,\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      bannerImage,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POST_BY_ID_QUERYResult
+    '\n  *[\n    _type == "investigationPost" &&\n    $categoryId in categories[]._ref\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    mainImage,\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POSTS_BY_CATEGORY_QUERYResult
+    '\n  *[_type == "investigationCategory"] | order(title asc) {\n    _id,\n    title,\n    description,\n    thumbnail,\n    bannerImage,\n    "slug": slug.current,\n    "postCount": count(*[\n      _type == "investigationPost" &&\n      references(^._id)\n    ])\n  }\n': INVESTIGATION_CATEGORIES_QUERYResult
+    '\n  *[\n    _type == "investigationCategory" &&\n    slug.current == $slug\n  ][0] {\n    _id,\n    title,\n    description,\n    thumbnail,\n    bannerImage,\n    "slug": slug.current,\n    "posts": *[\n      _type == "investigationPost" &&\n      references(^._id)\n    ] | order(publishedAt desc) {\n      _id,\n      title,\n      description,\n      slug,\n      publishedAt,\n      views,\n      mainImage,\n      categories[] -> {\n        _id,\n        title\n      }\n    }\n  }\n': INVESTIGATION_CATEGORY_BY_SLUG_QUERYResult
+    '\n  *[\n    _type == "investigationPost" &&\n    _id == $id\n  ][0] {\n    _id,\n    views\n  }\n': INVESTIGATION_POST_VIEW_QUERYResult
+    '\n  *[\n    _type == "post" &&\n    defined(slug.current) &&\n    (!defined($search) || title match $search || categories[]->title match $search)\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      description\n    },\n    body\n  }\n': POSTS_QUERYResult
+    '\n  *[\n    _type == "post" &&\n    _id == $id\n  ][0] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      description\n    },\n    body\n  }\n': POST_BY_ID_QUERYResult
+    '\n  *[\n    _type == "post" &&\n    $categoryId in categories[]._ref\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      description\n    },\n    body\n  }\n': POSTS_BY_CATEGORY_QUERYResult
+    '\n  *[_type == "postCategory"] | order(title asc) {\n    _id,\n    title,\n    description,\n    "slug": slug.current,\n    "postCount": count(*[\n      _type == "post" &&\n      references(^._id)\n    ])\n  }\n': POST_CATEGORIES_QUERYResult
+    '\n  *[\n    _type == "postCategory" &&\n    slug.current == $slug\n  ][0] {\n    _id,\n    title,\n    description,\n    "slug": slug.current,\n    "posts": *[\n      _type == "post" &&\n      references(^._id)\n    ] | order(publishedAt desc) {\n      _id,\n      title,\n      description,\n      slug,\n      publishedAt,\n      views,\n      thumbnail,\n      categories[] -> {\n        _id,\n        title\n      }\n    }\n  }\n': POST_CATEGORY_BY_SLUG_QUERYResult
+    '\n  *[\n    _type == "post" &&\n    _id == $id\n  ][0] {\n    _id,\n    views\n  }\n': POST_VIEW_QUERYResult
   }
 }
