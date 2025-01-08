@@ -6,27 +6,27 @@ export const NAVBAR_LINKS = () => {
     },
     {
       name: "Nosotros",
-      href: "/nosotros",
+      href: "/we",
     },
     {
       name: "Productos",
       href: "/store",
     },
     {
-      name: "Eventos",
-      href: "/events",
+      name: "Investigación",
+      href: "/investigation",
     },
     {
-      name: "Investigación",
-      href: "/investigacion",
+      name: "Blog",
+      href: "/blog",
     },
     {
       name: "Plataforma",
-      href: "/plataforma",
+      href: "/platform",
     },
     {
       name: "Contáctanos",
-      href: "/contactanos",
+      href: "/contact",
     },
   ]
 }

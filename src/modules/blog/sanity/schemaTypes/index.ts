@@ -1,9 +1,10 @@
 import { type SchemaTypeDefinition } from "sanity"
 
-import { categoryType } from "./categoryType"
-import { authorType } from "./authorType"
+import { postCategoryType } from "./postCategoryType"
 import { postType } from "./postType"
+import { investigationPostType } from "./investigationPostType"
+import { investigationCategoryType } from "./investigationCategoryType"
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [categoryType, postType, authorType],
+  types: [ postCategoryType, postType, investigationPostType, investigationCategoryType],
 }

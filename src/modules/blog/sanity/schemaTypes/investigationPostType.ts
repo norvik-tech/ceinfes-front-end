@@ -1,14 +1,18 @@
 import { DocumentTextIcon } from "@sanity/icons"
 import { defineArrayMember, defineField, defineType } from "sanity"
 
-export const postType = defineType({
-  name: "post",
-  title: "Post",
+export const investigationPostType = defineType({
+  name: "investigationPost",
+  title: "Investigation post",
   type: "document",
   icon: DocumentTextIcon,
   fields: [
     defineField({
       name: "title",
+      type: "string",
+    }),
+    defineField({
+      name: "description",
       type: "string",
     }),
     defineField({
@@ -19,10 +23,6 @@ export const postType = defineType({
       },
     }),
     defineField({
-      name: "description",
-      type: "string",
-    }),
-    defineField({
       name: "thumbnail",
       type: "url",
       validation: (Rule) => Rule.required(),
@@ -31,7 +31,7 @@ export const postType = defineType({
       name: "categories",
       type: "array",
       of: [
-        defineArrayMember({ type: "reference", to: { type: "postCategory" } }),
+        defineArrayMember({ type: "reference", to: { type: "investigationCategory" } }),
       ],
     }),
     defineField({
