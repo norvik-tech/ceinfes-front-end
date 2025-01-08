@@ -13,8 +13,8 @@ export const NAVBAR_LINKS = () => {
       href: "/store",
     },
     {
-      name: "Eventos",
-      href: "/events",
+      name: "Investigación",
+      href: "/investigation-group",
     },
     {
       name: "Investigación",
