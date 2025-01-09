@@ -1,12 +1,15 @@
 import { defineQuery } from "next-sanity"
 
+export const TOTAL_INVESTIGATION_POSTS_QUERY = defineQuery(`
+  count(*[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])
+`)
+
+export const TOTAL_POSTS_QUERY = defineQuery(`
+  count(*[_type == "post" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])
+`)
 // Investigation Posts Queries
 export const INVESTIGATION_POSTS_QUERY = defineQuery(`
-  *[
-    _type == "investigationPost" &&
-    defined(slug.current) &&
-    (!defined($search) || title match $search || categories[]->title match $search)
-  ] | order(publishedAt desc) {
+  *[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)] | order(publishedAt desc) [$start...$end] {
     _id,
     title,
     description,
@@ -130,7 +133,7 @@ export const POSTS_QUERY = defineQuery(`
     _type == "post" &&
     defined(slug.current) &&
     (!defined($search) || title match $search || categories[]->title match $search)
-  ] | order(publishedAt desc) {
+  ] | order(publishedAt desc) [$start...$end] {
     _id,
     title,
     description,

@@ -1,5 +1,5 @@
 import { BlogFilter } from "../components/featured-posts/BlogFilter"
-import { FeaturedEvents } from "../components/featured-posts/FeaturedPosts"
+import { FeaturedPosts } from "../components/featured-posts/FeaturedPosts"
 import { CategoryType, PostType } from "types/blog"
 import { sanityFetch } from "../sanity/lib/live"
 import { POST_CATEGORIES_QUERY } from "../sanity/lib/queries"
@@ -8,9 +8,11 @@ import { ClearFilters } from "../components/ClearFilters"
 interface Props {
   posts: PostType[]
   query?: string
+  currentPage: number
+  totalPages: number
 }
 
-export const BlogPage = async ({ posts, query }: Props) => {
+export const BlogPage = async ({ posts, query, currentPage, totalPages }: Props) => {
   const { data: categories } = await sanityFetch({
     query: POST_CATEGORIES_QUERY,
   })
@@ -27,7 +29,7 @@ export const BlogPage = async ({ posts, query }: Props) => {
           <BlogFilter query={query} categories={categories as unknown as CategoryType[]} />
           <ClearFilters />
         </aside>
-        <FeaturedEvents posts={posts} query={query} />
+        <FeaturedPosts currentPage={currentPage} totalPages={totalPages} posts={posts} query={query} />
       </article>
     </main>
   )
