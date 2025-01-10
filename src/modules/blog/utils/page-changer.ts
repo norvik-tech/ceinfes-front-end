@@ -6,5 +6,8 @@ export const handlePageChange = (
   router?: AppRouterInstance
 ) => {
   const params = `page=${page}${query ? `query=${query}` : ""}`
-  if (router) router.push(`?${params}`)
+  if (router)
+    router.push(`?${params}`, {
+      scroll: false,
+    })
 }

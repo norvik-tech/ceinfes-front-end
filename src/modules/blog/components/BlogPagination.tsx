@@ -18,14 +18,16 @@ export const BlogPagination = ({
   const router = useRouter()
 
   return (
-    <div className="flex justify-center mt-8">
+    <div className="flex flex-col items-center gap-y-1">
+      <p className="text-xs text-dark">Paginación</p>
       <Pagination
         total={totalPages}
         page={currentPage}
-        color="secondary"
+        color="primary"
         variant="light"
         onChange={(page) => handlePageChange(page, query, router)}
         classNames={{
+          cursor: "text-secondary-foreground",
           wrapper: "gap-2",
         }}
       />

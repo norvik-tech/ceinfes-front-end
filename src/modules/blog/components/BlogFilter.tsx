@@ -19,21 +19,23 @@ export const BlogFilter = ({ query, categories }: BlogFilterProps) => {
   const handleSelectionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const params = new URLSearchParams(searchParams)
     params.set("query", e.target.value)
-    router.push(`?${params.toString()}`)
+    router.push(`?${params.toString()}`, {
+      scroll: false,
+    })
   }
 
   return (
-    <div className="flex items-center justify-start">
+    <div className="flex items-center min-w-[340px]">
+      <p className="text-black text-xs w-full">Filtrar por categoría:</p>
       <Select
         ref={selectRef}
         name="query"
         value={query ? [query] : []}
         defaultSelectedKeys={query ? [query] : []}
-        className="max-w-md"
-        label="Filtrar por:"
         labelPlacement="outside-left"
+        className="min-w-[220px]"
         variant="bordered"
-        placeholder="Seleccionar filtro"
+        placeholder="Seleccionar categoría"
         isLoading={categories.length == 0}
         onChange={handleSelectionChange}
       >
