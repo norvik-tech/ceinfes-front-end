@@ -4,10 +4,11 @@ import { Select, SelectItem } from "@nextui-org/react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { useRef } from "react"
 import { CategoryType } from "types/blog"
+import { InvestigationCategoryType } from "types/investigation-post"
 
 type BlogFilterProps = {
   query?: string
-  categories: CategoryType[]
+  categories: CategoryType[] | InvestigationCategoryType[]
 }
 
 export const BlogFilter = ({ query, categories }: BlogFilterProps) => {
