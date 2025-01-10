@@ -1,3 +1,4 @@
+import { usePagination } from "@modules/blog/hooks/usePagination"
 import { sanityFetch, SanityLive } from "@modules/blog/sanity/lib/live"
 import {
   INVESTIGATION_POSTS_QUERY,
@@ -8,7 +9,10 @@ import { Metadata } from "next"
 import React from "react"
 import { InvestigationPostType } from "types/investigation-post"
 
-const ITEMS_PER_PAGE = 3
+export const metadata: Metadata = {
+  title: "Ceinfes | Publicaciones",
+  description: "Ceinfes Publicaciones",
+}
 
 type InvestigationPostProps = {
   searchParams: Promise<{
@@ -17,35 +21,17 @@ type InvestigationPostProps = {
   }>
 }
 
-export const metadata: Metadata = {
-  title: "Ceinfes | Publicaciones",
-  description: "Ceinfes Publicaciones",
-}
+const ITEMS_PER_PAGE = 4
 
 const Publications = async (props: InvestigationPostProps) => {
-  const { query: categoryQuery, page } = await props.searchParams
-  const currentPage = Number(page) || 1
-  const start = (currentPage - 1) * ITEMS_PER_PAGE
-  const end = start + ITEMS_PER_PAGE
-
-  const params = {
-    search: categoryQuery || null,
-    start,
-    end,
-  }
-
-  const [{ data: posts }, { data: total }] = await Promise.all([
-    sanityFetch({
-      query: INVESTIGATION_POSTS_QUERY,
-      params,
-    }),
-    sanityFetch({
-      query: TOTAL_INVESTIGATION_POSTS_QUERY,
-      params: { search: categoryQuery || null },
-    }),
-  ])
-
-  const totalPages = Math.ceil(total / ITEMS_PER_PAGE)
+  const { posts, totalPages, currentPage, categoryQuery } = await usePagination(
+    {
+      searchParams: props.searchParams,
+      items_per_page: ITEMS_PER_PAGE,
+      posts_query: INVESTIGATION_POSTS_QUERY,
+      total_posts_query: TOTAL_INVESTIGATION_POSTS_QUERY,
+    }
+  )
 
   return (
     <>

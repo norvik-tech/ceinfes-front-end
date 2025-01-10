@@ -1,9 +1,10 @@
-import { BlogFilter } from "../components/featured-posts/BlogFilter"
-import { FeaturedPosts } from "../components/featured-posts/FeaturedPosts"
+import { BlogFilter } from "../components/BlogFilter"
+import { FeaturedPosts } from "../components/FeaturedPosts"
 import { CategoryType, PostType } from "types/blog"
 import { sanityFetch } from "../sanity/lib/live"
 import { POST_CATEGORIES_QUERY } from "../sanity/lib/queries"
 import { ClearFilters } from "../components/ClearFilters"
+import { BlogPagination } from "../components/BlogPagination"
 
 interface Props {
   posts: PostType[]
@@ -12,7 +13,12 @@ interface Props {
   totalPages: number
 }
 
-export const BlogPage = async ({ posts, query, currentPage, totalPages }: Props) => {
+export const BlogPage = async ({
+  posts,
+  query,
+  currentPage,
+  totalPages,
+}: Props) => {
   const { data: categories } = await sanityFetch({
     query: POST_CATEGORIES_QUERY,
   })
@@ -26,11 +32,19 @@ export const BlogPage = async ({ posts, query, currentPage, totalPages }: Props)
       </section>
       <article className="content-container flex flex-col gap-y-12">
         <aside className="flex items-center gap-4">
-          <BlogFilter query={query} categories={categories as unknown as CategoryType[]} />
+          <BlogFilter
+            query={query}
+            categories={categories as unknown as CategoryType[]}
+          />
           <ClearFilters />
         </aside>
-        <FeaturedPosts currentPage={currentPage} totalPages={totalPages} posts={posts} query={query} />
+        <FeaturedPosts posts={posts} query={query} />
       </article>
+      <BlogPagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        query={query}
+      />
     </main>
   )
 }

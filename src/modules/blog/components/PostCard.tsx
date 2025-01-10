@@ -15,9 +15,11 @@ export const PostCard = ({ post }: Props) => {
       <CardBody className="overflow-visible py-2">
         <Image
           alt="Card background"
-          className="object-cover rounded-xl"
+          className="w-full max-h-[180px] object-cover"
+          classNames={{
+            wrapper: '!max-w-none'
+          }}
           src={post.thumbnail}
-          height={180}
         />
         <p className="text-small text-default-500 mt-4 line-clamp-3">
           {post.description}

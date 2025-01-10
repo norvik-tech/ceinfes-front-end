@@ -5,9 +5,10 @@ import {
   InvestigationCategoryType,
   InvestigationPostType,
 } from "types/investigation-post"
-import { BlogFilter } from "../components/featured-posts/BlogFilter"
+import { BlogFilter } from "../components/BlogFilter"
 import { ClearFilters } from "../components/ClearFilters"
-import { FeaturedPosts } from "../components/featured-posts/FeaturedPosts"
+import { FeaturedPosts } from "../components/FeaturedPosts"
+import { BlogPagination } from "../components/BlogPagination"
 
 interface Props {
   posts: InvestigationPostType[]
@@ -41,13 +42,13 @@ export const InvestigationPublicationPage = async ({
           />
           <ClearFilters />
         </aside>
-        <FeaturedPosts
-          posts={posts}
-          currentPage={currentPage}
-          totalPages={totalPages}
-          query={query}
-        />
+        <FeaturedPosts posts={posts} query={query} />
       </article>
+      <BlogPagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        query={query}
+      />
     </main>
   )
 }
