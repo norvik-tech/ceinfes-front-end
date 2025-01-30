@@ -5,7 +5,7 @@ import ErrorMessage from "@modules/ecommerce/checkout/components/error-message"
 import PaymentContainer from "@modules/ecommerce/checkout/components/payment-container"
 import { StripeContext } from "@modules/ecommerce/checkout/components/payment-wrapper/stripe-wrapper"
 import Divider from "@modules/ecommerce/common/components/divider"
-import { Button, cn } from "@nextui-org/react"
+import { Button, cn } from "@heroui/react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import {

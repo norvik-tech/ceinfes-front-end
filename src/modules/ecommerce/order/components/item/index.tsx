@@ -1,7 +1,7 @@
 "use client"
 
 import { HttpTypes } from "@medusajs/types"
-import { Card, CardBody } from "@nextui-org/react"
+import { Card, CardBody } from "@heroui/react"
 import LineItemOptions from "@modules/ecommerce/common/components/line-item-options"
 import LineItemPrice from "@modules/ecommerce/common/components/line-item-price"
 import LineItemUnitPrice from "@modules/ecommerce/common/components/line-item-unit-price"

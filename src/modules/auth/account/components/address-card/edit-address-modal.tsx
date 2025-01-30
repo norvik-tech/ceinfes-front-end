@@ -9,7 +9,7 @@ import Spinner from "@modules/ecommerce/common/icons/spinner"
 import { SubmitButton } from "@modules/ecommerce/checkout/components/submit-button"
 import { HttpTypes } from "@medusajs/types"
 
-import { Button, cn } from "@nextui-org/react"
+import { Button, cn } from "@heroui/react"
 import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
 import {
   deleteCustomerAddress,

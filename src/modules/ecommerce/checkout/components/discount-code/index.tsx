@@ -6,7 +6,7 @@ import { HttpTypes } from "@medusajs/types"
 import Trash from "@modules/ecommerce/common/icons/trash"
 import ErrorMessage from "../error-message"
 import { SubmitButton } from "../submit-button"
-import { Badge, Input } from "@nextui-org/react"
+import { Badge, Input } from "@heroui/react"
 import { applyPromotions, submitPromotionForm } from "@modules/ecommerce/common/data/cart"
 import { convertToLocale } from "@modules/ecommerce/common/util/money"
 

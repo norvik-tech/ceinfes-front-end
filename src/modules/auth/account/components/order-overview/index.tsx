@@ -3,7 +3,7 @@
 import OrderCard from "../order-card"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@nextui-org/react"
+import { Button } from "@heroui/react"
 
 const OrderOverview = ({ orders }: { orders: HttpTypes.StoreOrder[] }) => {
   if (orders?.length) {

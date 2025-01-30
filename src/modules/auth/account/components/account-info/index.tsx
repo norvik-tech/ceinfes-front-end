@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react"
 import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
-import { Badge, Button, cn } from "@nextui-org/react"
+import { Badge, Button, cn } from "@heroui/react"
 import { useEffect } from "react"
 
 import { useFormStatus } from "react-dom"

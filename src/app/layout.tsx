@@ -1,6 +1,6 @@
 import { HelveticaNeue } from "@modules/common/config/fonts-config"
 import { getBaseURL } from "@modules/ecommerce/common/util/env"
-import { NextUIProvider } from "@nextui-org/react"
+import { HeroUIProvider } from "@heroui/react"
 import { Metadata } from "next"
 
 import "easymde/dist/easymde.min.css"
@@ -16,9 +16,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body
         className={`${HelveticaNeue.variable} font-helvetica-neue text-dark`}
       >
-        <NextUIProvider>
+        <HeroUIProvider>
           <main className="relative">{props.children}</main>
-        </NextUIProvider>
+        </HeroUIProvider>
       </body>
     </html>
   )

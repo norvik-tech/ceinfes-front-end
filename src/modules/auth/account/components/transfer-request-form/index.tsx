@@ -3,7 +3,7 @@
 import { useActionState } from "react"
 import { SubmitButton } from "@modules/ecommerce/checkout/components/submit-button"
 import { useEffect, useState } from "react"
-import { Button, Input } from "@nextui-org/react"
+import { Button, Input } from "@heroui/react"
 import { createTransferRequest } from "@modules/ecommerce/common/data/orders"
 
 export default function TransferRequestForm() {

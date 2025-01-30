@@ -1,4 +1,4 @@
-import { cn, Image } from "@nextui-org/react"
+import { cn, Image } from "@heroui/react"
 
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"

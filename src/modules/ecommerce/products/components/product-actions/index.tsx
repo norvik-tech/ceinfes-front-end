@@ -8,7 +8,7 @@ import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
-import { Button } from "@nextui-org/react"
+import { Button } from "@heroui/react"
 import { useIntersection } from "@modules/ecommerce/common/hooks/use-in-view"
 import { addToCart } from "@modules/ecommerce/common/data/cart"
 

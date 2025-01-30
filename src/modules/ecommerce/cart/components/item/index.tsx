@@ -1,7 +1,7 @@
 "use client"
 
-import { Card, CardBody } from "@nextui-org/react"
-import { Select, SelectItem } from "@nextui-org/react"
+import { Card, CardBody } from "@heroui/react"
+import { Select, SelectItem } from "@heroui/react"
 import { HttpTypes } from "@medusajs/types"
 import ErrorMessage from "@modules/ecommerce/checkout/components/error-message"
 import DeleteButton from "@modules/ecommerce/common/components/delete-button"

@@ -1,4 +1,4 @@
-import { cn, Radio, RadioGroup } from "@nextui-org/react"
+import { cn, Radio, RadioGroup } from "@heroui/react"
 
 type FilterRadioGroupProps = {
   title: string

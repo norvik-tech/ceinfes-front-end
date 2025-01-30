@@ -10,7 +10,7 @@ import {
 } from "react"
 
 import ChevronDown from "@modules/ecommerce/common/icons/chevron-down"
-import { Badge, cn } from "@nextui-org/react"
+import { Badge, cn } from "@heroui/react"
 
 type NativeSelectProps = {
   placeholder?: string
