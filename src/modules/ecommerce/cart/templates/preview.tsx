@@ -1,10 +1,10 @@
 "use client"
 
 import { HttpTypes } from "@medusajs/types"
-import { Card, CardBody } from "@nextui-org/react"
+import { Card, CardBody } from "@heroui/react"
 import Item from "@modules/ecommerce/cart/components/item"
 import SkeletonLineItem from "@modules/ecommerce/skeletons/components/skeleton-line-item"
-import { cn } from "@nextui-org/react"
+import { cn } from "@heroui/react"
 import repeat from "@modules/ecommerce/common/util/repeat"
 
 type ItemsTemplateProps = {

@@ -4,7 +4,7 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
-import { Image } from "@nextui-org/react"
+import { Image } from "@heroui/react"
 import { NAVBAR_LINKS } from "@modules/layout/config/constants/navbar-links"
 import { listRegions } from "@modules/ecommerce/common/data/regions"
 

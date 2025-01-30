@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react"
-import { cn } from "@nextui-org/react"
+import { cn } from "@heroui/react"
 import React, { Fragment } from "react"
 
 import X from "@modules/ecommerce/common/icons/x"

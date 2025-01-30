@@ -1,5 +1,5 @@
 import { HttpTypes } from "@medusajs/types"
-import { cn } from "@nextui-org/react"
+import { cn } from "@heroui/react"
 import React from "react"
 
 type OptionSelectProps = {

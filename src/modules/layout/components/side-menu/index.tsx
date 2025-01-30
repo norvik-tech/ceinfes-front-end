@@ -6,7 +6,7 @@ import { Fragment } from "react"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import CountrySelect from "../country-select"
 import { HttpTypes } from "@medusajs/types"
-import { cn } from "@nextui-org/react"
+import { cn } from "@heroui/react"
 import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
 
 const SideMenuItems = {

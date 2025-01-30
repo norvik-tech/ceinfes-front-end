@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardBody, CardHeader } from "@nextui-org/react"
+import { Card, CardBody, CardHeader } from "@heroui/react"
 import SkeletonCartItem from "@modules/ecommerce/skeletons/components/skeleton-cart-item"
 import SkeletonCodeForm from "@modules/ecommerce/skeletons/components/skeleton-code-form"
 import SkeletonOrderSummary from "@modules/ecommerce/skeletons/components/skeleton-order-summary"

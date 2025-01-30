@@ -1,4 +1,4 @@
-import { cn } from "@nextui-org/react"
+import { cn } from "@heroui/react"
 
 import { HttpTypes } from "@medusajs/types"
 import { getProductPrice } from "@modules/ecommerce/common/util/get-product-price"

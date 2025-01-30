@@ -5,7 +5,7 @@ import Divider from "@modules/ecommerce/common/components/divider"
 import DiscountCode from "@modules/ecommerce/checkout/components/discount-code"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@nextui-org/react"
+import { Button } from "@heroui/react"
 
 type SummaryProps = {
   cart: HttpTypes.StoreCart & {

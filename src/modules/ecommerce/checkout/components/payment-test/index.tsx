@@ -1,4 +1,4 @@
-import { Badge } from "@nextui-org/react"
+import { Badge } from "@heroui/react"
 
 const PaymentTest = ({ className }: { className?: string }) => {
   return (

@@ -4,7 +4,7 @@ import Divider from "@modules/ecommerce/common/components/divider"
 import repeat from "@modules/ecommerce/common/util/repeat"
 import Item from "@modules/ecommerce/order/components/item"
 import SkeletonLineItem from "@modules/ecommerce/skeletons/components/skeleton-line-item"
-import { Card, CardBody } from "@nextui-org/react"
+import { Card, CardBody } from "@heroui/react"
 
 type ItemsProps = {
   order: HttpTypes.StoreOrder

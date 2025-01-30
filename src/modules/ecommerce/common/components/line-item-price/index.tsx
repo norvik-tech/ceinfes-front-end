@@ -1,6 +1,6 @@
 
 import { HttpTypes } from "@medusajs/types"
-import { cn } from "@nextui-org/react"
+import { cn } from "@heroui/react"
 import { convertToLocale } from "../../util/money"
 import { getPercentageDiff } from "../../util/get-precentage-diff"
 

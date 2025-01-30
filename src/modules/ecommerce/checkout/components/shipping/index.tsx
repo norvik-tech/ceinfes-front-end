@@ -8,7 +8,7 @@ import MedusaRadio from "@modules/ecommerce/common/components/radio"
 import { setShippingMethod } from "@modules/ecommerce/common/data/cart"
 import { calculatePriceForShippingOption } from "@modules/ecommerce/common/data/fulfillment"
 import { convertToLocale } from "@modules/ecommerce/common/util/money"
-import { Button, cn } from "@nextui-org/react"
+import { Button, cn } from "@heroui/react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 

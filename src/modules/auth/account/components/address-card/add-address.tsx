@@ -7,7 +7,7 @@ import Input from "@modules/ecommerce/common/components/input"
 import Modal from "@modules/ecommerce/common/components/modal"
 import { SubmitButton } from "@modules/ecommerce/checkout/components/submit-button"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@nextui-org/react"
+import { Button } from "@heroui/react"
 import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
 import { addCustomerAddress } from "@modules/ecommerce/common/data/customer"
 
