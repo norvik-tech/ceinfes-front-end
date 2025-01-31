@@ -16,10 +16,10 @@ export const NAVBAR_LINKS = () => {
       name: "Investigación",
       href: "/investigation-group",
     },
-    {
-      name: "Blog",
-      href: "/blog",
-    },
+    // {
+    //   name: "Blog",
+    //   href: "/blog",
+    // },
     {
       name: "Plataforma",
       href: "/platform",

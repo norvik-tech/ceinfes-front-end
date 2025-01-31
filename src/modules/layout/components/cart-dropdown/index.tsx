@@ -85,7 +85,9 @@ const CartDropdown = ({
             className=""
             href="/cart"
             data-testid="nav-cart-link"
-          >{`Carrito (${totalItems})`}</LocalizedClientLink>
+          >
+            <Button className="flex gap-2 bg-primary text-white"> <span className="icon-[ion--cart-outline] text-xl"></span>{`Tienda (${totalItems})`}</Button>{" "}
+          </LocalizedClientLink>
         </PopoverButton>
         <Transition
           show={cartDropdownOpen}
