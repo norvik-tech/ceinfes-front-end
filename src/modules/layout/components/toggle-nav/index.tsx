@@ -20,8 +20,9 @@ const ToggleNav = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <Navbar
+      className="drop-shadow-sm"
       classNames={{
-        wrapper: "content-container",
+        wrapper: "content-container gap-10",
       }}
       onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
     >
@@ -30,7 +31,7 @@ const ToggleNav = ({ children }: { children: React.ReactNode }) => {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
+        <NavbarBrand as={Link} href="/">
           <Image
             src="/ceinfes-logo.png"
             radius="none"
@@ -49,7 +50,7 @@ const ToggleNav = ({ children }: { children: React.ReactNode }) => {
               href={link.href}
               key={`${link.name}-${index}`}
               data-testid="nav-account-link"
-              className="relative text-[1.5vw] md:text-sm group transition-colors hover:text-primary cursor-pointer 
+              className="relative text-[1.5vw] md:text-base group transition-colors hover:text-primary cursor-pointer 
        after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-0 after:bg-primary 
        after:transition-all after:origin-left 
        hover:after:w-full"
