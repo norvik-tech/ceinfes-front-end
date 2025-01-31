@@ -1,7 +1,9 @@
 "use client"
+
 import {
   Image,
   Navbar,
+  NavbarBrand,
   NavbarContent,
   NavbarItem,
   NavbarMenu,
@@ -19,54 +21,50 @@ const ToggleNav = ({ children }: { children: React.ReactNode }) => {
   return (
     <Navbar
       classNames={{
-        wrapper: "md:w-[100vw] justify-between p-0",
-        base: "w-[100vw] justify-between p-0",
-        content: "md:w-[100vw] justify-between p-0",
+        wrapper: "content-container",
       }}
       onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
     >
-      <div
-        key="navbar-content"
-        className="flex w-[98vw] pl-4 gap-10 items-center justify-between"
-      >
-        <NavbarContent>
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden"
-          />
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
           <Image
             src="/ceinfes-logo.png"
             radius="none"
             className="w-[100px] md:min-w-[8vw]"
             alt="Ceinfes"
           />
-        </NavbarContent>
+        </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent
+        className="hidden sm:flex gap-[2vw] w-full"
+        justify="center"
+      >
+        <ul className="flex flex-1 items-center gap-x-10 h-full text-base font-light basis-0 justify-end">
+          {NAVBAR_LINKS().map((link, index) => (
+            <LocalizedClientLink
+              href={link.href}
+              key={`${link.name}-${index}`}
+              data-testid="nav-account-link"
+              className="relative text-[1.5vw] md:text-sm group transition-colors hover:text-primary cursor-pointer 
+       after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-0 after:bg-primary 
+       after:transition-all after:origin-left 
+       hover:after:w-full"
+            >
+              {link.name}
+            </LocalizedClientLink>
+          ))}
+          {/* TODO: Search */}
+          {/* <span className="icon-[meteor-icons--search]"></span> */}
+        </ul>
+      </NavbarContent>
 
-        <NavbarContent  className="hidden sm:flex gap-[2vw]" justify="center">
-          <div key="navbar-content" className="flex flex-1 items-center gap-x-10 h-full text-base font-light basis-0 justify-end">
-            {NAVBAR_LINKS().map((link, index) => (
-              <LocalizedClientLink
-                href={link.href}
-                data-testid="nav-account-link"
-              >
-                <div
-                  key={`${link.name}-${index}`}
-                  className="relative text-[1.5vw] md:text-sm group transition-colors  hover:text-primary cursor-pointer"
-                >
-                  {link.name}
-                  <div className="absolute h-1 bg-primary left-0 -bottom-1 w-0 group-hover:w-full transition-all duration-300 origin-left" />
-                </div>
-              </LocalizedClientLink>
-            ))}
-            {/* TODO: Search */}
-            {/* <span className="icon-[meteor-icons--search]"></span> */}
-          </div>
-        </NavbarContent>
-
-        <NavbarContent justify="end">
-          <NavbarItem>{children}</NavbarItem>
-        </NavbarContent>
-      </div>
+      <NavbarContent justify="end">
+        <NavbarItem>{children}</NavbarItem>
+      </NavbarContent>
 
       <NavbarMenu>
         {NAVBAR_LINKS().map((item, index) => (
