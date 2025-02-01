@@ -5,7 +5,7 @@ import ToggleNav from "@modules/layout/components/toggle-nav"
 
 export default async function Nav() {
   return (
-    <div className="sticky top-0 inset-x-0 z-50">
+    <div className="sticky border-b border-ui-border-base top-0 inset-x-0 z-50">
       <ToggleNav>
         <Suspense
           fallback={

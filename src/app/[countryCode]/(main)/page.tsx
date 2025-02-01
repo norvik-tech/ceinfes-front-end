@@ -1,3 +1,4 @@
+import Banner from "@modules/blog/components/Banner"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  return <></>
+  return <main className='bg-dots h-full w-full overflow-x-hidden'><Banner/></main>
 }
