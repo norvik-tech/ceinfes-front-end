@@ -24,7 +24,7 @@ const Programs = () => {
       {programs.map((item) => (
         <div className="flex justify-center items-center text-center flex-col gap-3">
           <Image className="w-[120px] mx-auto mb-3" src={item.src} />
-          <p className="text-[30px] text-darkgrey max-w-[250px] leading-[35px] font-bold">{item.title}</p>
+          <p className="text-[30px] text-darkGrey max-w-[250px] leading-[35px] font-bold">{item.title}</p>
           <p className="max-w-[300px] text-sm font-light">{item.description}</p>
         </div>
       ))}
