@@ -2,7 +2,7 @@ import Banner from "@modules/home/components/Banner"
 import Programs from "@modules/home/components/Programs"
 import React from "react"
 
-const Home = () => {
+const HomeLayout = () => {
   return (
     <main className="bg-dots h-full w-full overflow-x-hidden">
       <Banner />
@@ -11,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeLayout
