@@ -1,3 +1,4 @@
+import HomeLayout from "@modules/home/layout"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -7,6 +8,6 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <Home/>
+    <HomeLayout/>
   )
 }

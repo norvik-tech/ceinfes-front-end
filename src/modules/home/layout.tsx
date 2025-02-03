@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from './components/Banner'
 import Programs from './components/Programs'
 
-const layout = () => {
+const HomeLayout = () => {
   return (
     <main className="bg-dots h-full w-full overflow-x-hidden">
       <Banner/>
@@ -11,4 +11,4 @@ const layout = () => {
   )
 }
 
-export default layout
+export default HomeLayout
