@@ -23,7 +23,7 @@ const newsItems: NewsItem[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ia",
     image:
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7LQvjp81K8mLFoWGFGyAUcoaaEzm7K.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7LQvjp81K8mLFoWGFGyAUcoaaEzm7K.png",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const newsItems: NewsItem[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ia",
     image:
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-puQdPHUqgfXfNLuCGPjj1oHyOeGjtb.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-puQdPHUqgfXfNLuCGPjj1oHyOeGjtb.png",
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const newsItems: NewsItem[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ia",
     image:
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7LQvjp81K8mLFoWGFGyAUcoaaEzm7K.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7LQvjp81K8mLFoWGFGyAUcoaaEzm7K.png",
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ const newsItems: NewsItem[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ia",
     image:
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-puQdPHUqgfXfNLuCGPjj1oHyOeGjtb.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-puQdPHUqgfXfNLuCGPjj1oHyOeGjtb.png",
   },
 ]
 
@@ -60,8 +60,8 @@ export const useNews = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current
       container.scrollBy({
-        left: scrollStep, // Hacer scroll a la derecha
-        behavior: "smooth", // Desplazamiento suave
+        left: scrollStep,
+        behavior: "smooth",
       })
     }
     setCurrentIndex((prev) => (prev + 1) % newsItems.length)
@@ -71,8 +71,8 @@ export const useNews = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current
       container.scrollBy({
-        left: -scrollStep, // Hacer scroll a la izquierda
-        behavior: "smooth", // Desplazamiento suave
+        left: -scrollStep,
+        behavior: "smooth",
       })
     }
     setCurrentIndex((prev) => (prev - 1 + newsItems.length) % newsItems.length)

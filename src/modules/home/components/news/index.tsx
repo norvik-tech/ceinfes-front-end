@@ -16,7 +16,7 @@ const News = () => {
   } = useNews()
 
   return (
-    <div className="w-full flex flex-col justify-center pl-[12%]  p-4">
+    <div className="w-full flex flex-col justify-center md:pl-[12%]  p-4">
       <h2 className="text-[35px] max-w-[200px] md:max-w-[500px] leading-[2.7rem] mx-auto text-center font-semibold mb-8 md:mb-14">
         <span className="text-secondary md:text-primary">Noticias y </span>
         <span className="text-primary md:text-secondary">actualidad</span>
