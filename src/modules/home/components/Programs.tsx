@@ -22,7 +22,7 @@ const Programs = () => {
   return (
     <section className="w-full flex flex-wrap-reverse gap-x-5 gap-y-10 items-center justify-center p-20 h-full bg-white/65">
       {programs.map((item) => (
-        <div className="flex justify-center items-center text-center flex-col gap-3">
+        <div key={item.title} className="flex justify-center items-center text-center flex-col gap-3">
           <Image className="w-[120px] mx-auto mb-3" src={item.src} />
           <p className="text-[30px] text-darkGrey max-w-[250px] leading-[35px] font-bold">{item.title}</p>
           <p className="max-w-[300px] text-sm font-light">{item.description}</p>
