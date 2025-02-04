@@ -20,7 +20,7 @@ const Programs = () => {
       },
   ]
   return (
-    <section className="w-full flex flex-wrap-reverse gap-x-5 gap-y-10 items-center justify-center p-20 h-full bg-white/65">
+    <section className="w-full shadow-xl md:shadow-none mb-8 flex flex-wrap-reverse gap-x-5 gap-y-10 items-center justify-center p-20 h-full bg-white/80">
       {programs.map((item) => (
         <div key={item.title} className="flex justify-center items-center text-center flex-col gap-3">
           <Image className="w-[120px] mx-auto mb-3" src={item.src} />

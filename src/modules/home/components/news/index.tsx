@@ -39,14 +39,14 @@ const News = () => {
         <ScrollShadow
           orientation="horizontal"
           ref={scrollContainerRef}
-          className="hidden md:flex gap-4 overflow-x-auto no-scrollbar"
+          className="hidden md:p-5 md:flex gap-6 overflow-x-auto no-scrollbar"
         >
           {newsItems.map((item) => (
             <NewCard key={item.id} item={item} />
           ))}
         </ScrollShadow>
 
-        <div className="flex w-full justify-center md:justify-start mt-4 gap-5 text-secondary text-[40px]">
+        <div className="flex w-full justify-center md:justify-start pl-3 mt-2 gap-4 text-secondary text-[40px]">
           <button
             onClick={handlePrevious}
             className="p-2 rounded-full"
