@@ -2,9 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 .bg-dots {
-  --dot-bg: #ffffff;
+  --dot-bg: #fdfdfd;
   --dot-color: #e0e0e0;  /* Color más oscuro (antes era #f5f5f5) */
-  --dot-size: 1.3px;     /* Puntos ligeramente más grandes */
+  --dot-size: 1.4px;     /* Puntos ligeramente más grandes */
   --dot-space: 7px;     /* Menos espacio entre puntos (antes era 22px) */
   background: 
     linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),

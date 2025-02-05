@@ -2,6 +2,7 @@ import React from "react"
 import Banner from "./components/Banner"
 import Programs from "./components/Programs"
 import News from "./components/news"
+import Investigation from "./components/Investigation"
 
 
 const HomeLayout = () => {
@@ -10,6 +11,7 @@ const HomeLayout = () => {
       <Banner />
       <Programs />
       <News/>
+      <Investigation/>
     </main>
   )
 }
