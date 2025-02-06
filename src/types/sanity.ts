@@ -14,418 +14,192 @@
 
 // Source: schema.json
 export type SanityImagePaletteSwatch = {
-  _type: "sanity.imagePaletteSwatch"
-  background?: string
-  foreground?: string
-  population?: number
-  title?: string
-}
+  _type: "sanity.imagePaletteSwatch";
+  background?: string;
+  foreground?: string;
+  population?: number;
+  title?: string;
+};
 
 export type SanityImagePalette = {
-  _type: "sanity.imagePalette"
-  darkMuted?: SanityImagePaletteSwatch
-  lightVibrant?: SanityImagePaletteSwatch
-  darkVibrant?: SanityImagePaletteSwatch
-  vibrant?: SanityImagePaletteSwatch
-  dominant?: SanityImagePaletteSwatch
-  lightMuted?: SanityImagePaletteSwatch
-  muted?: SanityImagePaletteSwatch
-}
+  _type: "sanity.imagePalette";
+  darkMuted?: SanityImagePaletteSwatch;
+  lightVibrant?: SanityImagePaletteSwatch;
+  darkVibrant?: SanityImagePaletteSwatch;
+  vibrant?: SanityImagePaletteSwatch;
+  dominant?: SanityImagePaletteSwatch;
+  lightMuted?: SanityImagePaletteSwatch;
+  muted?: SanityImagePaletteSwatch;
+};
 
 export type SanityImageDimensions = {
-  _type: "sanity.imageDimensions"
-  height?: number
-  width?: number
-  aspectRatio?: number
-}
+  _type: "sanity.imageDimensions";
+  height?: number;
+  width?: number;
+  aspectRatio?: number;
+};
 
 export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot"
-  x?: number
-  y?: number
-  height?: number
-  width?: number
-}
+  _type: "sanity.imageHotspot";
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+};
 
 export type SanityImageCrop = {
-  _type: "sanity.imageCrop"
-  top?: number
-  bottom?: number
-  left?: number
-  right?: number
-}
+  _type: "sanity.imageCrop";
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
 
 export type SanityFileAsset = {
-  _id: string
-  _type: "sanity.fileAsset"
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  source?: SanityAssetSourceData
-}
+  _id: string;
+  _type: "sanity.fileAsset";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash?: string;
+  extension?: string;
+  mimeType?: string;
+  size?: number;
+  assetId?: string;
+  uploadId?: string;
+  path?: string;
+  url?: string;
+  source?: SanityAssetSourceData;
+};
 
 export type SanityImageAsset = {
-  _id: string
-  _type: "sanity.imageAsset"
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  metadata?: SanityImageMetadata
-  source?: SanityAssetSourceData
-}
+  _id: string;
+  _type: "sanity.imageAsset";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash?: string;
+  extension?: string;
+  mimeType?: string;
+  size?: number;
+  assetId?: string;
+  uploadId?: string;
+  path?: string;
+  url?: string;
+  metadata?: SanityImageMetadata;
+  source?: SanityAssetSourceData;
+};
 
 export type SanityImageMetadata = {
-  _type: "sanity.imageMetadata"
-  location?: Geopoint
-  dimensions?: SanityImageDimensions
-  palette?: SanityImagePalette
-  lqip?: string
-  blurHash?: string
-  hasAlpha?: boolean
-  isOpaque?: boolean
-}
+  _type: "sanity.imageMetadata";
+  location?: Geopoint;
+  dimensions?: SanityImageDimensions;
+  palette?: SanityImagePalette;
+  lqip?: string;
+  blurHash?: string;
+  hasAlpha?: boolean;
+  isOpaque?: boolean;
+};
 
 export type Geopoint = {
-  _type: "geopoint"
-  lat?: number
-  lng?: number
-  alt?: number
-}
+  _type: "geopoint";
+  lat?: number;
+  lng?: number;
+  alt?: number;
+};
 
 export type SanityAssetSourceData = {
-  _type: "sanity.assetSourceData"
-  name?: string
-  id?: string
-  url?: string
-}
+  _type: "sanity.assetSourceData";
+  name?: string;
+  id?: string;
+  url?: string;
+};
 
 export type InvestigationCategory = {
-  _id: string
-  _type: "investigationCategory"
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: string
-  thumbnail?: string
-  bannerImage?: string
-  slug?: Slug
-  description?: string
-}
+  _id: string;
+  _type: "investigationCategory";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  thumbnail?: string;
+  bannerImage?: string;
+  slug?: Slug;
+  description?: string;
+};
 
 export type InvestigationPost = {
-  _id: string
-  _type: "investigationPost"
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: string
-  description?: string
-  slug?: Slug
-  thumbnail?: string
+  _id: string;
+  _type: "investigationPost";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  description?: string;
+  slug?: Slug;
+  thumbnail?: string;
   categories?: Array<{
-    _ref: string
-    _type: "reference"
-    _weak?: boolean
-    _key: string
-    [internalGroqTypeReferenceTo]?: "investigationCategory"
-  }>
-  views?: number
-  publishedAt?: string
-  body?: string
-}
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "investigationCategory";
+  }>;
+  views?: number;
+  publishedAt?: string;
+  body?: string;
+};
 
 export type Post = {
-  _id: string
-  _type: "post"
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: string
-  slug?: Slug
-  description?: string
-  thumbnail?: string
+  _id: string;
+  _type: "post";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
+  thumbnail?: string;
   categories?: Array<{
-    _ref: string
-    _type: "reference"
-    _weak?: boolean
-    _key: string
-    [internalGroqTypeReferenceTo]?: "postCategory"
-  }>
-  views?: number
-  publishedAt?: string
-  body?: string
-}
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "postCategory";
+  }>;
+  views?: number;
+  publishedAt?: string;
+  body?: string;
+};
 
 export type PostCategory = {
-  _id: string
-  _type: "postCategory"
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: string
-  slug?: Slug
-  description?: string
-}
+  _id: string;
+  _type: "postCategory";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
+};
 
 export type Slug = {
-  _type: "slug"
-  current?: string
-  source?: string
-}
+  _type: "slug";
+  current?: string;
+  source?: string;
+};
 
-export type Markdown = string
+export type Markdown = string;
 
-export type AllSanitySchemaTypes =
-  | SanityImagePaletteSwatch
-  | SanityImagePalette
-  | SanityImageDimensions
-  | SanityImageHotspot
-  | SanityImageCrop
-  | SanityFileAsset
-  | SanityImageAsset
-  | SanityImageMetadata
-  | Geopoint
-  | SanityAssetSourceData
-  | InvestigationCategory
-  | InvestigationPost
-  | Post
-  | PostCategory
-  | Slug
-  | Markdown
-export declare const internalGroqTypeReferenceTo: unique symbol
-// Source: ./src/modules/blog/sanity/lib/queries.ts
-// Variable: TOTAL_INVESTIGATION_POSTS_QUERY
-// Query: count(*[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])
-export type TOTAL_INVESTIGATION_POSTS_QUERYResult = number
-// Variable: TOTAL_POSTS_QUERY
-// Query: count(*[_type == "post" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])
-export type TOTAL_POSTS_QUERYResult = number
-// Variable: INVESTIGATION_POSTS_QUERY
-// Query: *[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)] | order(publishedAt desc) [$start...$end] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      thumbnail,      description    },    body  }
-export type INVESTIGATION_POSTS_QUERYResult = Array<{
-  _id: string
-  title: string | null
-  description: string | null
-  slug: Slug | null
-  publishedAt: string | null
-  views: number | null
-  thumbnail: string | null
-  categories: Array<{
-    _id: string
-    title: string | null
-    thumbnail: string | null
-    description: string | null
-  }> | null
-  body: string | null
-}>
-// Variable: INVESTIGATION_POST_BY_ID_QUERY
-// Query: *[    _type == "investigationPost" &&    _id == $id  ][0] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      thumbnail,      bannerImage,      description    },    body  }
-export type INVESTIGATION_POST_BY_ID_QUERYResult = {
-  _id: string
-  title: string | null
-  description: string | null
-  slug: Slug | null
-  publishedAt: string | null
-  views: number | null
-  thumbnail: string | null
-  categories: Array<{
-    _id: string
-    title: string | null
-    thumbnail: string | null
-    bannerImage: string | null
-    description: string | null
-  }> | null
-  body: string | null
-} | null
-// Variable: INVESTIGATION_POSTS_BY_CATEGORY_QUERY
-// Query: *[    _type == "investigationPost" &&    $categoryId in categories[]._ref  ] | order(publishedAt desc) {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      thumbnail,      description    },    body  }
-export type INVESTIGATION_POSTS_BY_CATEGORY_QUERYResult = Array<{
-  _id: string
-  title: string | null
-  description: string | null
-  slug: Slug | null
-  publishedAt: string | null
-  views: number | null
-  thumbnail: string | null
-  categories: Array<{
-    _id: string
-    title: string | null
-    thumbnail: string | null
-    description: string | null
-  }> | null
-  body: string | null
-}>
-// Variable: INVESTIGATION_CATEGORIES_QUERY
-// Query: *[_type == "investigationCategory"] | order(title asc) {    _id,    title,    description,    thumbnail,    bannerImage,    "slug": slug.current,    "postCount": count(*[      _type == "investigationPost" &&      references(^._id)    ])  }
-export type INVESTIGATION_CATEGORIES_QUERYResult = Array<{
-  _id: string
-  title: string | null
-  description: string | null
-  thumbnail: string | null
-  bannerImage: string | null
-  slug: string | null
-  postCount: number
-}>
-// Variable: INVESTIGATION_CATEGORY_BY_SLUG_QUERY
-// Query: *[    _type == "investigationCategory" &&    slug.current == $slug  ][0] {    _id,    title,    description,    thumbnail,    bannerImage,    "slug": slug.current,    "posts": *[      _type == "investigationPost" &&      references(^._id)    ] | order(publishedAt desc) {      _id,      title,      description,      slug,      publishedAt,      views,      mainImage,      categories[] -> {        _id,        title      }    }  }
-export type INVESTIGATION_CATEGORY_BY_SLUG_QUERYResult = {
-  _id: string
-  title: string | null
-  description: string | null
-  thumbnail: string | null
-  bannerImage: string | null
-  slug: string | null
-  posts: Array<{
-    _id: string
-    title: string | null
-    description: string | null
-    slug: Slug | null
-    publishedAt: string | null
-    views: number | null
-    mainImage: null
-    categories: Array<{
-      _id: string
-      title: string | null
-    }> | null
-  }>
-} | null
-// Variable: INVESTIGATION_POST_VIEW_QUERY
-// Query: *[    _type == "investigationPost" &&    _id == $id  ][0] {    _id,    views  }
-export type INVESTIGATION_POST_VIEW_QUERYResult = {
-  _id: string
-  views: number | null
-} | null
-// Variable: POSTS_QUERY
-// Query: *[    _type == "post" &&    defined(slug.current) &&    (!defined($search) || title match $search || categories[]->title match $search)  ] | order(publishedAt desc) [$start...$end] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      description    },    body  }
-export type POSTS_QUERYResult = Array<{
-  _id: string
-  title: string | null
-  description: string | null
-  slug: Slug | null
-  publishedAt: string | null
-  views: number | null
-  thumbnail: string | null
-  categories: Array<{
-    _id: string
-    title: string | null
-    description: string | null
-  }> | null
-  body: string | null
-}>
-// Variable: POST_BY_ID_QUERY
-// Query: *[    _type == "post" &&    _id == $id  ][0] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      description    },    body  }
-export type POST_BY_ID_QUERYResult = {
-  _id: string
-  title: string | null
-  description: string | null
-  slug: Slug | null
-  publishedAt: string | null
-  views: number | null
-  thumbnail: string | null
-  categories: Array<{
-    _id: string
-    title: string | null
-    description: string | null
-  }> | null
-  body: string | null
-} | null
-// Variable: POSTS_BY_CATEGORY_QUERY
-// Query: *[    _type == "post" &&    $categoryId in categories[]._ref  ] | order(publishedAt desc) {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    categories[] -> {      _id,      title,      description    },    body  }
-export type POSTS_BY_CATEGORY_QUERYResult = Array<{
-  _id: string
-  title: string | null
-  description: string | null
-  slug: Slug | null
-  publishedAt: string | null
-  views: number | null
-  thumbnail: string | null
-  categories: Array<{
-    _id: string
-    title: string | null
-    description: string | null
-  }> | null
-  body: string | null
-}>
-// Variable: POST_CATEGORIES_QUERY
-// Query: *[_type == "postCategory"] | order(title asc) {    _id,    title,    description,    "slug": slug.current,    "postCount": count(*[      _type == "post" &&      references(^._id)    ])  }
-export type POST_CATEGORIES_QUERYResult = Array<{
-  _id: string
-  title: string | null
-  description: string | null
-  slug: string | null
-  postCount: number
-}>
-// Variable: POST_CATEGORY_BY_SLUG_QUERY
-// Query: *[    _type == "postCategory" &&    slug.current == $slug  ][0] {    _id,    title,    description,    "slug": slug.current,    "posts": *[      _type == "post" &&      references(^._id)    ] | order(publishedAt desc) {      _id,      title,      description,      slug,      publishedAt,      views,      thumbnail,      categories[] -> {        _id,        title      }    }  }
-export type POST_CATEGORY_BY_SLUG_QUERYResult = {
-  _id: string
-  title: string | null
-  description: string | null
-  slug: string | null
-  posts: Array<{
-    _id: string
-    title: string | null
-    description: string | null
-    slug: Slug | null
-    publishedAt: string | null
-    views: number | null
-    thumbnail: string | null
-    categories: Array<{
-      _id: string
-      title: string | null
-    }> | null
-  }>
-} | null
-// Variable: POST_VIEW_QUERY
-// Query: *[    _type == "post" &&    _id == $id  ][0] {    _id,    views  }
-export type POST_VIEW_QUERYResult = {
-  _id: string
-  views: number | null
-} | null
-
-// Query TypeMap
-import "@sanity/client"
-declare module "@sanity/client" {
-  interface SanityQueries {
-    '\n  count(*[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])\n': TOTAL_INVESTIGATION_POSTS_QUERYResult
-    '\n  count(*[_type == "post" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])\n': TOTAL_POSTS_QUERYResult
-    '\n  *[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)] | order(publishedAt desc) [$start...$end] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POSTS_QUERYResult
-    '\n  *[\n    _type == "investigationPost" &&\n    _id == $id\n  ][0] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      bannerImage,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POST_BY_ID_QUERYResult
-    '\n  *[\n    _type == "investigationPost" &&\n    $categoryId in categories[]._ref\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POSTS_BY_CATEGORY_QUERYResult
-    '\n  *[_type == "investigationCategory"] | order(title asc) {\n    _id,\n    title,\n    description,\n    thumbnail,\n    bannerImage,\n    "slug": slug.current,\n    "postCount": count(*[\n      _type == "investigationPost" &&\n      references(^._id)\n    ])\n  }\n': INVESTIGATION_CATEGORIES_QUERYResult
-    '\n  *[\n    _type == "investigationCategory" &&\n    slug.current == $slug\n  ][0] {\n    _id,\n    title,\n    description,\n    thumbnail,\n    bannerImage,\n    "slug": slug.current,\n    "posts": *[\n      _type == "investigationPost" &&\n      references(^._id)\n    ] | order(publishedAt desc) {\n      _id,\n      title,\n      description,\n      slug,\n      publishedAt,\n      views,\n      mainImage,\n      categories[] -> {\n        _id,\n        title\n      }\n    }\n  }\n': INVESTIGATION_CATEGORY_BY_SLUG_QUERYResult
-    '\n  *[\n    _type == "investigationPost" &&\n    _id == $id\n  ][0] {\n    _id,\n    views\n  }\n': INVESTIGATION_POST_VIEW_QUERYResult
-    '\n  *[\n    _type == "post" &&\n    defined(slug.current) &&\n    (!defined($search) || title match $search || categories[]->title match $search)\n  ] | order(publishedAt desc) [$start...$end] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      description\n    },\n    body\n  }\n': POSTS_QUERYResult
-    '\n  *[\n    _type == "post" &&\n    _id == $id\n  ][0] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      description\n    },\n    body\n  }\n': POST_BY_ID_QUERYResult
-    '\n  *[\n    _type == "post" &&\n    $categoryId in categories[]._ref\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      description\n    },\n    body\n  }\n': POSTS_BY_CATEGORY_QUERYResult
-    '\n  *[_type == "postCategory"] | order(title asc) {\n    _id,\n    title,\n    description,\n    "slug": slug.current,\n    "postCount": count(*[\n      _type == "post" &&\n      references(^._id)\n    ])\n  }\n': POST_CATEGORIES_QUERYResult
-    '\n  *[\n    _type == "postCategory" &&\n    slug.current == $slug\n  ][0] {\n    _id,\n    title,\n    description,\n    "slug": slug.current,\n    "posts": *[\n      _type == "post" &&\n      references(^._id)\n    ] | order(publishedAt desc) {\n      _id,\n      title,\n      description,\n      slug,\n      publishedAt,\n      views,\n      thumbnail,\n      categories[] -> {\n        _id,\n        title\n      }\n    }\n  }\n': POST_CATEGORY_BY_SLUG_QUERYResult
-    '\n  *[\n    _type == "post" &&\n    _id == $id\n  ][0] {\n    _id,\n    views\n  }\n': POST_VIEW_QUERYResult
-  }
-}
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | SanityAssetSourceData | InvestigationCategory | InvestigationPost | Post | PostCategory | Slug | Markdown;
+export declare const internalGroqTypeReferenceTo: unique symbol;

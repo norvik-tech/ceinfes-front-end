@@ -3,6 +3,7 @@ import Banner from "./components/Banner"
 import Programs from "./components/Programs"
 import News from "./components/news"
 import Investigation from "./components/Investigation"
+import Innovation from "./components/Innovation"
 
 
 const HomeLayout = () => {
@@ -12,6 +13,7 @@ const HomeLayout = () => {
       <Programs />
       <News/>
       <Investigation/>
+      <Innovation/>
     </main>
   )
 }
