@@ -87,16 +87,16 @@ const CartDropdown = ({
             data-testid="nav-cart-link"
           >
             <Button
-              className=" gap-2 bg-primary text-white"
+              className="gap-2 bg-primary text-white text-base rounded-lg"
               startContent={
                 <i
-                  className="icon-[ri--shopping-cart-2-line] text-xl"
+                  className="icon-[ri--shopping-cart-2-line] text-lg"
                   role="img"
                   aria-hidden="true"
                 />
               }
             >
-              <p className="mt-1">{`Tienda (${totalItems})`}</p>
+              <p>{`Tienda (${totalItems})`}</p>
             </Button>{" "}
           </LocalizedClientLink>
         </PopoverButton>

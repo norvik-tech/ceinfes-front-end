@@ -64,6 +64,7 @@ module.exports = {
       },
       fontFamily: {
         "helvetica-neue": ["var(--font-helvetica-neue)"],
+        poppins: ["var(--font-poppins)"],
       },
       keyframes: {
         ring: {
