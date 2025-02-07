@@ -4,6 +4,7 @@ import Programs from "./components/Programs"
 import News from "./components/news"
 import Investigation from "./components/Investigation"
 import Innovation from "./components/Innovation"
+import About from "./components/About"
 
 
 const HomeLayout = () => {
@@ -14,6 +15,7 @@ const HomeLayout = () => {
       <News/>
       <Investigation/>
       <Innovation/>
+      <About/>
     </main>
   )
 }
