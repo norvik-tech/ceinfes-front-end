@@ -1,5 +1,4 @@
 "use client"
-"use client"
 import React, { useRef } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useNews } from "@modules/home/hooks/News"
