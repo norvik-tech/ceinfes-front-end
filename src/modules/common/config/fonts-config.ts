@@ -1,4 +1,5 @@
 import localFont from "next/font/local"
+import { Poppins } from "next/font/google"
 
 export const HelveticaNeue = localFont({
   src: [
@@ -84,4 +85,10 @@ export const HelveticaNeue = localFont({
     },
   ],
   variable: "--font-helvetica-neue",
+})
+
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
 })
