@@ -3,17 +3,19 @@
 import React, { useRef } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useNews } from "@modules/home/hooks/News"
-import NewCard from "./NewCard"
 import { Button, ScrollShadow } from "@heroui/react"
+import { PostType } from "types/blog"
+import NewCard from "./NewCard"
 
-export const NewsSection = () => {
-  const {
-    newsItems,
-    currentIndex,
-    handleNext,
-    handlePrevious,
-    scrollContainerRef,
-  } = useNews()
+interface Props {
+  posts: PostType[]
+}
+
+export const NewsSection = ({ posts }: Props) => {
+  const { currentIndex, handleNext, handlePrevious, scrollContainerRef } =
+    useNews(posts)
+
+  if (!posts) return
 
   return (
     <section className="w-full flex flex-col justify-center py-12 lg:py-20 content-container gap-y-8 md:gap-y-16">
@@ -26,23 +28,23 @@ export const NewsSection = () => {
         <AnimatePresence mode="wait">
           <motion.div
             className="md:hidden"
-            key={newsItems[currentIndex].id}
             initial={{ opacity: 0.5, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.1 }}
           >
-            <NewCard item={newsItems[currentIndex]} />
+            <NewCard post={posts?.[currentIndex]} />
           </motion.div>
         </AnimatePresence>
 
         <ScrollShadow
           orientation="horizontal"
+          size={30}
           ref={scrollContainerRef}
           className="hidden md:p-5 md:flex gap-6 overflow-x-auto no-scrollbar"
         >
-          {newsItems.map((item) => (
-            <NewCard key={item.id} item={item} />
+          {posts.map((post) => (
+            <NewCard key={post?._id} post={post} />
           ))}
         </ScrollShadow>
       </div>
