@@ -74,11 +74,7 @@ const CartDropdown = ({
   }, [totalItems, itemRef.current])
 
   return (
-    <div
-      className="h-full z-50"
-      onMouseEnter={openAndCancel}
-      onMouseLeave={close}
-    >
+    <div className="h-full" onMouseEnter={openAndCancel} onMouseLeave={close}>
       <Popover className="relative h-full">
         <PopoverButton className="h-full min-w-[67.3px]">
           <LocalizedClientLink
@@ -87,17 +83,17 @@ const CartDropdown = ({
             data-testid="nav-cart-link"
           >
             <Button
-              className=" gap-2 bg-primary text-white"
+              className="gap-2 bg-primary text-white rounded-lg text-sm xl:text-base"
               startContent={
                 <i
-                  className="icon-[ri--shopping-cart-2-line] text-xl"
+                  className="icon-[ri--shopping-cart-2-line] text-base xl:text-lg"
                   role="img"
                   aria-hidden="true"
                 />
               }
             >
-              <p className="mt-1">{`Tienda (${totalItems})`}</p>
-            </Button>{" "}
+              <p>{`Tienda (${totalItems})`}</p>
+            </Button>
           </LocalizedClientLink>
         </PopoverButton>
         <Transition
