@@ -4,7 +4,7 @@ export const Banner = () => {
   return (
     <section className="w-full flex flex-col  md:flex-row">
       <article className="flex flex-col w-full md:w-1/2 gap-5 md:pl-[5%] lg:pl-[10%] justify-center pt-7">
-        <div className="font-medium text-[38px] md:text-[5vw] leading-[1.1] flex flex-col text-center md:text-left">
+        <div className="font-medium text-[38px] lg:text-[73.75px] leading-[1.1] flex flex-col text-center md:text-left">
           <p className="text-primary">Investigación</p>
           <p className="text-secondary">educativa a tu alcance</p>
         </div>
