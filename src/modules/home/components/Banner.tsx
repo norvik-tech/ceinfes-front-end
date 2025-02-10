@@ -1,7 +1,6 @@
 import { Button, Image } from "@heroui/react"
-import React from "react"
 
-const Banner = () => {
+export const Banner = () => {
   return (
     <section className="w-full flex flex-col  md:flex-row">
       <article className="flex flex-col w-full md:w-1/2 gap-5 md:pl-[5%] lg:pl-[10%] justify-center pt-7">
@@ -46,5 +45,3 @@ const Banner = () => {
     </section>
   )
 }
-
-export default Banner
