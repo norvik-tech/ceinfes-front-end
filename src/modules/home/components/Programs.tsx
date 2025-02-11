@@ -9,7 +9,7 @@ export const Programs = () => {
         {PROGRAMS.map((program, index) => (
           <li
             key={`${program.title}-${index}`}
-            className="flex justify-center items-center text-center flex-col gap-3"
+            className="flex justify-center items-center text-center flex-col gap-3 text-darkGrey"
           >
             <Image className="w-[120px] mx-auto mb-3" src={program.src} />
             <p className="text-[30px] text-darkgrey max-w-[250px] leading-[35px] font-bold">
