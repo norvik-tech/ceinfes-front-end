@@ -18,7 +18,7 @@ export const NewsSection = ({ posts }: Props) => {
   if (!posts) return
 
   return (
-    <section className="w-full flex flex-col justify-center py-12 lg:py-20 content-container gap-y-8 md:gap-y-16">
+    <section className="w-full flex flex-col justify-center py-6 lg:py-20 content-container gap-y-8 md:gap-y-16">
       <h3 className="leading-[1.1] mx-auto text-center font-medium text-[38px] lg:text-[73.75px]">
         <span className="text-secondary md:text-primary">Noticias y </span>
         <span className="text-primary md:text-secondary">actualidad</span>

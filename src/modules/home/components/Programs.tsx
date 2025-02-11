@@ -4,7 +4,7 @@ import { PROGRAMS } from "../data/programs"
 
 export const Programs = () => {
   return (
-    <section className="py-12 lg:py-20  h-full bg-white">
+    <section className="py-6 lg:py-20 h-full bg-white">
       <ul className="w-full lg:w-[90%] mx-auto items-center justify-around flex flex-wrap-reverse gap-y-10">
         {PROGRAMS.map((program, index) => (
           <li
