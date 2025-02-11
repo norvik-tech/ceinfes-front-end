@@ -64,6 +64,7 @@ module.exports = {
       },
       fontFamily: {
         "helvetica-neue": ["var(--font-helvetica-neue)"],
+        poppins: ["var(--font-poppins)"],
       },
       keyframes: {
         ring: {
@@ -162,7 +163,9 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            primary: "#F97203",
+            primary: {
+              foreground: "#fff",
+            },
             secondary: "#385B8A",
             foreground: "#212121",
           },
