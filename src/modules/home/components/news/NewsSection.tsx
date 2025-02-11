@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useNews } from "@modules/home/hooks/News"
 import { Button, ScrollShadow } from "@heroui/react"
 import { PostType } from "types/blog"
-import NewCard from "./NewCard"
+import { NewCard } from "./NewCard"
 
 interface Props {
   posts: PostType[]

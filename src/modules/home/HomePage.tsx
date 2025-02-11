@@ -1,4 +1,5 @@
 import { Banner } from "./components/Banner"
+import { Innovation } from "./components/Innovation"
 import Investigation from "./components/Investigation"
 import { NewsSection } from "./components/news/NewsSection"
 import { Programs } from "./components/Programs"
@@ -15,6 +16,7 @@ export const HomePage = ({ posts }: HomePageProps) => {
       <Programs />
       <NewsSection posts={posts} />
       <Investigation />
+      <Innovation />
     </main>
   )
 }

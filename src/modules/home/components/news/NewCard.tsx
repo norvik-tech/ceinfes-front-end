@@ -8,10 +8,9 @@ import {
 } from "@heroui/react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
-import React from "react"
 import { PostType } from "types/blog"
 
-const NewCard = ({ post }: { post: PostType }) => {
+export const NewCard = ({ post }: { post: PostType }) => {
   const { countryCode } = useParams()
 
   return (
@@ -48,5 +47,3 @@ const NewCard = ({ post }: { post: PostType }) => {
     </Card>
   )
 }
-
-export default NewCard
