@@ -14,9 +14,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" data-mode="light">
       <body className={`${poppins.variable} font-poppins text-dark`}>
-        <HeroUIProvider>
-          <main className="relative">{props.children}</main>
-        </HeroUIProvider>
+        <HeroUIProvider>{props.children}</HeroUIProvider>
       </body>
     </html>
   )
