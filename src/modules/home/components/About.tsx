@@ -2,7 +2,7 @@ import { Button, Image } from "@heroui/react"
 
 export const About = () => {
   return (
-    <section className="bg-white md:rounded-lg p-8 md:justify-between md:px-16 shadow-lg my-10 relative flex flex-col gap-[24px] md:flex-row content-container">
+    <section className="bg-white md:rounded-3xl py-12 md:justify-between md:px-16 shadow-lg my-10 relative flex flex-col gap-[24px] md:flex-row content-container">
       <div className="flex flex-col gap-5 md:justify-center md:w-[50%]">
         <Image
           classNames={{
