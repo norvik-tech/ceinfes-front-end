@@ -3,6 +3,7 @@ import { Banner } from "./components/Banner"
 import { Innovation } from "./components/Innovation"
 import Investigation from "./components/Investigation"
 import { NewsSection } from "./components/news/NewsSection"
+import { Newsletter } from "./components/newsletter/Newsletter"
 import { PQRSF } from "./components/pqrsf/PQRSF"
 import { Programs } from "./components/Programs"
 import { PostType } from "types/blog"
@@ -21,6 +22,7 @@ export const HomePage = ({ posts }: HomePageProps) => {
       <Innovation />
       <About />
       <PQRSF />
+      <Newsletter />
     </main>
   )
 }
