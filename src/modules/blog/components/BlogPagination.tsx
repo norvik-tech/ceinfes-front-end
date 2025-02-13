@@ -1,6 +1,6 @@
 "use client"
 
-import { Pagination } from "@nextui-org/react"
+import { Pagination } from "@heroui/react"
 import { handlePageChange } from "../utils/page-changer"
 import { useRouter } from "next/navigation"
 

@@ -1,5 +1,5 @@
-import { Button, Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import Link from "next/link"
+import { Button, Card, CardBody, CardHeader, Image } from "@heroui/react"
 import { PostType } from "types/blog"
 import { InvestigationPostType } from "types/investigation-post"
 

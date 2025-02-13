@@ -1,4 +1,4 @@
-import { cn } from "@nextui-org/react"
+import { cn } from "@heroui/react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import React from "react"
 

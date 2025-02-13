@@ -6,7 +6,7 @@ import X from "@modules/ecommerce/common/icons/x"
 
 import OptionSelect from "./option-select"
 import { HttpTypes } from "@medusajs/types"
-import { Button, cn } from "@nextui-org/react"
+import { Button, cn } from "@heroui/react"
 import useToggleState from "@modules/ecommerce/common/hooks/use-toggle-state"
 import { getProductPrice } from "@modules/ecommerce/common/util/get-product-price"
 

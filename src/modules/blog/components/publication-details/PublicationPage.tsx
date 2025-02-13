@@ -1,4 +1,4 @@
-import { Image } from "@nextui-org/react"
+import { Image } from "@heroui/react"
 import { InvestigationPostType } from "types/investigation-post"
 import { AuthorCard } from "./AuthorCard"
 import { SectionCard } from "./SectionCard"

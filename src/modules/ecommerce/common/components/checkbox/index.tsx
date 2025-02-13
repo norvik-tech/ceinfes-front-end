@@ -1,5 +1,4 @@
-import { Checkbox } from "@nextui-org/react"
-import React from "react"
+import { Checkbox } from "@heroui/react"
 
 type CheckboxProps = {
   checked?: boolean

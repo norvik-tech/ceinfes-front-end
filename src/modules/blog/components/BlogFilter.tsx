@@ -1,6 +1,6 @@
 "use client"
 
-import { Select, SelectItem } from "@nextui-org/react"
+import { Select, SelectItem } from "@heroui/react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { useRef } from "react"
 import { CategoryType } from "types/blog"

@@ -6,7 +6,7 @@ import {
   StoreCartShippingOption,
   StorePrice,
 } from "@medusajs/types"
-import { Button, cn } from "@nextui-org/react"
+import { Button, cn } from "@heroui/react"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { useState } from "react"
 import { StoreFreeShippingPrice } from "types/global"

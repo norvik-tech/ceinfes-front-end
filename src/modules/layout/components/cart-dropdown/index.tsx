@@ -13,7 +13,7 @@ import LineItemPrice from "@modules/ecommerce/common/components/line-item-price"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { convertToLocale } from "@modules/ecommerce/common/util/money"
 import Thumbnail from "@modules/ecommerce/products/components/thumbnail"
-import { Button } from "@nextui-org/react"
+import { Button } from "@heroui/react"
 import { usePathname } from "next/navigation"
 import { Fragment, useEffect, useRef, useState } from "react"
 
@@ -74,18 +74,27 @@ const CartDropdown = ({
   }, [totalItems, itemRef.current])
 
   return (
-    <div
-      className="h-full z-50"
-      onMouseEnter={openAndCancel}
-      onMouseLeave={close}
-    >
+    <div className="h-full" onMouseEnter={openAndCancel} onMouseLeave={close}>
       <Popover className="relative h-full">
         <PopoverButton className="h-full min-w-[67.3px]">
           <LocalizedClientLink
             className=""
             href="/cart"
             data-testid="nav-cart-link"
-          >{`Carrito (${totalItems})`}</LocalizedClientLink>
+          >
+            <Button
+              className="gap-2 bg-primary text-white rounded-lg text-sm xl:text-base"
+              startContent={
+                <i
+                  className="icon-[ri--shopping-cart-2-line] text-base xl:text-lg"
+                  role="img"
+                  aria-hidden="true"
+                />
+              }
+            >
+              <p>{`Tienda (${totalItems})`}</p>
+            </Button>
+          </LocalizedClientLink>
         </PopoverButton>
         <Transition
           show={cartDropdownOpen}

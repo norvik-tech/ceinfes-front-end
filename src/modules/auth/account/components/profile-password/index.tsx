@@ -1,17 +1,17 @@
 "use client"
 
-import React, { useEffect, useActionState } from "react"
 import Input from "@modules/ecommerce/common/components/input"
 import AccountInfo from "../account-info"
 import { HttpTypes } from "@medusajs/types"
 import { toast } from "sonner"
+import { useState } from "react"
 
 type MyInformationProps = {
   customer: HttpTypes.StoreCustomer
 }
 
 const ProfilePassword: React.FC<MyInformationProps> = ({ customer }) => {
-  const [successState, setSuccessState] = React.useState(false)
+  const [successState, setSuccessState] = useState(false)
 
   // TODO: Add support for password updates
   const updatePassword = async () => {

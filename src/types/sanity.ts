@@ -240,7 +240,7 @@ export type TOTAL_INVESTIGATION_POSTS_QUERYResult = number
 // Query: count(*[_type == "post" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])
 export type TOTAL_POSTS_QUERYResult = number
 // Variable: INVESTIGATION_POSTS_QUERY
-// Query: *[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)] | order(publishedAt desc) [$start...$end] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    sections[] {      Image,      title,      description    },    categories[] -> {      _id,      title,      thumbnail,      description    },    body  }
+// Query: *[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)] | order(publishedAt desc) [$start...$end] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    sections[] {      image,      title,      description    },    categories[] -> {      _id,      title,      thumbnail,      description    },    body  }
 export type INVESTIGATION_POSTS_QUERYResult = Array<{
   _id: string
   title: string | null
@@ -250,7 +250,7 @@ export type INVESTIGATION_POSTS_QUERYResult = Array<{
   views: number | null
   thumbnail: string | null
   sections: Array<{
-    Image: null
+    image: string | null
     title: string | null
     description: string | null
   }> | null
@@ -263,7 +263,7 @@ export type INVESTIGATION_POSTS_QUERYResult = Array<{
   body: string | null
 }>
 // Variable: INVESTIGATION_POST_BY_ID_QUERY
-// Query: *[    _type == "investigationPost" &&    _id == $id  ][0] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    sections[] {      Image,      title,      description    },    categories[] -> {      _id,      title,      thumbnail,      bannerImage,      description    },    body  }
+// Query: *[    _type == "investigationPost" &&    _id == $id  ][0] {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    sections[] {      image,      title,      description    },    categories[] -> {      _id,      title,      thumbnail,      bannerImage,      description    },    body  }
 export type INVESTIGATION_POST_BY_ID_QUERYResult = {
   _id: string
   title: string | null
@@ -273,7 +273,7 @@ export type INVESTIGATION_POST_BY_ID_QUERYResult = {
   views: number | null
   thumbnail: string | null
   sections: Array<{
-    Image: null
+    image: string | null
     title: string | null
     description: string | null
   }> | null
@@ -287,7 +287,7 @@ export type INVESTIGATION_POST_BY_ID_QUERYResult = {
   body: string | null
 } | null
 // Variable: INVESTIGATION_POSTS_BY_CATEGORY_QUERY
-// Query: *[    _type == "investigationPost" &&    $categoryId in categories[]._ref  ] | order(publishedAt desc) {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    sections[] {      Image,      title,      description    },    categories[] -> {      _id,      title,      thumbnail,      description    },    body  }
+// Query: *[    _type == "investigationPost" &&    $categoryId in categories[]._ref  ] | order(publishedAt desc) {    _id,    title,    description,    slug,    publishedAt,    views,    thumbnail,    sections[] {      image,      title,      description    },    categories[] -> {      _id,      title,      thumbnail,      description    },    body  }
 export type INVESTIGATION_POSTS_BY_CATEGORY_QUERYResult = Array<{
   _id: string
   title: string | null
@@ -297,7 +297,7 @@ export type INVESTIGATION_POSTS_BY_CATEGORY_QUERYResult = Array<{
   views: number | null
   thumbnail: string | null
   sections: Array<{
-    Image: null
+    image: string | null
     title: string | null
     description: string | null
   }> | null
@@ -321,7 +321,7 @@ export type INVESTIGATION_CATEGORIES_QUERYResult = Array<{
   postCount: number
 }>
 // Variable: INVESTIGATION_CATEGORY_BY_SLUG_QUERY
-// Query: *[    _type == "investigationCategory" &&    slug.current == $slug  ][0] {    _id,    title,    description,    thumbnail,    bannerImage,    "slug": slug.current,    "posts": *[      _type == "investigationPost" &&      references(^._id)    ] | order(publishedAt desc) {      _id,      title,      description,      slug,      publishedAt,      views,      mainImage,      sections[] {        Image,        title,        description      },      categories[] -> {        _id,        title      }    }  }
+// Query: *[    _type == "investigationCategory" &&    slug.current == $slug  ][0] {    _id,    title,    description,    thumbnail,    bannerImage,    "slug": slug.current,    "posts": *[      _type == "investigationPost" &&      references(^._id)    ] | order(publishedAt desc) {      _id,      title,      description,      slug,      publishedAt,      views,      mainImage,      sections[] {        image,        title,        description      },      categories[] -> {        _id,        title      }    }  }
 export type INVESTIGATION_CATEGORY_BY_SLUG_QUERYResult = {
   _id: string
   title: string | null
@@ -338,7 +338,7 @@ export type INVESTIGATION_CATEGORY_BY_SLUG_QUERYResult = {
     views: number | null
     mainImage: null
     sections: Array<{
-      Image: null
+      image: string | null
       title: string | null
       description: string | null
     }> | null
@@ -448,11 +448,11 @@ declare module "@sanity/client" {
   interface SanityQueries {
     '\n  count(*[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])\n': TOTAL_INVESTIGATION_POSTS_QUERYResult
     '\n  count(*[_type == "post" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])\n': TOTAL_POSTS_QUERYResult
-    '\n  *[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)] | order(publishedAt desc) [$start...$end] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    sections[] {\n      Image,\n      title,\n      description\n    },\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POSTS_QUERYResult
-    '\n  *[\n    _type == "investigationPost" &&\n    _id == $id\n  ][0] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    sections[] {\n      Image,\n      title,\n      description\n    },\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      bannerImage,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POST_BY_ID_QUERYResult
-    '\n  *[\n    _type == "investigationPost" &&\n    $categoryId in categories[]._ref\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    sections[] {\n      Image,\n      title,\n      description\n    },\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POSTS_BY_CATEGORY_QUERYResult
+    '\n  *[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)] | order(publishedAt desc) [$start...$end] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    sections[] {\n      image,\n      title,\n      description\n    },\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POSTS_QUERYResult
+    '\n  *[\n    _type == "investigationPost" &&\n    _id == $id\n  ][0] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    sections[] {\n      image,\n      title,\n      description\n    },\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      bannerImage,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POST_BY_ID_QUERYResult
+    '\n  *[\n    _type == "investigationPost" &&\n    $categoryId in categories[]._ref\n  ] | order(publishedAt desc) {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    sections[] {\n      image,\n      title,\n      description\n    },\n    categories[] -> {\n      _id,\n      title,\n      thumbnail,\n      description\n    },\n    body\n  }\n': INVESTIGATION_POSTS_BY_CATEGORY_QUERYResult
     '\n  *[_type == "investigationCategory"] | order(title asc) {\n    _id,\n    title,\n    description,\n    thumbnail,\n    bannerImage,\n    "slug": slug.current,\n    "postCount": count(*[\n      _type == "investigationPost" &&\n      references(^._id)\n    ])\n  }\n': INVESTIGATION_CATEGORIES_QUERYResult
-    '\n  *[\n    _type == "investigationCategory" &&\n    slug.current == $slug\n  ][0] {\n    _id,\n    title,\n    description,\n    thumbnail,\n    bannerImage,\n    "slug": slug.current,\n    "posts": *[\n      _type == "investigationPost" &&\n      references(^._id)\n    ] | order(publishedAt desc) {\n      _id,\n      title,\n      description,\n      slug,\n      publishedAt,\n      views,\n      mainImage,\n      sections[] {\n        Image,\n        title,\n        description\n      },\n      categories[] -> {\n        _id,\n        title\n      }\n    }\n  }\n': INVESTIGATION_CATEGORY_BY_SLUG_QUERYResult
+    '\n  *[\n    _type == "investigationCategory" &&\n    slug.current == $slug\n  ][0] {\n    _id,\n    title,\n    description,\n    thumbnail,\n    bannerImage,\n    "slug": slug.current,\n    "posts": *[\n      _type == "investigationPost" &&\n      references(^._id)\n    ] | order(publishedAt desc) {\n      _id,\n      title,\n      description,\n      slug,\n      publishedAt,\n      views,\n      mainImage,\n      sections[] {\n        image,\n        title,\n        description\n      },\n      categories[] -> {\n        _id,\n        title\n      }\n    }\n  }\n': INVESTIGATION_CATEGORY_BY_SLUG_QUERYResult
     '\n  *[\n    _type == "investigationPost" &&\n    _id == $id\n  ][0] {\n    _id,\n    views\n  }\n': INVESTIGATION_POST_VIEW_QUERYResult
     '\n  *[\n    _type == "post" &&\n    defined(slug.current) &&\n    (!defined($search) || title match $search || categories[]->title match $search)\n  ] | order(publishedAt desc) [$start...$end] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      description\n    },\n    body\n  }\n': POSTS_QUERYResult
     '\n  *[\n    _type == "post" &&\n    _id == $id\n  ][0] {\n    _id,\n    title,\n    description,\n    slug,\n    publishedAt,\n    views,\n    thumbnail,\n    categories[] -> {\n      _id,\n      title,\n      description\n    },\n    body\n  }\n': POST_BY_ID_QUERYResult

@@ -1,12 +1,12 @@
 const path = require("path")
-import { nextui } from "@nextui-org/react"
+import { heroui } from "@heroui/react"
 import { addDynamicIconSelectors } from "@iconify/tailwind"
 
 module.exports = {
   darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -36,6 +36,7 @@ module.exports = {
         primary: "#F97203",
         secondary: "#385B8A",
         dark: "#212121",
+        darkGrey: "#555A65",
         "secondary-foreground": "#fff",
       },
       borderRadius: {
@@ -44,7 +45,6 @@ module.exports = {
         base: "4px",
         rounded: "8px",
         large: "16px",
-        circle: "9999px",
       },
       maxWidth: {
         "8xl": "100rem",
@@ -63,6 +63,7 @@ module.exports = {
       },
       fontFamily: {
         "helvetica-neue": ["var(--font-helvetica-neue)"],
+        poppins: ["var(--font-poppins)"],
       },
       keyframes: {
         ring: {
@@ -154,14 +155,16 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-radix")(),
-    nextui({
+    heroui({
       prefix: "nextui",
       defaultTheme: "light",
       defaultExtendTheme: "light",
       themes: {
         light: {
           colors: {
-            primary: "#F97203",
+            primary: {
+              foreground: "#fff",
+            },
             secondary: "#385B8A",
             foreground: "#212121",
           },

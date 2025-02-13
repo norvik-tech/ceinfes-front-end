@@ -4,7 +4,7 @@ import {
   acceptTransferRequest,
   declineTransferRequest,
 } from "@modules/ecommerce/common/data/orders"
-import { Button } from "@nextui-org/react"
+import { Button } from "@heroui/react"
 import { useState } from "react"
 
 type TransferStatus = "pending" | "success" | "error"

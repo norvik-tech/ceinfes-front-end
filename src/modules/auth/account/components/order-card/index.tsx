@@ -3,7 +3,7 @@ import { useMemo } from "react"
 import Thumbnail from "@modules/ecommerce/products/components/thumbnail"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@nextui-org/react"
+import { Button } from "@heroui/react"
 import { convertToLocale } from "@modules/ecommerce/common/util/money"
 
 type OrderCardProps = {

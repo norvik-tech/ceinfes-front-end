@@ -1,4 +1,4 @@
-import { cn } from "@nextui-org/react"
+import { cn } from "@heroui/react"
 import { VariantPrice } from "types/global"
 
 export default async function PreviewPrice({ price }: { price: VariantPrice }) {

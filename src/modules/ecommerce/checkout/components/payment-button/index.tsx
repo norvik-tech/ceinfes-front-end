@@ -3,7 +3,7 @@
 import { HttpTypes } from "@medusajs/types"
 import React, { useState } from "react"
 import ErrorMessage from "../error-message"
-import { Button } from "@nextui-org/react"
+import { Button } from "@heroui/react"
 import { isManual, isStripe } from "@modules/ecommerce/common/config/constants"
 import { placeOrder } from "@modules/ecommerce/common/data/cart"
 
