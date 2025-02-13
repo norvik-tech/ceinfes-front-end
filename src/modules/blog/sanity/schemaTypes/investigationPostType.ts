@@ -31,7 +31,10 @@ export const investigationPostType = defineType({
       name: "categories",
       type: "array",
       of: [
-        defineArrayMember({ type: "reference", to: { type: "investigationCategory" } }),
+        defineArrayMember({
+          type: "reference",
+          to: { type: "investigationCategory" },
+        }),
       ],
     }),
     defineField({
@@ -45,6 +48,12 @@ export const investigationPostType = defineType({
     defineField({
       name: "body",
       type: "markdown",
+    }),
+    defineField({
+      name: "sections",
+      title: "Sections",
+      type: "array",
+      of: [defineArrayMember({ type: "section" })],
     }),
   ],
 })

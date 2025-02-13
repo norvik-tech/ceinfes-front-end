@@ -7,6 +7,7 @@ export const TOTAL_INVESTIGATION_POSTS_QUERY = defineQuery(`
 export const TOTAL_POSTS_QUERY = defineQuery(`
   count(*[_type == "post" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)])
 `)
+
 // Investigation Posts Queries
 export const INVESTIGATION_POSTS_QUERY = defineQuery(`
   *[_type == "investigationPost" && defined(slug.current) && (!defined($search) || title match $search || categories[]->title match $search)] | order(publishedAt desc) [$start...$end] {
@@ -17,6 +18,11 @@ export const INVESTIGATION_POSTS_QUERY = defineQuery(`
     publishedAt,
     views,
     thumbnail,
+    sections[] {
+      image,
+      title,
+      description
+    },
     categories[] -> {
       _id,
       title,
@@ -39,6 +45,11 @@ export const INVESTIGATION_POST_BY_ID_QUERY = defineQuery(`
     publishedAt,
     views,
     thumbnail,
+    sections[] {
+      image,
+      title,
+      description
+    },
     categories[] -> {
       _id,
       title,
@@ -62,6 +73,11 @@ export const INVESTIGATION_POSTS_BY_CATEGORY_QUERY = defineQuery(`
     publishedAt,
     views,
     thumbnail,
+    sections[] {
+      image,
+      title,
+      description
+    },
     categories[] -> {
       _id,
       title,
@@ -109,6 +125,11 @@ export const INVESTIGATION_CATEGORY_BY_SLUG_QUERY = defineQuery(`
       publishedAt,
       views,
       mainImage,
+      sections[] {
+        image,
+        title,
+        description
+      },
       categories[] -> {
         _id,
         title

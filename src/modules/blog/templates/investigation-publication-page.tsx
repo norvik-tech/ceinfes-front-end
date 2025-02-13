@@ -35,12 +35,19 @@ export const InvestigationPublicationPage = async ({
         <p>{posts?.length} posts</p>
       </section>
       <article className="content-container flex flex-col gap-y-12">
-        <aside className="flex items-center gap-4">
-          <BlogFilter
+        <aside className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <BlogFilter
+              query={query}
+              categories={categories as unknown as InvestigationCategoryType[]}
+            />
+            {query && <ClearFilters />}
+          </div>
+          <BlogPagination
+            totalPages={totalPages}
+            currentPage={currentPage}
             query={query}
-            categories={categories as unknown as InvestigationCategoryType[]}
           />
-          <ClearFilters />
         </aside>
         <FeaturedPosts posts={posts} query={query} />
       </article>
