@@ -1,24 +1,29 @@
-import { Button, Image } from "@heroui/react"
+import { Button } from "@heroui/react"
+import Image from "next/image"
 import React from "react"
 
 const Investigation = () => {
   return (
     <section className="w-full flex py-6 lg:py-16 justify-center items-center">
       <div className="w-[100vw] md:w-[80vw] p-6 relative flex flex-col-reverse lg:flex-row items-center md:justify-center shadow-md bg-white md:rounded-[16px]">
-        <Image
-          className="h-[80px] w-[80px] md:h-[100px] md:w-[100px] xl:w-[140px] xl:h-[140px]"
-          classNames={{
-            wrapper: "absolute -top-5 md:-top-7 lg:-top-10 md:-right-6 right-5",
-          }}
-          src="/home/investigation/SearchIcon.svg"
-        />
-        <Image
-          className="w-full rounded-lg"
-          classNames={{
-            wrapper: "lg:w-[50%] w-full",
-          }}
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-tkddscqoIn2H4gocIOoMqfAd1gXuIs.png"
-        />
+        <div className="-top-5 md:-top-7 lg:-top-10 md:-right-6 right-5 w-[80px] h-[80px] md:w-[100px] md:h-[100px] xl:w-[140px] xl:h-[140px] relative">
+          <Image
+            src="/home/investigation/SearchIcon.svg"
+            alt="Search Icon"
+            fill
+            priority
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+        <div className="lg:w-[50%] w-full relative aspect-video">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-tkddscqoIn2H4gocIOoMqfAd1gXuIs.png"
+            alt="Investigation"
+            fill
+            className="rounded-lg"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
         <div className="flex flex-col w-full lg:w-[50%] gap-10 md:py-6 lg:p-10">
           <h4 className="font-semibold leading-[2.7rem] text-secondary text-[38px] md:text-[48px]">
             Grupo de{" "}

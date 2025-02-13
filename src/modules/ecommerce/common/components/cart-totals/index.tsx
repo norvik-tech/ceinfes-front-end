@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import { convertToLocale } from "../../util/money"
 
 type CartTotalsProps = {

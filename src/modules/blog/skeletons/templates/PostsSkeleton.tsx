@@ -1,5 +1,4 @@
 import repeat from "@modules/ecommerce/common/util/repeat"
-import React from "react"
 import { PostSkeleton } from "../components/PostSkeleton"
 
 export const PostsSkeleton = () => {

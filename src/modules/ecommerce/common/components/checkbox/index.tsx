@@ -1,5 +1,4 @@
 import { Checkbox } from "@heroui/react"
-import React from "react"
 
 type CheckboxProps = {
   checked?: boolean

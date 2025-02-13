@@ -1,5 +1,5 @@
 import { usePagination } from "@modules/blog/hooks/usePagination"
-import { sanityFetch, SanityLive } from "@modules/blog/sanity/lib/live"
+import { SanityLive } from "@modules/blog/sanity/lib/live"
 import {
   INVESTIGATION_POSTS_QUERY,
   TOTAL_INVESTIGATION_POSTS_QUERY,

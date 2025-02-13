@@ -1,9 +1,8 @@
-import { Image } from "@heroui/react"
-
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { listCollections } from "@modules/ecommerce/common/data/collections"
 import { listCategories } from "@modules/ecommerce/common/data/categories"
 import Link from "next/link"
+import Image from "next/image"
 
 export default async function Footer() {
   const { collections } = await listCollections({
@@ -17,13 +16,16 @@ export default async function Footer() {
         <div className="flex flex-col gap-6 xsmall:flex-row items-start justify-between py-10">
           {/* Logo Section */}
           <div>
-            <LocalizedClientLink href="/" className="block">
+            <LocalizedClientLink
+              href="/"
+              className="block relative w-[240px] h-[70px]"
+            >
               <Image
                 src="/ceinfes-logo.png"
                 alt="Ceinfes"
-                width={240}
-                height={70}
-                radius="none"
+                fill
+                priority
+                style={{ objectFit: "contain" }}
               />
             </LocalizedClientLink>
           </div>

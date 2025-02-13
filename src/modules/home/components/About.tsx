@@ -10,6 +10,7 @@ export const About = () => {
           }}
           className="w-[100px]"
           src="/home/about/AboutIcon.svg"
+          alt="Sobre nosotros"
         />
         <h4 className="text-secondary text-[38px] font-semibold leading-[2.75rem] w-[50%]">
           Sobre <span className="text-primary md:text-secondary">nosotros</span>
@@ -32,6 +33,7 @@ export const About = () => {
       <Image
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-rE7Jy7guLfwevr4cTiDIw9tMEsgBCI.png"
         className="w-full h-full"
+        alt="Equipo de Ceinfes"
       />
     </section>
   )

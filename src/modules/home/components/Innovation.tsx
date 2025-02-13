@@ -20,6 +20,7 @@ export const Innovation = () => {
           <Image
             className="max-w-[100px]"
             src="/home/innovation/infoIcon.svg"
+            alt="Icono de información"
           />
           <div className="flex flex-col gap-2">
             <p className="text-secondary font-medium text-[24px]">
@@ -35,6 +36,7 @@ export const Innovation = () => {
           <Image
             className="max-w-[100px]"
             src="/home/innovation/watchIcon.svg"
+            alt="Icono de reloj"
           />
           <div className="flex flex-col gap-2">
             <p className="text-secondary font-medium text-[24px]">
@@ -50,6 +52,7 @@ export const Innovation = () => {
           <Image
             className="max-w-[100px]"
             src="/home/innovation/watchIcon.svg"
+            alt="Icono de reloj"
           />
           <div className="flex flex-col gap-2">
             <p className="text-secondary font-medium text-[24px]">

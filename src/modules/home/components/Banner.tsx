@@ -34,12 +34,15 @@ export const Banner = () => {
         <Image
           alt="heroImage"
           className="md:h-[100%] z-0 block md:hidden"
-          src="/home/banner/banner_mobile.svg"
+          src="/home/banner/banner_mobile.webp"
+          fetchPriority="high"
         />
         <Image
           alt="heroImage"
           className="md:h-[100%] z-0 hidden md:block"
-          src="/home/banner/Banner.svg"
+          src="/home/banner/Banner.webp"
+          fetchPriority="high"
+          loading="eager"
         />
       </div>
     </section>

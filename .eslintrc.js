@@ -1,3 +1,13 @@
 module.exports = {
   extends: ["next/core-web-vitals"],
+  rules: {
+    "no-unused-vars": [
+      "error",
+      {
+        vars: "all",
+        args: "after-used",
+        ignoreRestSiblings: true,
+      },
+    ],
+  },
 }

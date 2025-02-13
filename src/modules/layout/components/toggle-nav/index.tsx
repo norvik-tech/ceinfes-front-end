@@ -1,19 +1,18 @@
 "use client"
 
 import {
-  Image,
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@heroui/react"
 import LocalizedClientLink from "@modules/ecommerce/common/components/localized-client-link"
 import { NAVBAR_LINKS } from "@modules/layout/config/constants/navbar-links"
+import Image from "next/image"
 import Link from "next/link"
-import React, { useState } from "react"
+import { useState } from "react"
 
 const ToggleNav = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -28,12 +27,15 @@ const ToggleNav = ({ children }: { children: React.ReactNode }) => {
     >
       <NavbarContent>
         <NavbarBrand as={Link} href="/">
-          <Image
-            src="/ceinfes-logo.png"
-            radius="none"
-            className="w-[120px] lg:w-[180px] md:min-w-[8vw]"
-            alt="Ceinfes"
-          />
+          <div className="relative w-[120px] lg:w-[180px] md:min-w-[8vw] h-[60px]">
+            <Image
+              src="/ceinfes-logo.png"
+              alt="Ceinfes"
+              fill
+              priority
+              style={{ objectFit: "contain" }}
+            />
+          </div>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify="end">

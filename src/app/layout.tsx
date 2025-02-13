@@ -1,4 +1,4 @@
-import { HelveticaNeue, poppins } from "@modules/common/config/fonts-config"
+import { poppins } from "@modules/common/config/fonts-config"
 import { getBaseURL } from "@modules/ecommerce/common/util/env"
 import { HeroUIProvider } from "@heroui/react"
 import { Metadata } from "next"
